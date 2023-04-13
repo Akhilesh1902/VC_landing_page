@@ -11,7 +11,7 @@ const ImageDropper = (props: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className='relative w-full mx-4 '>
+    <div className='relative w-full md:mx-4 '>
       <button
         className='rounded-full py-4 px-8 w-full flex justify-between items-center bg-white text-primary-red text-sm font-medium shadow-lg'
         onClick={() => {

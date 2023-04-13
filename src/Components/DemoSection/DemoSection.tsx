@@ -18,11 +18,13 @@ const DemoSection = (props: Props) => {
           <Card name='furniture' imgsrc='./Marketing_Solution.png' />
         </div>
       </div>
-      <Container>
+      <Container className='mt-16 pb-10'>
         <ImageDropper
           buttonText='My Space 3D - Demonstrating Interior Design'
           imgsrc='./MySpace3D_Demo.png'>
-          <div style={{ backgroundColor: '#EFFCF9' }} className='p-10'>
+          <div
+            style={{ backgroundColor: '#EFFCF9' }}
+            className='p-10 hidden md:block'>
             <div className=' bg-emerald-400/20 pb-10 flex gap-3 text-center rounded-3xl p-5 font-medium'>
               <div className='flex flex-col gap-3 items-center '>
                 <GoPrimitiveDot size={24} className='text-primary-red/50' />
@@ -43,7 +45,7 @@ const DemoSection = (props: Props) => {
             </div>
           </div>
         </ImageDropper>
-        <div className='p-10 flex justify-around'>
+        <div className='p-10 mt-10 flex justify-around'>
           <Button rounded shadow onClick={() => {}}>
             Partner
           </Button>

@@ -7,6 +7,7 @@ interface Props extends React.PropsWithChildren {
   onClick: () => void;
   className?: string;
   rounded?: boolean;
+  shadow?: boolean;
 
   dropdown?: boolean;
   options?: string[];
@@ -30,7 +31,8 @@ const Button = (props: Props) => {
           'bg-transparent text-slate-800 border-2 border-slate-800':
             props.varient === 'transparent',
           'bg-transparent text-slate-800': props.varient === null,
-          rounded: props.rounded,
+          'rounded-lg': props.rounded,
+          'shadow-lg': props.shadow,
         },
         'hover:bg-lime-200 hover:text-slate-800',
         props.className

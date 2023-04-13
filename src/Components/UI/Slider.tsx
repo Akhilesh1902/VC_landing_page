@@ -17,7 +17,9 @@ const Slider = (props: Props) => {
   };
   return (
     <div className='relative'>
-      <Button onClick={openDropDown} className='capitalize font-bold'>
+      <Button
+        onClick={openDropDown}
+        className='capitalize font-bold hover:bg-transparent'>
         {props.children}
       </Button>
       {showOptions && (
@@ -31,7 +33,7 @@ const Slider = (props: Props) => {
               <Button
                 onClick={handleOptionSelect}
                 rounded
-                className='text-xs capitalize'>
+                className='text-xs capitalize hover:bg-transparent'>
                 {item}
               </Button>
             ))}

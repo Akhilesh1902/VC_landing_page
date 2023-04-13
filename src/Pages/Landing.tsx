@@ -1,9 +1,17 @@
 import React from 'react';
+import { DemoSection, Footer, Hero, MarketingSolution } from '../Components';
 
 type Props = {};
 
 const Landing = (props: Props) => {
-  return <div>Landing</div>;
+  return (
+    <>
+      <Hero />
+      <MarketingSolution />
+      <DemoSection />
+      <Footer />
+    </>
+  );
 };
 
 export default Landing;

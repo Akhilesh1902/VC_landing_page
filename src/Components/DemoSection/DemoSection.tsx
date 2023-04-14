@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, ImageDropper } from '../UI';
 import { FiPlayCircle } from 'react-icons/fi';
 import { GoPrimitiveDot } from 'react-icons/go';
+import { Marketing_Solution, MySpace3D_Demo } from '../../assets/images';
 type Props = {};
 
 const DemoSection = (props: Props) => {
@@ -11,17 +12,17 @@ const DemoSection = (props: Props) => {
         className={`relative  after:content-[''] after:absolute after:top-full after:-translate-y-full after:z-[5] after:w-full after:h-1/2 after:bg-primary-red`}>
         <div
           className={` relative p-10 flex justify-center z-10 gap-10 overflow-scroll md:overflow-clip`}>
-          <Card name='furniture' imgsrc='./Marketing_Solution.png' />
-          <Card name='furniture' imgsrc='./Marketing_Solution.png' />
-          <Card name='furniture' imgsrc='./Marketing_Solution.png' />
-          <Card name='furniture' imgsrc='./Marketing_Solution.png' />
-          <Card name='furniture' imgsrc='./Marketing_Solution.png' />
+          <Card name='furniture' imgsrc={Marketing_Solution} />
+          <Card name='furniture' imgsrc={Marketing_Solution} />
+          <Card name='furniture' imgsrc={Marketing_Solution} />
+          <Card name='furniture' imgsrc={Marketing_Solution} />
+          <Card name='furniture' imgsrc={Marketing_Solution} />
         </div>
       </div>
       <Container className='mt-16 pb-10'>
         <ImageDropper
           buttonText='My Space 3D - Demonstrating Interior Design'
-          imgsrc='./MySpace3D_Demo.png'>
+          imgsrc={MySpace3D_Demo}>
           <div
             style={{ backgroundColor: '#EFFCF9' }}
             className='p-10 hidden md:block'>
@@ -46,10 +47,10 @@ const DemoSection = (props: Props) => {
           </div>
         </ImageDropper>
         <div className='p-10 mt-10 flex justify-around'>
-          <Button rounded shadow onClick={() => {}}>
+          <Button type='button' rounded shadow onClick={() => {}}>
             Partner
           </Button>
-          <Button rounded shadow onClick={() => {}}>
+          <Button type='button' rounded shadow onClick={() => {}}>
             Incubater
           </Button>
         </div>
@@ -76,7 +77,11 @@ const Card = (props: CardProps) => {
           className='object-cover w-full h-full'
         />
       </div>
-      <Button onClick={() => {}} varient={'primary'} className='rounded-full'>
+      <Button
+        type='button'
+        onClick={() => {}}
+        varient={'primary'}
+        className='rounded-full'>
         <div className='flex  items-center gap-2'>
           <p className='capitalize'>Furniture</p>
           <FiPlayCircle />

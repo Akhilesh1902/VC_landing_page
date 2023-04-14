@@ -2,6 +2,7 @@ import React, { Suspense, useState } from 'react';
 import { Container, DropDown, ImageDropper } from '../UI/';
 // import CanvasWrapper from './ThreeJS/CanvasWrapper';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import { VisCommerce_levels } from '../../assets/images';
 
 import Slider from '../UI/Slider';
 
@@ -58,10 +59,7 @@ const Hero = (props: Props) => {
         </div>
       </div>
       <Marque />
-      <ImageDropper
-        buttonText='Our Offerings'
-        imgsrc='./VisCommerce_levels.png'
-      />
+      <ImageDropper buttonText='Our Offerings' imgsrc={VisCommerce_levels} />
     </Container>
   );
 };

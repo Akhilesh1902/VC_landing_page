@@ -18,6 +18,7 @@ const Slider = (props: Props) => {
   return (
     <div className='relative'>
       <Button
+        type='button'
         onClick={openDropDown}
         className='capitalize font-bold hover:bg-transparent'>
         {props.children}
@@ -31,6 +32,7 @@ const Slider = (props: Props) => {
           {props.options &&
             props.options.map((item) => (
               <Button
+                type='button'
                 onClick={handleOptionSelect}
                 rounded
                 className='text-xs capitalize hover:bg-transparent'>

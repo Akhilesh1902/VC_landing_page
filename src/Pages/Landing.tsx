@@ -9,7 +9,6 @@ const Landing = (props: Props) => {
       <Hero />
       <MarketingSolution />
       <DemoSection />
-      <Footer />
     </>
   );
 };

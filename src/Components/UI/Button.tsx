@@ -1,28 +1,70 @@
 import React from 'react';
 import clsx from 'clsx';
-import MyDropDown from './DropDown';
+import MyDropDown, { DropDownOptions } from './DropDown';
+import { useNavigate } from 'react-router-dom';
 
-interface Props extends React.PropsWithChildren {
-  varient?: 'primary' | 'secondary' | 'transparent' | null;
-  onClick: () => void;
+interface DefaultProps extends React.PropsWithChildren {
   className?: string;
-  rounded?: boolean;
   shadow?: boolean;
-
-  dropdown?: boolean;
-  options?: string[];
+}
+interface ButtonProps extends DefaultProps {
+  onClick: () => void;
+  rounded?: boolean;
+  url?: string;
+  varient?: 'primary' | 'secondary' | 'transparent' | null;
+  type: 'button';
 }
 
+interface DropdownProps extends DefaultProps {
+  // dropdown?: boolean;
+  type: 'dropdown';
+  options: DropDownOptions[];
+
+  optionSelect: () => void;
+}
+
+type Props = ButtonProps | DropdownProps;
+
+// interface Props extends React.PropsWithChildren {
+//   varient?: 'primary' | 'secondary' | 'transparent' | null;
+//   onClick: () => void;
+//   className?: string;
+//   rounded?: boolean;
+//   shadow?: boolean;
+//   url?: string;
+
+//   dropdown?: boolean;
+//   options?: string[];
+//   optionsUrl?: string[];
+// }
+
 const Button = (props: Props) => {
-  if (props.dropdown)
+  if (props.type === 'dropdown')
     return (
-      <MyDropDown options={props.options} optionSelcect={props.onClick}>
-        {props.children}
-      </MyDropDown>
+      <>
+        {props.options && (
+          <MyDropDown
+            options={props.options}
+            optionSelcect={props.optionSelect}>
+            {props.children}
+          </MyDropDown>
+        )}
+      </>
     );
+
+  const navigateto = useNavigate();
+
+  const handleClick = () => {
+    if (props.url) {
+      navigateto(props.url);
+      return;
+    }
+    props.onClick();
+  };
+
   return (
     <button
-      onClick={props.onClick}
+      onClick={handleClick}
       className={clsx(
         'uppercase px-4 py-2 transition-background duration-300 ',
         {

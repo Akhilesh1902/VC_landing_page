@@ -2,25 +2,39 @@ import LogoImg from '../assets/VIsCommercelogo.svg';
 import Logo from '../../assets/Logo.svg';
 import { Button, Container } from '../UI';
 import { AiFillCaretDown } from 'react-icons/ai';
-
+import { useNavigate } from 'react-router-dom';
 type Props = {};
 
 const Nav = (props: Props) => {
+  const navigateto = useNavigate();
   return (
     <div className='bg-white'>
       <Container className='flex px-8 '>
         <div className='flex w-full justify-between items-center'>
-          <div>
+          <div
+            onClick={() => {
+              navigateto('/');
+            }}
+            className='cursor-pointer'>
             <img src={Logo} alt='' className='h-16' />
           </div>
           <ul className='hidden md:flex text-xs gap-2 font-medium'>
             <li>
               <Button
-                onClick={() => {
+                optionSelect={() => {
                   console.log('clicked');
                 }}
-                dropdown
-                options={['option1', 'option2', 'option3']}>
+                type='dropdown'
+                options={[
+                  {
+                    innerText: 'Store3D',
+                    url: '/solutions/store3d',
+                  },
+                  {
+                    innerText: 'MySpace3D',
+                    url: '/solutions/myspace3d',
+                  },
+                ]}>
                 <div className='flex items-center gap-2'>
                   <p>Solution</p>
                   <AiFillCaretDown />
@@ -29,19 +43,30 @@ const Nav = (props: Props) => {
             </li>
             <li>
               <Button
-                onClick={() => {
+                type='dropdown'
+                optionSelect={() => {
                   console.log('clicked');
                 }}
-                dropdown
-                options={['option1', 'option2', 'option3']}>
+                options={[
+                  {
+                    innerText: 'Store3D',
+                    url: '/benefits/store3d',
+                  },
+                  {
+                    innerText: 'MySpace3D',
+                    url: '/benefits/myspace3d',
+                  },
+                ]}>
                 <div className='flex items-center gap-2'>
-                  <p>BEnifits</p>
+                  <p>Benefits</p>
                   <AiFillCaretDown />
                 </div>
               </Button>
             </li>
             <li>
               <Button
+                type='button'
+                url='/pricing'
                 onClick={() => {
                   console.log('clicked');
                 }}>
@@ -50,6 +75,8 @@ const Nav = (props: Props) => {
             </li>
             <li>
               <Button
+                type='button'
+                url='/resources'
                 onClick={() => {
                   console.log('clicked');
                 }}>
@@ -58,11 +85,20 @@ const Nav = (props: Props) => {
             </li>
             <li>
               <Button
-                onClick={() => {
+                optionSelect={() => {
                   console.log('clicked');
                 }}
-                dropdown
-                options={['option1', 'option2', 'option3']}>
+                type='dropdown'
+                options={[
+                  {
+                    innerText: 'About Us',
+                    url: '/company/store3d',
+                  },
+                  {
+                    innerText: 'Team',
+                    url: '/company/mySpace3D',
+                  },
+                ]}>
                 <div className='flex items-center gap-2'>
                   <p>Company</p>
                   <AiFillCaretDown />

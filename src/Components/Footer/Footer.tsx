@@ -4,9 +4,13 @@ import Logo from '../../assets/Logo.svg';
 const Footer = () => {
   return (
     <div className='bg-white'>
-      <div className='bg-primary-red py-3 w-full flex items-center justify-center gap-5'>
+      <div className='bg-primary-red py-3 w-full flex flex-col md:flex-row items-center justify-center gap-5'>
         <h2 className='text-white font-bold'>Ready for VisCommerce?</h2>
-        <Button onClick={() => {}} rounded className='bg-white px-10'>
+        <Button
+          type='button'
+          onClick={() => {}}
+          rounded
+          className='bg-white px-10'>
           Reach Us
         </Button>
       </div>

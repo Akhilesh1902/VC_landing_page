@@ -92,11 +92,11 @@ const Nav = (props: Props) => {
                 options={[
                   {
                     innerText: 'About Us',
-                    url: '/company/store3d',
+                    url: '/company/aboutus',
                   },
                   {
                     innerText: 'Team',
-                    url: '/company/mySpace3D',
+                    url: '/company/team',
                   },
                 ]}>
                 <div className='flex items-center gap-2'>

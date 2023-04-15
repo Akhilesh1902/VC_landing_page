@@ -14,7 +14,6 @@ interface Props extends React.PropsWithChildren {
 const DropDown = (props: Props) => {
   const [showOptions, setShowOptions] = useState(false);
   const openDropDown = () => {
-    console.log('opening Dropdown');
     setShowOptions((p) => !p);
   };
   const handleOptionSelect = () => {
@@ -35,6 +34,7 @@ const DropDown = (props: Props) => {
           {props.options &&
             props.options.map((item, i) => (
               <Button
+                key={i}
                 type='button'
                 onClick={handleOptionSelect}
                 url={item.url}

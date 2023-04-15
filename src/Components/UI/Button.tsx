@@ -57,7 +57,6 @@ const Button = (props: Props) => {
   const handleClick = () => {
     if (props.url) {
       navigateto(props.url);
-      return;
     }
     props.onClick();
   };

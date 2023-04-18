@@ -9,7 +9,7 @@ const Nav = (props: Props) => {
   const navigateto = useNavigate();
   return (
     <div className='bg-white'>
-      <Container className='flex px-8 '>
+      <Container className='flex px-8 py-3 '>
         <div className='flex w-full justify-between items-center'>
           <div
             onClick={() => {

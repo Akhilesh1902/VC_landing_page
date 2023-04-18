@@ -1,5 +1,11 @@
 import React from 'react';
-import { DemoSection, Footer, Hero, MarketingSolution } from '../Components';
+import {
+  DemoSection,
+  Footer,
+  Hero,
+  MarketingSolution,
+  Testimonial,
+} from '../Components';
 
 type Props = {};
 
@@ -9,6 +15,7 @@ const Landing = (props: Props) => {
       <Hero />
       <MarketingSolution />
       <DemoSection />
+      <Testimonial />
     </>
   );
 };

@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom';
 interface DefaultProps extends React.PropsWithChildren {
   className?: string;
   shadow?: boolean;
+  innertext?: string;
 }
 interface ButtonProps extends DefaultProps {
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
   rounded?: boolean;
   url?: string;
   varient?: 'primary' | 'secondary' | 'transparent' | null;
@@ -54,16 +55,23 @@ const Button = (props: Props) => {
 
   const navigateto = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    console.log(props.url);
     if (props.url) {
       navigateto(props.url);
     }
-    props.onClick();
+    props.onClick(e);
   };
 
   return (
     <button
-      onClick={handleClick}
+      onClick={(e) => {
+        if (props.url) {
+          handleClick(e);
+          return;
+        }
+        props.onClick ? props.onClick(e) : handleClick(e);
+      }}
       className={clsx(
         'uppercase px-4 py-2 transition-background duration-300 ',
         {
@@ -77,7 +85,8 @@ const Button = (props: Props) => {
         },
         'hover:bg-lime-200 hover:text-slate-800',
         props.className
-      )}>
+      )}
+      data-innertext={props.innertext}>
       {props.children}
     </button>
   );

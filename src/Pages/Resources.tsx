@@ -6,20 +6,25 @@ type Props = {};
 
 const ButtonArr = ['all', 'store 3d', 'my space 3d'];
 
+const initialBtnArr = [
+  {
+    name: 'all',
+    active: false,
+  },
+  {
+    name: 'store 3d',
+    active: false,
+  },
+  {
+    name: 'my space 3d',
+    active: false,
+  },
+];
+
 const Resources = (props: Props) => {
   const [btnArr, setBtnArr] = useState([
-    {
-      name: 'all',
-      active: true,
-    },
-    {
-      name: 'store 3d',
-      active: false,
-    },
-    {
-      name: 'my space 3d',
-      active: false,
-    },
+    ...initialBtnArr,
+    { name: 'all', active: true },
   ]);
 
   return (

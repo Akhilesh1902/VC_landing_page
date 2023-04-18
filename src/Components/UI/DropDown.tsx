@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export interface DropDownOptions {
   innerText: string;
@@ -13,10 +14,12 @@ interface Props extends React.PropsWithChildren {
 
 const DropDown = (props: Props) => {
   const [showOptions, setShowOptions] = useState(false);
+  const navigateTo = useNavigate();
   const openDropDown = () => {
     setShowOptions((p) => !p);
   };
   const handleOptionSelect = () => {
+    console.log('handeling dropdown select');
     setShowOptions(false);
     props.optionSelcect();
   };

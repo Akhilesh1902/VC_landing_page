@@ -1,14 +1,14 @@
-export { default as DayStore3dLogo } from './Day_Store3D_Logo.png';
-export { default as Enhance_Brand_1 } from './Enhance_Brand_1.png';
-export { default as Groww_Revenue_image } from './Groww_Revenue_image.png';
-export { default as Product_Return_1 } from './Product_Return_1.png';
-export { default as VisCommerce_levels } from './VisCommerce_levels.png';
-export { default as Marketing_Solution } from './Marketing_Solution.png';
-export { default as MySpace3D_Demo } from './MySpace3D_Demo.png';
-export { default as DRM } from './DRM.png';
-export { default as PRS } from './PRS.png';
-export { default as RM } from './RM.png';
-export { default as STL } from './STL.png';
+export { default as DayStore3dLogo } from './Day_Store3D_Logo.webp';
+export { default as Enhance_Brand_1 } from './Enhance_Brand_1.webp';
+export { default as Groww_Revenue_image } from './Groww_Revenue_image.webp';
+export { default as Product_Return_1 } from './Product_Return_1.webp';
+export { default as VisCommerce_levels } from './VisCommerce_levels.webp';
+export { default as Marketing_Solution } from './Marketing_Solution.webp';
+export { default as MySpace3D_Demo } from './MySpace3D_Demo.webp';
+export { default as DRM } from './DRM.webp';
+export { default as PRS } from './PRS.webp';
+export { default as RM } from './RM.webp';
+export { default as STL } from './STL.webp';
 
 // my space 3d
 import BrandExperience_D from './mySpace3d/Brand Experience 1 DTP-100.webp';
@@ -58,7 +58,7 @@ export const BrandExperience = {
   mobile: [BrandExperience_M],
 };
 
-export { default as commerce3d } from './logos/3dcommerce.png';
-export { default as Draco_logo } from './logos/Draco_logo.png';
-export { default as KTX_logo } from './logos/KTX_logo.png';
-export { default as glTfimage } from './logos/glTF.png';
+export { default as commerce3d } from './logos/3dcommerce.webp';
+export { default as Draco_logo } from './logos/Draco_logo.webp';
+export { default as KTX_logo } from './logos/KTX_logo.webp';
+export { default as glTfimage } from './logos/glTF.webp';

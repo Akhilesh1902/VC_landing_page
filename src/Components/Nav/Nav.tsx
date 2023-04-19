@@ -18,7 +18,7 @@ const Nav = (props: Props) => {
             className='cursor-pointer'>
             <img src={Logo} alt='' className='h-16' />
           </div>
-          <ul className='hidden md:flex text-xs gap-2 font-medium'>
+          <ul className='hidden md:flex text-xs gap-2 font-medium capitalize!'>
             <li>
               <Button
                 optionSelect={() => {
@@ -32,10 +32,10 @@ const Nav = (props: Props) => {
                   },
                   {
                     innerText: 'MySpace3D',
-                    url: '/solutions/myspace3d',
+                    url: '/solutions/myspace3d/userExperience',
                   },
                 ]}>
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 '>
                   <p>Solution</p>
                   <AiFillCaretDown />
                 </div>

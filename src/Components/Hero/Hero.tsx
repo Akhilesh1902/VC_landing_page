@@ -1,10 +1,8 @@
-import React, { Suspense, useState } from 'react';
-import { Container, DropDown, ImageDropper } from '../UI/';
-// import CanvasWrapper from './ThreeJS/CanvasWrapper';
-import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import React, { Suspense } from 'react';
+import { Container, ImageDropper, Slider } from '../UI/';
 import { VisCommerce_levels } from '../../assets/images';
 
-import Slider from '../UI/Slider';
+// import Slider from '../UI/Slider';
 
 const CanvasWrapper = React.lazy(() => import('../ThreeJS/CanvasWrapper'));
 

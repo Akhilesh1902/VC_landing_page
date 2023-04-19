@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Button, Container } from '../Components/UI';
+import { Container } from '../Components/UI';
 import { useState } from 'react';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
@@ -9,7 +9,6 @@ import {
   WhiteLabeling,
   BrandExperience,
 } from '../assets/images';
-import { ImGift } from 'react-icons/im';
 type Props = {};
 
 const Solutions = (props: Props) => {
@@ -55,7 +54,18 @@ const MySpace3d = () => {
     <Container className='flex flex-col items-center '>
       <div className='my-10 flex gap-3'>
         {button.map((item) => {
-          return <NavLink to={item.link}>{item.innerText}</NavLink>;
+          return (
+            <NavLink
+              to={item.link}
+              className={({ isActive, isPending }) =>
+                clsx(
+                  `font-bold relative after:block after:w-[2px] after:h-full after:bg-black after:absolute after:top-1/2 after:-translate-y-1/2 last:after:hidden after:-right-2 `,
+                  { 'text-primary-red': isActive }
+                )
+              }>
+              {item.innerText}
+            </NavLink>
+          );
         })}
       </div>
 

@@ -26,19 +26,6 @@ interface DropdownProps extends DefaultProps {
 
 type Props = ButtonProps | DropdownProps;
 
-// interface Props extends React.PropsWithChildren {
-//   varient?: 'primary' | 'secondary' | 'transparent' | null;
-//   onClick: () => void;
-//   className?: string;
-//   rounded?: boolean;
-//   shadow?: boolean;
-//   url?: string;
-
-//   dropdown?: boolean;
-//   options?: string[];
-//   optionsUrl?: string[];
-// }
-
 const Button = (props: Props) => {
   if (props.type === 'dropdown')
     return (
@@ -73,7 +60,7 @@ const Button = (props: Props) => {
         props.onClick ? props.onClick(e) : handleClick(e);
       }}
       className={clsx(
-        'uppercase px-4 py-2 transition-background duration-300 ',
+        'capitalize text-base px-4 py-2 transition-background duration-300 ',
         {
           'bg-primary-red text-slate-50': props.varient === 'primary',
           'bg-gray-400 text-slate-800': props.varient === 'secondary',

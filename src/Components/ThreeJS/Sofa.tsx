@@ -5,7 +5,7 @@ import * as THREE from 'three';
 type Props = {};
 
 const Sofa = (props: Props) => {
-  const { scene } = useGLTF('./sofa.glb');
+  const { scene } = useGLTF('/sofa.glb');
   scene.traverse((item) => {
     if (item instanceof THREE.Mesh) {
       item.castShadow = true;

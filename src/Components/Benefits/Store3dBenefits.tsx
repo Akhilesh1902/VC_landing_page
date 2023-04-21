@@ -87,39 +87,42 @@ const Store3dBenefits = (props: Props) => {
           </div>
         </div>
         <CardSection />
-        <div className='w-full flex flex-col items-center gap-10 mb-10'>
-          <h1 className='font-bold text-lg md:text-2xl'>
-            DRM (Dgital Rights Management)
-          </h1>
-          <div
-            style={{
-              boxShadow: '0px 0px 10px  #42424266',
-            }}
-            className='flex flex-col md:flex-row w-full justify-center items-center gap-5 pb-10 md:pb-0 bg-yellow-300/30 rounded-xl  '>
-            <div className='my-10'>
-              <img src={DRM} alt='' className='w-40 object-cover' />
-            </div>
-            <div className='px-3'>
-              <p className=''>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className=''>
-                &#x2022; Lorem ipsum dolor sit, amet consectetur adipisicing
-                elit. Iusto, dolorum.
-              </p>
-              <p className=''>
-                &#x2022; Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Eveniet, temporibus.
-              </p>
-              <p className=''>
-                &#x2022; Lorem ipsum dolor sit amet consectetur adipisicing
-                elit.
-              </p>
-            </div>
-          </div>
-        </div>
+        <DigitalRightsManagement />
       </Container>
     </div>
   );
 };
+
+export const DigitalRightsManagement = () => (
+  <div className='w-full flex flex-col items-center gap-10 mb-10'>
+    <h1 className='font-bold text-lg md:text-2xl'>
+      DRM (Dgital Rights Management)
+    </h1>
+    <div
+      style={{
+        boxShadow: '0px 0px 10px  #42424266',
+      }}
+      className='flex flex-col md:flex-row w-full justify-center items-center gap-5 pb-10 md:pb-0 bg-yellow-300/30 rounded-xl  '>
+      <div className='my-10'>
+        <img src={DRM} alt='' className='w-40 object-cover' />
+      </div>
+      <div className='px-3'>
+        <p className=''>&#x2022; Lorem ipsum dolor sit amet.</p>
+        <p className=''>
+          &#x2022; Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Iusto, dolorum.
+        </p>
+        <p className=''>
+          &#x2022; Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eveniet, temporibus.
+        </p>
+        <p className=''>
+          &#x2022; Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+  </div>
+);
 
 export default Store3dBenefits;
 

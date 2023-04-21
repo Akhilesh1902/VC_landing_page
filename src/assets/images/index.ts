@@ -9,6 +9,7 @@ export { default as DRM } from './DRM.webp';
 export { default as PRS } from './PRS.webp';
 export { default as RM } from './RM.webp';
 export { default as STL } from './STL.webp';
+export { default as techStack } from './techStack.webp';
 
 // my space 3d
 import BrandExperience_D from './mySpace3d/Brand Experience 1 DTP-100.webp';
@@ -62,3 +63,19 @@ export { default as commerce3d } from './logos/3dcommerce.webp';
 export { default as Draco_logo } from './logos/Draco_logo.webp';
 export { default as KTX_logo } from './logos/KTX_logo.webp';
 export { default as glTfimage } from './logos/glTF.webp';
+
+export { default as bedroomImage } from './room/Bedroom.webp';
+
+import Bathtub from './landingCard/Bathtub.webp';
+import Light from './landingCard/Light.webp';
+import Paint from './landingCard/Paint.webp';
+import Sofa from './landingCard/Sofa.webp';
+import Tiles from './landingCard/Tiles.webp';
+
+export const landingCards = {
+  Bathtub,
+  Light,
+  Paint,
+  Sofa,
+  Tiles,
+};

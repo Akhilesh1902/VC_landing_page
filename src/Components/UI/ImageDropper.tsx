@@ -13,7 +13,7 @@ const ImageDropper = (props: Props) => {
   return (
     <div className='relative w-full md:mx-4 '>
       <button
-        className='rounded-full py-4 px-8 w-full flex justify-between items-center bg-white text-primary-red text-sm font-medium shadow-lg'
+        className='rounded-full py-4 px-8 w-full flex justify-between items-center bg-white text-primary-red text-sm font-bold shadow-lg'
         onClick={() => {
           setOpen((p) => !p);
         }}>
@@ -21,7 +21,7 @@ const ImageDropper = (props: Props) => {
         {!open ? <BiChevronDown size={24} /> : <BiChevronUp size={24} />}
       </button>
       {open && (
-        <Container className='absolute w-[95%] -translate-x-1/2 left-1/2 !p-0'>
+        <Container className='absolute w-[95%] z-10 -translate-x-1/2 left-1/2 !p-0'>
           {props.children}
           <img src={props.imgsrc} alt='' className='' />
         </Container>

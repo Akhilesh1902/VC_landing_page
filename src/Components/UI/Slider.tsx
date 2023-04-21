@@ -28,16 +28,14 @@ const Slider = (props: Props) => {
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1, transition: { duration: 0.3 } }}
           exit={{ x: 50, opacity: 0 }}
-          className='flex flex-col w-full rounded ml-4'>
+          className='flex flex-col items-start gap-2 w-full rounded ml-10'>
           {props.options &&
             props.options.map((item) => (
-              <Button
-                type='button'
+              <p
                 onClick={handleOptionSelect}
-                rounded
-                className='text-xs capitalize hover:bg-transparent'>
+                className='text-sm text-black/50 font-bold capitalize text-start w-[70%] hover:bg-transparent'>
                 {item}
-              </Button>
+              </p>
             ))}
         </motion.div>
       )}

@@ -2,7 +2,11 @@ import React from 'react';
 import { Button, Container, ImageDropper } from '../UI';
 import { FiPlayCircle } from 'react-icons/fi';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { Marketing_Solution, MySpace3D_Demo } from '../../assets/images';
+import {
+  Marketing_Solution,
+  MySpace3D_Demo,
+  landingCards,
+} from '../../assets/images';
 type Props = {};
 
 const DemoSection = (props: Props) => {
@@ -12,11 +16,11 @@ const DemoSection = (props: Props) => {
         className={`relative  after:content-[''] after:absolute after:top-full after:-translate-y-full after:z-[5] after:w-full after:h-1/2 after:bg-primary-red`}>
         <div
           className={` relative p-10 flex justify-center z-10 gap-10 overflow-scroll md:overflow-clip`}>
-          <Card name='furniture' imgsrc={Marketing_Solution} />
-          <Card name='furniture' imgsrc={Marketing_Solution} />
-          <Card name='furniture' imgsrc={Marketing_Solution} />
-          <Card name='furniture' imgsrc={Marketing_Solution} />
-          <Card name='furniture' imgsrc={Marketing_Solution} />
+          <Card name='furniture' imgsrc={landingCards.Sofa} />
+          <Card name='furniture' imgsrc={landingCards.Light} />
+          <Card name='paint' imgsrc={landingCards.Paint} />
+          <Card name='tiles' imgsrc={landingCards.Tiles} />
+          <Card name='sanitaryWare' imgsrc={landingCards.Bathtub} />
         </div>
       </div>
       <Container className='mt-16 pb-10'>
@@ -26,22 +30,33 @@ const DemoSection = (props: Props) => {
           <div
             style={{ backgroundColor: '#EFFCF9' }}
             className='p-10 hidden md:block'>
-            <div className=' bg-emerald-400/20 pb-10 flex gap-3 text-center rounded-3xl p-5 font-medium'>
+            <div className=' bg-emerald-400/20 pb-10 flex gap-3 text-center rounded-3xl p-5 font-bold '>
               <div className='flex flex-col gap-3 items-center '>
                 <GoPrimitiveDot size={24} className='text-primary-red/50' />
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p>
+                  MySpace3D is an innovative, Personalized Interior Design
+                  Solution
+                </p>
               </div>
               <div className='flex flex-col gap-3 items-center '>
                 <GoPrimitiveDot size={24} className='text-primary-red/50' />
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p>
+                  Empowers user to design homes with infinite combinations while
+                  saving time and money.
+                </p>
               </div>
               <div className='flex flex-col gap-3 items-center '>
                 <GoPrimitiveDot size={24} className='text-primary-red/50' />
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p>
+                  Creates new profitable revenue streams for Biz in Furniture,
+                  Lightings, Paints, Tiles sector
+                </p>
               </div>
               <div className='flex flex-col gap-3 items-center '>
                 <GoPrimitiveDot size={24} className='text-primary-red/50' />
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p>
+                  Built on a platform of Unity, AI, Cloud and Web Technologies
+                </p>
               </div>
             </div>
           </div>
@@ -74,7 +89,7 @@ const Card = (props: CardProps) => {
         <img
           src={props.imgsrc}
           alt=' card '
-          className='object-cover w-full h-full'
+          className='object-contain w-full h-full'
         />
       </div>
       <Button
@@ -83,7 +98,7 @@ const Card = (props: CardProps) => {
         varient={'primary'}
         className='rounded-full'>
         <div className='flex  items-center gap-2'>
-          <p className='capitalize'>Furniture</p>
+          <p className='capitalize'>Try Demo</p>
           <FiPlayCircle />
         </div>
       </Button>

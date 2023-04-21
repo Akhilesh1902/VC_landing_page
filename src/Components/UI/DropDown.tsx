@@ -24,16 +24,16 @@ const DropDown = (props: Props) => {
     props.optionSelcect();
   };
   return (
-    <div className='relative'>
+    <div className='relative w-max'>
       <Button type='button' onClick={openDropDown}>
         {props.children}
       </Button>
       {showOptions && (
         <motion.div
-          initial={{ y: -50, opacity: 0 }}
+          initial={{ y: -50, x: '-50%', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          className='absolute z-10 bg-white top-full flex flex-col w-full shadow-md shadow-gray-300 rounded'>
+          className='absolute z-10 p-2 left-1/2 bg-white w-fit top-full shadow-md shadow-gray-300 rounded'>
           {props.options &&
             props.options.map((item, i) => (
               <Button
@@ -42,7 +42,7 @@ const DropDown = (props: Props) => {
                 onClick={handleOptionSelect}
                 url={item.url}
                 rounded
-                className='m-2'>
+                className='my-2 text-sm w-full'>
                 {item.innerText}
               </Button>
             ))}

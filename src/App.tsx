@@ -3,9 +3,15 @@ import { Footer, Nav } from './Components';
 import Pages from './Pages';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import CanvasWrapper from './Components/ThreeJS/CanvasWrapper';
+import Modal from './Components/UI/Modal';
+import { useState } from 'react';
 
 function App() {
   const location = useLocation();
+
+  const [openModal, setOpenModel] = useState(false);
+  const [modalType] = useState<'email'>('email');
+  console.log(openModal);
   return (
     <>
       <AnimatePresence>
@@ -17,8 +23,9 @@ function App() {
         <div className='absolute z-0 w-screen'>
           <Nav />
           <Pages />
-          <Footer />
+          <Footer setOpenModel={setOpenModel} />
         </div>
+        {openModal && <Modal type={modalType} setOpenModel={setOpenModel} />}
       </AnimatePresence>
     </>
   );

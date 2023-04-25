@@ -1,14 +1,22 @@
 import React from 'react';
 import { Button, Container } from '../UI';
 import Logo from '../../assets/Logo.svg';
-const Footer = () => {
+
+type Props = {
+  setOpenModel: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Footer = (props: Props) => {
   return (
     <div className='bg-white'>
       <div className='bg-primary-red py-3 w-full flex flex-col md:flex-row items-center justify-center gap-5'>
         <h2 className='text-white font-bold'>Ready for VisCommerce?</h2>
         <Button
           type='button'
-          onClick={() => {}}
+          onClick={() => {
+            console.log('clicking button');
+            props.setOpenModel(true);
+          }}
           rounded
           className='bg-white px-10'>
           Reach Us

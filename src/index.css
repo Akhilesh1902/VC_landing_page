@@ -88,3 +88,12 @@ body {
 .swiper-pagination .swiper-pagination-bullet-active {
   background: red;
 }
+
+.store3d-card-details {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transition: clip-path 0.3s ease-in-out;
+}
+
+.store3d-card:hover .store3d-card-details {
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}

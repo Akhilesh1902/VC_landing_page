@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Container, ImageDropper, Slider } from '../UI/';
 import { VisCommerce_levels } from '../../assets/images';
 import { motion } from 'framer-motion';
-
+import Marquee from 'react-fast-marquee';
 // import Slider from '../UI/Slider';
 
 const CanvasWrapper = React.lazy(() => import('../ThreeJS/CanvasWrapper'));
@@ -26,7 +26,7 @@ const Hero = (props: Props) => {
               'Furniture, Lighting, Paints, Tiles, Carpets, Sanitaryware and related sectors',
               'Increase revenue, reduce product returns and enhance brand value',
             ]}>
-            <div className='flex items-center'>
+            <div className='flex items-center text-start'>
               <p>
                 <span className='text-primary-red'>
                   Interactive 3D marketing
@@ -41,7 +41,7 @@ const Hero = (props: Props) => {
               'Scale, Shape and Material accuracy.',
               'Save time and money.',
             ]}>
-            <div className='flex items-center'>
+            <div className='flex text-start items-center'>
               <p>
                 Democratizing{' '}
                 <span className='text-primary-red'>Interior Design</span>
@@ -49,7 +49,7 @@ const Hero = (props: Props) => {
             </div>
           </Slider>
           <Slider options={[]}>
-            <div className='flex items-center'>
+            <div className='flex text-start items-center'>
               <p>
                 Technology platform composed of 3D, AI, BlockChain, Crypto etc.,
               </p>
@@ -68,7 +68,9 @@ const Hero = (props: Props) => {
           </Suspense>
         </div>
       </div>
-      <Marque />
+      <Marquee>
+        <Marque />
+      </Marquee>
       <ImageDropper buttonText='Our Offerings' imgsrc={VisCommerce_levels} />
     </Container>
   );
@@ -77,7 +79,7 @@ const Hero = (props: Props) => {
 export default Hero;
 
 const Marque = () => (
-  <div className=' my-4 bg p-1 w-full  bottom-10 left z-20 text-primary-red hidden md:flex justify-center items-center'>
+  <div className=' my-4 bg p-1 w-full bottom-10 left z-20 text-primary-red flex justify-center items-center'>
     <p className='p-2 bg-primary-red/40 w-fit h-fit text-center'>
       Reduce returns by 50% per Harris poll
     </p>

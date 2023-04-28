@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, Container, ImageDropper } from '../UI';
 import { FiPlayCircle } from 'react-icons/fi';
 import { GoPrimitiveDot } from 'react-icons/go';
@@ -7,9 +7,12 @@ import {
   MySpace3D_Demo,
   landingCards,
 } from '../../assets/images';
+import { PartnersData } from '../constants';
+import clsx from 'clsx';
 type Props = {};
 
 const DemoSection = (props: Props) => {
+  const [partnerIndex, setPartnerIndex] = useState([false, false]);
   return (
     <div className='bg-white w-full'>
       <div
@@ -61,13 +64,31 @@ const DemoSection = (props: Props) => {
             </div>
           </div>
         </ImageDropper>
-        <div className='p-10 mt-10 flex justify-around'>
-          <Button type='button' rounded shadow onClick={() => {}}>
-            Partner
-          </Button>
-          <Button type='button' rounded shadow onClick={() => {}}>
-            Incubater
-          </Button>
+        <div className='p-10 mt-10 grid grid-cols-2'>
+          {PartnersData.map((item, i) => (
+            <div className='flex flex-col gap-2  items-center '>
+              <div
+                className={clsx('flex flex-col w-1/2 gap-3', {
+                  hidden: partnerIndex[i],
+                })}>
+                <img src={item.image} alt='' />
+                <p>{item.desc}</p>
+              </div>
+
+              <Button
+                type='button'
+                rounded
+                className='align-baseline'
+                shadow
+                onClick={() => {
+                  setPartnerIndex((p) =>
+                    p.map((item, j) => (j === i ? !item : item))
+                  );
+                }}>
+                {item.title}
+              </Button>
+            </div>
+          ))}
         </div>
       </Container>
     </div>

@@ -106,19 +106,17 @@ export const DigitalRightsManagement = () => (
       <div className='my-10'>
         <img src={DRM} alt='' className='w-40 object-cover' />
       </div>
-      <div className='px-3'>
-        <p className=''>&#x2022; Lorem ipsum dolor sit amet.</p>
+      <div className='px-3 flex flex-col gap-2'>
+        <p className=''>&#x2022; Protect 3D Assets Against theft on the Web.</p>
         <p className=''>
-          &#x2022; Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Iusto, dolorum.
+          &#x2022; Varying Level of Crypto can be applied Depending on customer
+          requirement.
         </p>
         <p className=''>
-          &#x2022; Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Eveniet, temporibus.
+          &#x2022; Strong Public-Key Cryptography (RS) coupled with Symmetric
+          crypto algorithm (RC2) also available.
         </p>
-        <p className=''>
-          &#x2022; Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p className=''>&#x2022; Patent Pending.</p>
       </div>
     </div>
   </div>

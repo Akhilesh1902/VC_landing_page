@@ -23,35 +23,33 @@ const Hero = (props: Props) => {
           className='absolute z-10 left-0 md:relative '>
           <Slider
             options={[
-              'Furniture, Lighting, Paints, Tiles, Carpets, Sanitaryware and related sectors',
-              'Increase revenue, reduce product returns and enhance brand value',
+              'Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
             ]}>
             <div className='flex items-center text-start'>
               <p>
                 <span className='text-primary-red'>
-                  Interactive 3D marketing
+                  3D Commerce solution for
                 </span>{' '}
-                solutions for Home-Decor sector
+                Home-Decor companies - Store3D
               </p>
             </div>
           </Slider>
           <Slider
             options={[
-              'Home owners empowered to create stunning interior-designs, until now offered only by expensive designers.',
-              'Scale, Shape and Material accuracy.',
-              'Save time and money.',
+              'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
             ]}>
             <div className='flex text-start items-center'>
               <p>
-                Democratizing{' '}
-                <span className='text-primary-red'>Interior Design</span>
+                Interior Design Solution for -{' '}
+                <span className='text-primary-red'>Home3D</span>
               </p>
             </div>
           </Slider>
           <Slider options={[]}>
             <div className='flex text-start items-center'>
               <p>
-                Technology platform composed of 3D, AI, BlockChain, Crypto etc.,
+                Innovative Solutions leveraging 3D, Web, AI, Blockchain
+                Technologies.
               </p>
             </div>
           </Slider>

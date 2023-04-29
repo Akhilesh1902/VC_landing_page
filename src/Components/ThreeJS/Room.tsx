@@ -10,23 +10,26 @@ type Props = {
 };
 
 const Room = (props: Props) => {
-  const { scene } = useGLTF('./my_small_room4.glb');
+  const { scene } = useGLTF('./my_small_room8.glb');
   const sphereRef = useRef<THREE.Mesh>(null);
   const { camera } = useThree();
   //   camera.position.z = 3;
-  //   console.log(scene);
+  console.log(scene);
 
   scene.traverse((item) => {
     if (item instanceof THREE.Mesh) {
       console.log('here');
       item.castShadow = true;
       item.receiveShadow = true;
-    }
-    if (item.name === 'Floor_Lamp') {
-      console.log(item);
+      if (item.name === 'Lamp_shade') {
+        item.material.roughness = 0.2;
+        item.material.emissiveIntensity = props.lightActive ? 0.5 : 0.1;
+        item.material.emissive = new THREE.Color(0xf0d58b);
+        console.log(item);
+      }
     }
   });
-  const lamp = scene.getObjectByName('Floor_Lamp');
+  const lamp = scene.getObjectByName('Lamp_shade');
 
   if (lamp) {
     props.setLightPosition(lamp.position);
@@ -40,7 +43,7 @@ const Room = (props: Props) => {
     <>
       <group position-y={-1}>
         <primitive object={scene}></primitive>
-        <Sphere ref={sphereRef} position={lamp?.position} scale={0.1}>
+        <Sphere ref={sphereRef} position={lamp?.position} scale={0.2}>
           <meshStandardMaterial
             emissive={0xf0d58b}
             emissiveIntensity={props.lightActive ? 1 : 0}
@@ -51,7 +54,7 @@ const Room = (props: Props) => {
           position-x={lamp ? lamp.position.x + 1 : null}
           distanceFactor={6}>
           <button
-            className='bg-primary-red/50 w-fit whitespace-nowrap p-2 rounded'
+            className='bg-primary-red/80 text-white tracking-widest w-fit whitespace-nowrap p-2 rounded font-bold '
             type='button'
             onClick={() => {
               props.setLightActive((p) => !p);

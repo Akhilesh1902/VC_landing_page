@@ -4,8 +4,11 @@ import Sofa from './Sofa';
 import Floor from './Floor';
 import Lightings from './Lightings';
 import { useLocation } from 'react-router-dom';
-import { Box } from '@react-three/drei';
+import { Box, Html, OrbitControls } from '@react-three/drei';
 import SolutionModel from './SolutionModel';
+import Room from './Room';
+import { useState } from 'react';
+import { Vector3 } from 'three';
 
 type Props = {};
 
@@ -13,13 +16,25 @@ const CanvasWrapper = (props: Props) => {
   const location = useLocation();
   console.log(location);
 
+  const [lightActive, setLightActive] = useState(false);
+  const [lightPositon, setLightPosition] = useState(new Vector3());
+
   return (
     <Canvas shadows>
-      <Lightings />
-      <Floor />
-
+      <Lightings
+        lightActive={lightActive}
+        setLightPosition={setLightPosition}
+        lightPositon={lightPositon}
+      />
+      {/* <Floor /> */}
+      <OrbitControls />
       <Suspense>
-        {location.pathname === '/' ? <Sofa /> : <SolutionModel />}
+        {/* {location.pathname === '/' ? <Sofa /> : <SolutionModel />} */}
+        <Room
+          setLightPosition={setLightPosition}
+          setLightActive={setLightActive}
+          lightActive={lightActive}
+        />
       </Suspense>
     </Canvas>
   );

@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { Footer, Nav } from './Components';
 import Pages from './Pages';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import CanvasWrapper from './Components/ThreeJS/CanvasWrapper';
 import Modal from './Components/UI/Modal';
 import { useState } from 'react';

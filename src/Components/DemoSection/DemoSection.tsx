@@ -69,7 +69,7 @@ const DemoSection = (props: Props) => {
             <div className='flex flex-col gap-2  items-center '>
               <div
                 className={clsx('flex flex-col w-1/2 gap-3', {
-                  hidden: partnerIndex[i],
+                  hidden: !partnerIndex[i],
                 })}>
                 <img src={item.image} alt='' />
                 <p>{item.desc}</p>
@@ -78,7 +78,6 @@ const DemoSection = (props: Props) => {
               <Button
                 type='button'
                 rounded
-                className='align-baseline'
                 shadow
                 onClick={() => {
                   setPartnerIndex((p) =>

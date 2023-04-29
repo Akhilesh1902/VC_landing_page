@@ -10,7 +10,7 @@ const Floor = (props: Props) => {
       <Plane
         rotation-x={degToRad(-90)}
         scale={20}
-        position-y={-1.75}
+        position-y={-0.9}
         receiveShadow>
         <meshStandardMaterial
           color={0xffffff}

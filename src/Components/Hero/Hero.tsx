@@ -20,18 +20,13 @@ const Hero = (props: Props) => {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.5 },
           }}
-          className='absolute z-10 left-0 md:relative '>
+          className='absolute w-full z-10 left-0 md:relative '>
           <Slider
             options={[
-              'Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
+              'Store3D solution Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
             ]}>
             <div className='flex items-center text-start'>
-              <p>
-                <span className='text-primary-red'>
-                  3D Commerce solution for
-                </span>{' '}
-                Home-Decor companies - Store3D
-              </p>
+              <p>3D Commerce solution for Home-Decor</p>
             </div>
           </Slider>
           <Slider
@@ -39,15 +34,12 @@ const Hero = (props: Props) => {
               'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
             ]}>
             <div className='flex text-start items-center'>
-              <p>
-                Interior Design Solution for -{' '}
-                <span className='text-primary-red'>Home3D</span>
-              </p>
+              <p>Interior Design Solution for Home</p>
             </div>
           </Slider>
           <Slider options={[]}>
-            <div className='flex text-start items-center'>
-              <p>
+            <div className='flex text-start w-full items-center'>
+              <p className='w-full'>
                 Innovative Solutions leveraging 3D, Web, AI, Blockchain
                 Technologies.
               </p>
@@ -55,7 +47,7 @@ const Hero = (props: Props) => {
           </Slider>
         </motion.div>
 
-        <div className='w-full md:w-1/2 h-full'>
+        <div className='w-full md:w-1/2 grid place-items-center h-full'>
           <Suspense
             fallback={
               <div className='w-full h-full grid place-items-center'>
@@ -77,14 +69,14 @@ const Hero = (props: Props) => {
 export default Hero;
 
 const Marque = () => (
-  <div className=' my-4 bg p-1 w-full bottom-10 left z-20 text-primary-red flex justify-center items-center'>
-    <p className='p-2 bg-primary-red/40 w-fit h-fit text-center'>
+  <div className=' my-4 bg w-full bottom-10 left z-20 text-primary-red flex justify-center items-center'>
+    <p className='p-2 px-12 bg-primary-red/40 w-fit h-fit text-center'>
       Reduce returns by 50% per Harris poll
     </p>
-    <p className='p-2 bg-primary-red text-white/70 w-fit h-fit text-center'>
+    <p className='p-2 px-12 bg-primary-red text-white/70 w-fit h-fit text-center'>
       Shopify users experiencing 250% increase in sales due to 3D & AR
     </p>
-    <p className='p-2 bg-primary-red/40 w-fit h-fit text-center'>
+    <p className='p-2 px-12 bg-primary-red/40 w-fit h-fit text-center'>
       Thrill your customers with rich user experiences experiences
     </p>
   </div>

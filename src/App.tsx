@@ -20,8 +20,8 @@ function App() {
             <CanvasWrapper />
           </div>
         )}
+        <Nav />
         <div className='absolute z-0 w-screen'>
-          <Nav />
           <Pages />
           <Footer setOpenModel={setOpenModel} />
         </div>

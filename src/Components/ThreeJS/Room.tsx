@@ -7,6 +7,7 @@ type Props = {
   setLightPosition: React.Dispatch<React.SetStateAction<THREE.Vector3>>;
   setLightActive: React.Dispatch<React.SetStateAction<boolean>>;
   lightActive: boolean;
+  lightPosition: THREE.Vector3;
 };
 
 const Room = (props: Props) => {
@@ -38,12 +39,11 @@ const Room = (props: Props) => {
   useFrame((_, delta) => {
     // scene.rotation.y += delta;
   });
-
   return (
     <>
-      <group position-y={-1}>
+      <group>
         <primitive object={scene}></primitive>
-        <Sphere ref={sphereRef} position={lamp?.position} scale={0.2}>
+        <Sphere ref={sphereRef} position={props.lightPosition} scale={0.2}>
           <meshStandardMaterial
             emissive={0xf0d58b}
             emissiveIntensity={props.lightActive ? 1 : 0}
@@ -51,7 +51,8 @@ const Room = (props: Props) => {
         </Sphere>
         <Html
           position={lamp?.position}
-          position-x={lamp ? lamp.position.x + 1 : null}
+          position-x={lamp ? lamp.position.x - 1 : null}
+          position-y={lamp ? lamp.position.y - 1 : null}
           distanceFactor={6}>
           <button
             className='bg-primary-red/80 text-white tracking-widest w-fit whitespace-nowrap p-2 rounded font-bold '

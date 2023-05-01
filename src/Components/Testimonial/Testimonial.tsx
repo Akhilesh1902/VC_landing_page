@@ -46,9 +46,9 @@ const Testimonial = (props: Props) => {
 
   return (
     <div className=''>
-      <Container className='grid place-items-center p-5'>
+      <Container className='flex flex-col place-items-center p-5'>
         <h1 className='text-2xl font-bold my-10'>Testimonials</h1>
-        <div className='w-1/2 '>
+        <div className='w-full md:w-1/2 '>
           <Swiper
             effect='coverflow'
             grabCursor

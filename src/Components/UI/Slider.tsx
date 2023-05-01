@@ -20,7 +20,7 @@ const Slider = (props: Props) => {
       <Button
         type='button'
         onClick={openDropDown}
-        className='capitalize font-bold hover:bg-transparent'>
+        className='capitalize whitespace-break-spaces font-bold hover:bg-transparent'>
         {props.children}
       </Button>
       {showOptions && (

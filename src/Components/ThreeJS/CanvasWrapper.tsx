@@ -17,23 +17,24 @@ const CanvasWrapper = (props: Props) => {
   console.log(location);
 
   const [lightActive, setLightActive] = useState(false);
-  const [lightPositon, setLightPosition] = useState(new Vector3());
+  const [lightPosition, setLightPosition] = useState(new Vector3());
 
   return (
     <Canvas shadows>
       <Lightings
         lightActive={lightActive}
         setLightPosition={setLightPosition}
-        lightPositon={lightPositon}
+        lightPosition={lightPosition}
       />
       {/* <Floor /> */}
-      <OrbitControls />
+      <OrbitControls enableZoom={false} />
       <Suspense>
         {/* {location.pathname === '/' ? <Sofa /> : <SolutionModel />} */}
         <Room
           setLightPosition={setLightPosition}
           setLightActive={setLightActive}
           lightActive={lightActive}
+          lightPosition={lightPosition}
         />
       </Suspense>
     </Canvas>

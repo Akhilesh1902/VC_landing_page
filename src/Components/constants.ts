@@ -151,7 +151,7 @@ export const LandingPageYoutubeUrls = [
     url: 'https://youtu.be/Hq020eywBJ0',
   },
   {
-    title: 'Collaborating',
+    title: 'Collaboration',
     url: 'https://youtu.be/BWIDN3oT-Nc',
   },
   {
@@ -170,5 +170,62 @@ export const PartnersData = [
     title: 'Incubator',
     image: PartnersImages.CBIT_Logo,
     desc: 'Chaitanya bharathi institute of technology, established in the Year 1979, esteemed as the Premier Engineering Institute in the States of Telangana and Andhra Pradesh.',
+  },
+];
+
+export const whiteLabelingData = [
+  {
+    title: 'level 1',
+    subTitle: 'Basic 3D',
+    list: ['Zoom, Pan, Rotate', 'Viewpoints'],
+    background: 'cyan',
+  },
+  {
+    title: 'level 4',
+    subTitle: 'Collaboration',
+    list: [
+      'Real time event sync among 2 or more users',
+      'For e.g. seller and buyer experience cabinet door opening together',
+      'Save state of scene and share with anyone on the internet via URL',
+    ],
+    background: 'fuchsia',
+  },
+  {
+    title: 'level 2',
+    subTitle: 'Advanced 3D',
+    list: [
+      'Material Varients (Colour, Texture, Materials)',
+      'Animation (e.g. erogonomic table movements)',
+      'DImensions',
+      'Add / Delete Objects in the scene',
+      'Move, Rotate Objects',
+    ],
+    background: 'blue',
+  },
+  {
+    title: 'level 3',
+    subTitle: 'Lighting',
+    list: [
+      'Controls for on / off, intensity,colour',
+      'Visual effects such as shadows, reflection,ambient-occlussion etc',
+      'Daylight and NightLight',
+      'Exterior lighting including landscaping, plants, water bodies, fog etc',
+    ],
+    background: 'violet',
+  },
+
+  {
+    title: 'level 5',
+    subTitle: 'Personalization',
+    list: [
+      `User's space captured via photos and reconstructed to 3D model - Digital Twin`,
+      'Shape, Size, Material accuracy',
+      'User empowered to design their space via digital-twin of home-décor products from StoreFront3D',
+      'Huge combinations of Furniture, Lighting, Paints, Tiles, Plants, Sanitaryware enabled.',
+      'Order photo-realistic images of designed space via cloud based 3D render',
+      'Offered for White labelling by VisCommerce to home-décor companies',
+      'Revenue sharing on rendered images',
+    ],
+    background: 'rose',
   },
 ];

@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import { Button, Container, ImageDropper } from '../UI';
-import { FiPlayCircle } from 'react-icons/fi';
 import { GoPrimitiveDot } from 'react-icons/go';
-import {
-  Marketing_Solution,
-  MySpace3D_Demo,
-  landingCards,
-} from '../../assets/images';
+import { BsFillPlayCircleFill } from 'react-icons/bs';
+
+import { MySpace3D_Demo, landingCards } from '../../assets/images';
 import { PartnersData } from '../constants';
 import clsx from 'clsx';
 type Props = {};
@@ -16,15 +13,15 @@ const DemoSection = (props: Props) => {
   return (
     <div className='bg-white w-full'>
       <div
-        className={`relative  after:content-[''] after:absolute after:top-full after:-translate-y-full after:z-[5] after:w-full after:h-1/2 after:bg-primary-red`}>
-        <div
-          className={` relative p-10 flex justify-center z-10 gap-10 overflow-scroll md:overflow-clip`}>
+        className={`relative after:content-[''] overflow-scroll  after:absolute after:top-full after:-translate-y-full after:z-[5] after:w-full after:h-1/2 after:bg-primary-red`}>
+        <Container
+          className={` relative p-10 w-full flex md:justify-center z-10 gap-10 overflow-scroll md:overflow-cli`}>
           <Card name='furniture' imgsrc={landingCards.Sofa} />
           <Card name='furniture' imgsrc={landingCards.Light} />
           <Card name='paint' imgsrc={landingCards.Paint} />
           <Card name='tiles' imgsrc={landingCards.Tiles} />
           <Card name='sanitaryWare' imgsrc={landingCards.Bathtub} />
-        </div>
+        </Container>
       </div>
       <Container className='mt-16 pb-10'>
         <ImageDropper
@@ -103,7 +100,7 @@ type CardProps = {
 
 const Card = (props: CardProps) => {
   return (
-    <div className='flex flex-col gap-3 w-max  rounded-xl shadow-2xl p-4 items-center bg-white'>
+    <div className='shadow-card flex flex-col gap-3 w-ma rounded-xl p-4 items-center bg-white'>
       <h1 className='font-bold capitalize '>{props.name}</h1>
       <div className='w-36 h-36'>
         <img
@@ -119,7 +116,7 @@ const Card = (props: CardProps) => {
         className='rounded-full'>
         <div className='flex  items-center gap-2'>
           <p className='capitalize'>Try Demo</p>
-          <FiPlayCircle />
+          <BsFillPlayCircleFill />
         </div>
       </Button>
     </div>

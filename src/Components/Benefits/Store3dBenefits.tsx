@@ -11,7 +11,6 @@ import {
   KTX_logo,
   DRM,
 } from '../../assets/images';
-import Footer from '../Footer/Footer';
 type Props = {};
 
 const Store3dBenefits = (props: Props) => {
@@ -42,17 +41,31 @@ const Store3dBenefits = (props: Props) => {
               Increase Traffic and Conversions
             </h2>
             <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
+              <p className='opacity-50'>
+                &#x2022; Shopify reports more than 100% growth in users to 3D &
+                AR.
+              </p>
+              <p className='opacity-50'>
+                &#x2022; MarxentLabs reports more than 40% increase in
+                conversion.
+              </p>
+              <p className='opacity-50'>
+                &#x2022; Threekit reports consumers 20% more likely to buy with
+                product configurators.
+              </p>
             </div>
             <h2 className='font-bold text-lg'>Google Analytics</h2>
             <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
+              <p className='opacity-50'>
+                &#x2022; Enables regular measurements of key biz metrics.
+              </p>
             </div>
             <h2 className='font-bold text-lg'>Survey Agency</h2>
             <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
+              <p className='opacity-50'>
+                &#x2022; Tune Interactive3D Web-App and measure results in
+                real-time.
+              </p>
             </div>
           </div>
         </div>
@@ -65,9 +78,13 @@ const Store3dBenefits = (props: Props) => {
               2 Reduce Product Return
             </h1>
             <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
+              <p className='opacity-50'>
+                &#x2022; Average product return rate in eCommerce 20% - 30%
+              </p>
+              <p className='opacity-50'>
+                &#x2022; Using 3D / AR Shopify found returns reduce by 5%
+              </p>
+              <p className='opacity-50'>&#x2022; Improves bottom-line</p>
             </div>
           </div>
         </div>
@@ -77,12 +94,23 @@ const Store3dBenefits = (props: Props) => {
           </div>
           <div className='flex flex-col gap-3'>
             <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
-              2 Enhanced Brand
+              3 Enhanced Brand
             </h1>
             <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
-              <p className='opacity-50'>&#x2022; Lorem ipsum dolor sit amet.</p>
+              <p className='opacity-50'>
+                &#x2022; Ergonomic recommendations from osha <br />
+                <a href='https://www.osha.gov/ergonomics' className='ml-5'>
+                  https://www.osha.gov/ergonomics
+                </a>
+              </p>
+              <p className='opacity-50'>
+                &#x2022; Lighting recommendations from standards bodies <br />
+                <a
+                  href='https://www.iso.org/committee/4418564.html'
+                  className='ml-5'>
+                  https://www.iso.org/committee/4418564.html
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -132,44 +160,70 @@ const CardSection = () => {
           <img src={commerce3d} alt='' className='h-8 m-auto' />
         </div>
         <h2 className='font-bold'>3d Commerce Guidelines</h2>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
+        <a
+          className='opacity-80'
+          href='https://github.com/KhronosGroup/3DC-Asset-Creation'>
+          &#x2022; https://github.com/KhronosGroup/3DC-Asset-Creation
+        </a>
         <h2 className='font-bold'>PBR</h2>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
+        <p className='opacity-80'>&#x2022; Physically based rendering.</p>
+        <p className='opacity-80'>&#x2022; Compliant to laws of Physics.</p>
+        <p className='opacity-80'>
+          &#x2022; Ability to showcase many materials and their interaction with
+          light (e.g Wood, Leather, Glass etc)
+        </p>
+        <p className='opacity-80'>&#x2022; view pdf</p>
       </div>
       <div className='bg-red-300 p-5 shadow-2xl rounded-2xl pb-10'>
         <div className='my-5'>
           <img src={glTfimage} alt='' className='h-8 m-auto' />
         </div>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
+        <p className='opacity-80'>
+          &#x2022; Graphics Language Transmission Format.
+        </p>
+        <p className='opacity-80'>
+          &#x2022; Industry Standard with broad backing (e.g Google, Microsoft,
+          Shopify, Wayfair etc)
+        </p>
+        <p className='opacity-80'>&#x2022; Describe complete scenes.</p>
+        <p className='opacity-80'>
+          &#x2022; Windows, Android, iOS - Consistent Visual Fidelity.
+        </p>
+        <p className='opacity-80'>
+          &#x2022; Google Chrome, Microsoft Edge, Safari and other HTML5
+          web-browsers - Consistent Visual Fidelity.
+        </p>
+        <a href='https://www.khronos.org/gltf/' className='opacity-80'>
+          &#x2022; https://www.khronos.org/gltf/
+        </a>
       </div>
       <div className='bg-orange-200 p-5 shadow-2xl rounded-2xl pb-10'>
         <div className='my-5'>
           <img src={Draco_logo} alt='' className='h-8 m-auto' />
         </div>
         <h2 className='font-bold'>Mesh Compression</h2>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
+        <p className='opacity-80'>
+          &#x2022; 10x to 25x reduction in mesh size.
+        </p>
+        <p className='opacity-80'>
+          &#x2022; Google's innovation contributed to open-source.
+        </p>
+        <a href='https://google.github.io/draco/' className='opacity-80'>
+          &#x2022; https://google.github.io/draco/
+        </a>
       </div>
       <div className='bg-blue-200 p-5 shadow-2xl rounded-2xl pb-10'>
         <div className='my-5'>
           <img src={KTX_logo} alt='' className='h-8 m-auto' />
         </div>
-        <h2 className='font-bold'>3d Commerce Guidelines</h2>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
-        <p className='opacity-80'>&#x2022; Lorem ipsum dolor sit amet.</p>
+        <h2 className='font-bold'>Texture Comparision</h2>
+        <p className='opacity-80'>
+          &#x2022; Reduces download time and processing (ktx2)
+        </p>
+        <p className='opacity-80'>&#x2022; Leverages GPU's.</p>
+        <a href='https://www.khronos.org/ktx/' className='opacity-80'>
+          &#x2022; https://www.khronos.org/ktx/
+        </a>
       </div>
     </div>
   );

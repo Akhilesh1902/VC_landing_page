@@ -97,3 +97,7 @@ body {
 .store3d-card:hover .store3d-card-details {
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
+
+.shadow-card {
+  box-shadow: #2222244f 0px 0px 10px 5px;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container } from '../Components/UI';
-import { VisCommerce_levels } from '../assets/images';
+import { VisCommerce_levels, WhiteLabeling } from '../assets/images';
+import { whiteLabelingData } from '../Components/constants';
+import clsx from 'clsx';
 
 type Props = {};
 
@@ -31,86 +33,69 @@ const Pricing = (props: Props) => {
                 <div className='hidden lg:flex flex-col gap-2'>
                   <h2 className='font-bold'>Addon for eCommerce Store</h2>
                   <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
+                    <p>&#x2022; Home Décor sector</p>
                     <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
+                      &#x2022; Furniture, lighting, paints, tiles, plants,
+                      sanitaryware companies
                     </p>
+                    <p>&#x2022; 3DCommerce compliant</p>
+                  </div>
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <h2 className='font-bold'>SKU</h2>
+                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
+                    <p>&#x2022; 50 glTF, optimized models</p>
                     <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
+                      &#x2022; Pricing will proportionally increase with number
+                      of SKU's.
                     </p>
                   </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Addon for eCommerce Store</h2>
+                  <h2 className='font-bold'>Basic</h2>
+                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
+                    <p>&#x2022; Zoom, Pan, Rotate</p>
+                  </div>
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <h2 className='font-bold'>Material Varient</h2>
                   <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
                     <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
+                      &#x2022; Colors, Textures, Materials (e.g., Leather, Wood,
+                      Glass etc.)
                     </p>
+                  </div>
+                </div>
+
+                <div className='flex flex-col gap-2'>
+                  <h2 className='font-bold'>Animation (Movements)</h2>
+                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
                     <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
+                      &#x2022; E.g. Demonstration of table heights for ergonomic
+                      tables
                     </p>
+                    <p>&#x2022; E.g. Operating cabinet doors</p>
+                  </div>
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <h2 className='font-bold'>Lightings</h2>
+                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
+                    <p>&#x2022; Controls for On/Off, Intensity, Color</p>
+                  </div>
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <h2 className='font-bold'>Integration</h2>
+                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
                     <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
+                      &#x2022; For e.g. with eCommerce systems such as Magento,
+                      OpenCart
                     </p>
                   </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Addon for eCommerce Store</h2>
+                  <h2 className='font-bold'>Collateral</h2>
                   <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Addon for eCommerce Store</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Addon for eCommerce Store</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <p>
-                      &#x2022; Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                      amet.
-                    </p>
+                    <p>&#x2022; Related Explainer Video, Documentation</p>
                   </div>
                 </div>
               </div>
@@ -146,6 +131,39 @@ const Pricing = (props: Props) => {
                 </div>
               </div>
             </div>
+            <Container className='w-full flex flex-col gap-10 py-10 px-5 items-center col-span-2 mt-10 bg-white'>
+              <h1 className='text-2xl font-bold '>
+                Viscommerce Room3D - White Labelling
+              </h1>
+              <div className='flex flex-col md:grid grid-flow-row grid-cols-2 gap-4'>
+                {whiteLabelingData.map((item, i) => (
+                  <div
+                    className={clsx(
+                      'text-white p-4 rounded shadow-gray-500 shadow-md',
+                      `bg-${item.background}-400`,
+                      {
+                        'bg-cyan-300': i === 0,
+                        'bg-fuchsia-400': i === 1,
+                        'bg-blue-400': i === 2,
+                        'bg-violet-400': i === 3,
+
+                        'row-span-2 row-start-2 col-start-2 bg-rose-300':
+                          i === 4,
+                      }
+                    )}>
+                    <h1 className='capitalize font-bold text-xl'>
+                      {item.title}
+                    </h1>
+                    <h3 className='font-bold mt-4'>{item.subTitle}</h3>
+                    <div className='ml-4'>
+                      {item.list.map((item, i) => (
+                        <p>&#x2022; {item}</p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Container>
           </div>
         </Container>
       </div>

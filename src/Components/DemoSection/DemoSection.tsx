@@ -37,7 +37,7 @@ const DemoSection = (props: Props) => {
               <div className='flex flex-col gap-3 items-center '>
                 <GoPrimitiveDot size={24} className='text-primary-red/50' />
                 <p>
-                  MySpace3D is an innovative, Personalized Interior Design
+                  Home 3D is an innovative, Personalized Interior Design
                   Solution
                 </p>
               </div>

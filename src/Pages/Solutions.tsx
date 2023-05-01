@@ -27,7 +27,7 @@ const Solutions = (props: Props) => {
   const { type } = useParams();
   return (
     <div className='bg-transparent w-full'>
-      {type === 'myspace3d' ? (
+      {type === 'home3d' ? (
         <MySpace3d />
       ) : type === 'store3d' ? (
         <Store3d />
@@ -285,22 +285,22 @@ const initialBtnState = [
   {
     innerText: 'User Experience',
     active: true,
-    link: '/solutions/myspace3d/userExperience',
+    link: '/solutions/home3d/userExperience',
   },
   {
     innerText: 'VisCommerce Experience',
     active: false,
-    link: '/solutions/myspace3d/visCommerceExperience',
+    link: '/solutions/home3d/visCommerceExperience',
   },
   {
     innerText: 'Brand Experience',
     active: false,
-    link: '/solutions/myspace3d/brandExperience',
+    link: '/solutions/home3d/brandExperience',
   },
   {
     innerText: 'White Labeling',
     active: false,
-    link: '/solutions/myspace3d/whiteExperience',
+    link: '/solutions/home3d/whiteExperience',
   },
 ];
 

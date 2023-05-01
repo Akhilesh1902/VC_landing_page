@@ -8,7 +8,7 @@ const Benefits = (props: Props) => {
 
   return (
     <div>
-      {type == 'myspace3d' && <MySpace3dBenefits />}
+      {type == 'home3d' && <MySpace3dBenefits />}
       {type === 'store3d' && <Store3dBenefits />}
     </div>
   );

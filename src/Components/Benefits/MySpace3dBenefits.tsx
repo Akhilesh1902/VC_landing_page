@@ -10,7 +10,7 @@ const MySpace3dBenefits = (props: Props) => {
       <div className='relative bg-primary-red w-screen py-10'>
         <Container className='flex flex-col md:flex-row justify-center items-center gap-5 '>
           <h1 className='text-white text-center font-bold text-md mb-10 md:m-0 md:text-xl tracking-wider'>
-            MySpace3D benefits
+            Home 3D benefits
             <br /> For Businesses in Home Decor Sector
           </h1>
           <div className=' md:w-[30vw] max-w-xl aspect-[9/5]'>

@@ -128,14 +128,14 @@ const Pricing = (props: Props) => {
                   </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>MySpace3D_App</h2>
+                  <h2 className='font-bold'>Home 3D_App</h2>
                   <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
                     <p>&#x2022; Customization (eg., billing)</p>
                     <p>&#x2022; Branding</p>
                   </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>MySpace3D Server</h2>
+                  <h2 className='font-bold'>Home 3D Server</h2>
                   <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
                     <p>
                       &#x2022; Rendered Images (market price in the $50 to $200

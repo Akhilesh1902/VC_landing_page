@@ -31,8 +31,8 @@ const Nav = (props: Props) => {
                     url: '/solutions/store3d',
                   },
                   {
-                    innerText: 'MySpace3D',
-                    url: '/solutions/myspace3d/userExperience',
+                    innerText: 'Home3D',
+                    url: '/solutions/home3d/userExperience',
                   },
                 ]}>
                 <div className='flex items-center gap-2 '>
@@ -53,8 +53,8 @@ const Nav = (props: Props) => {
                     url: '/benefits/store3d',
                   },
                   {
-                    innerText: 'MySpace3D',
-                    url: '/benefits/myspace3d',
+                    innerText: 'Home3D',
+                    url: '/benefits/home3d',
                   },
                 ]}>
                 <div className='flex items-center gap-2'>

@@ -25,7 +25,7 @@ const DemoSection = (props: Props) => {
       </div>
       <Container className='mt-16 pb-10'>
         <ImageDropper
-          buttonText='My Space 3D - Demonstrating Interior Design'
+          buttonText='Home3D - Demonstrating Interior Design'
           imgsrc={MySpace3D_Demo}>
           <div
             style={{ backgroundColor: '#EFFCF9' }}
@@ -61,11 +61,11 @@ const DemoSection = (props: Props) => {
             </div>
           </div>
         </ImageDropper>
-        <div className='p-10 mt-10 grid grid-cols-2'>
+        <div className='flex flex-col gap-10 md:gap-0  p-10 mt-10 md:grid grid-cols-2'>
           {PartnersData.map((item, i) => (
             <div className='flex flex-col gap-2  items-center '>
               <div
-                className={clsx('flex flex-col w-1/2 gap-3', {
+                className={clsx('flex flex-col md:w-1/2 gap-3', {
                   hidden: !partnerIndex[i],
                 })}>
                 <img src={item.image} alt='' />

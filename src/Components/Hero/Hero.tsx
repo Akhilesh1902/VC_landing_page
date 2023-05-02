@@ -26,7 +26,7 @@ const Hero = (props: Props) => {
               'Store3D solution Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
             ]}>
             <div className='flex items-center text-start'>
-              <p>3D Commerce solution for Home-Decor</p>
+              <p className='text-xl'>3DCommerce for Home-Decor</p>
             </div>
           </Slider>
           <Slider
@@ -34,15 +34,12 @@ const Hero = (props: Props) => {
               'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
             ]}>
             <div className='flex text-start items-center'>
-              <p>Interior Design Solution for Home</p>
+              <p className='text-xl'>Interior Design Solution for Home</p>
             </div>
           </Slider>
           <Slider options={[]}>
             <div className='flex text-start w-full items-center'>
-              <p className='w-full'>
-                Innovative Solutions leveraging 3D, Web, AI, Blockchain
-                Technologies.
-              </p>
+              <p className='text-xl'>3D, Web, AI, Blockchain Technologies.</p>
             </div>
           </Slider>
         </motion.div>
@@ -73,7 +70,7 @@ const Marque = () => (
     <p className='p-2 px-12 bg-primary-red/40 w-fit h-fit text-center'>
       Reduce returns by 50% per Harris poll
     </p>
-    <p className='p-2 px-12 bg-primary-red text-white/70 w-fit h-fit text-center'>
+    <p className='p-2 px-12 bg-primary-red/40 w-fit h-fit text-center'>
       Shopify users experiencing 250% increase in sales due to 3D & AR
     </p>
     <p className='p-2 px-12 bg-primary-red/40 w-fit h-fit text-center'>

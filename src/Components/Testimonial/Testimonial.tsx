@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -9,41 +7,10 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 import { Container } from '../UI';
 import { Groww_Revenue_image } from '../../assets/images';
-
+import { testimonialData } from '../constants';
 type Props = {};
 
 const Testimonial = (props: Props) => {
-  const [testimonialData, setTestimonialData] = useState([
-    {
-      name: 'test Username',
-      title: 'tesitin title',
-      messsage:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorem minus voluptatem, totam a sit ipsam incidunt tempore id vero nisi enim ducimus perferendis nobis.',
-      date: '1-12-2023',
-    },
-    {
-      name: 'test Username',
-      title: 'tesitin title',
-      messsage:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorem minus voluptatem, totam a sit ipsam incidunt tempore id vero nisi enim ducimus perferendis nobis.',
-      date: '1-12-2023',
-    },
-    {
-      name: 'test Username',
-      title: 'tesitin title',
-      messsage:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorem minus voluptatem, totam a sit ipsam incidunt tempore id vero nisi enim ducimus perferendis nobis.',
-      date: '1-12-2023',
-    },
-    {
-      name: 'test Username',
-      title: 'tesitin title',
-      messsage:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorem minus voluptatem, totam a sit ipsam incidunt tempore id vero nisi enim ducimus perferendis nobis.',
-      date: '1-12-2023',
-    },
-  ]);
-
   return (
     <div className=''>
       <Container className='flex flex-col place-items-center p-5'>
@@ -72,7 +39,7 @@ const Testimonial = (props: Props) => {
               <SwiperSlide>
                 <div
                   className={`h-full flex flex-col gap-10 justify-between rounded p-3 bg-primary-red/30 pb-16`}>
-                  <div className='fex fex-col gap-2 '>
+                  <div className='fex h-full fex-col gap-2 '>
                     <div className='flex items-center'>
                       <img
                         src={Groww_Revenue_image}
@@ -80,15 +47,15 @@ const Testimonial = (props: Props) => {
                         alt=''
                       />
                       <div>
-                        <h1 className='capitalize font-bold tex-xl'>
+                        <h1 className='capitalize  font-bold tex-xl'>
                           {item.name}
                         </h1>
-                        <h2 className='capitalize'>{item.title}</h2>
+                        <h2 className='capitalize'>{item.designation}</h2>
                       </div>
                     </div>
-                    <p className='mt-3 '>{item.messsage}</p>
+                    <p className='mt-3 h-full'>{item.message}</p>
                   </div>
-                  <p className='font-bold text-sm'>{item.date}</p>
+                  {/* <p className='font-bold text-sm'>{item.date}</p> */}
                 </div>
               </SwiperSlide>
             ))}

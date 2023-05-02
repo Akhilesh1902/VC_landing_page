@@ -27,7 +27,7 @@ const CanvasWrapper = (props: Props) => {
         lightPosition={lightPosition}
       />
       {/* <Floor /> */}
-      <OrbitControls enableZoom={false} />
+      <OrbitControls enableZoom={true} />
       <Suspense>
         {/* {location.pathname === '/' ? <Sofa /> : <SolutionModel />} */}
         <Room

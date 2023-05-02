@@ -38,7 +38,7 @@ const Modal = (props: Props) => {
     // console.log(dataToSend);
 
     const res = await axios.post(
-      'http://localhost:3030/newContact',
+      'http://commercenexgen.com:3030/newContact',
       dataToSend
     );
     if (res.status === 200) {
@@ -54,7 +54,7 @@ const Modal = (props: Props) => {
     console.log('email form submitted');
   };
   return (
-    <div className='fixed w-screen h-screen grid place-items-center pointer-events-ne bg-gray-900/80'>
+    <div className='fixed w-screen top-0 h-screen grid place-items-center pointer-events-ne bg-gray-900/80'>
       {props.type === 'email' && (
         <>
           <div className='bg-white p-5'>

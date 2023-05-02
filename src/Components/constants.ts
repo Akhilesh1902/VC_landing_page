@@ -229,3 +229,27 @@ export const whiteLabelingData = [
     background: 'rose',
   },
 ];
+
+export const testimonialData = [
+  {
+    message: `Building visualization techniques driven by 3D is increasingly a vital element of creating the best possible experience for shoppers, as it provides an invaluable way to explore beautiful imagery with context and authenticity. As we continue to transform the way people shop for their homes, we believe that 3D will be ubiquitous in the coming years and that it is imperative to standardize 3D content so it can be exchanged effectively and experienced consistently.`,
+    name: 'Shrenik Sadalgi',
+    designation:
+      'Chair of the 3D Commerce Working Group & Director of Next at Wayfair',
+  },
+  {
+    message: `We're at an inflection point, where 3D visualization technologies initially developed for gaming and visual effects are beginning to transform the retail experience. At Adobe, we're committed to empowering designers with the tools and platforms to deliver the immersive content that consumers increasingly demand. This is an industry-wide transition, and we are delighted to be working with the 3D Commerce Group and Khronos Group to jointly define the standards required to make immersive content ubiquitous.`,
+    name: 'Ross McKegney',
+    designation: 'Director, Adobe Dimension',
+  },
+  {
+    message: `3D enables a completely new way to shop for your home, and we have been focused on applying these technologies for some time with over one million products shoppable in AR. We are excited to work with the group to spearhead 3D content standardization across AR/VR and other immersive experiences.`,
+    name: 'Sally Huang',
+    designation: 'Head of Visual Technologies at Houzz',
+  },
+  {
+    message: `IKEA has been working on large scale photoreal 3D for over 10 years and has been promoting open standards and collaboration all along. We are excited to contribute to this group to make the use of 3D easier and faster to meet the demands of our customers.`,
+    name: 'Martin Enthed',
+    designation: 'IKEA Communications AB',
+  },
+];

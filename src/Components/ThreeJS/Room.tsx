@@ -11,11 +11,11 @@ type Props = {
 };
 
 const Room = (props: Props) => {
-  const { scene } = useGLTF('./my_small_room8.glb');
+  const { scene } = useGLTF('./new_table_model2.glb');
   const sphereRef = useRef<THREE.Mesh>(null);
   const { camera } = useThree();
   //   camera.position.z = 3;
-  console.log(scene);
+  // console.log(scene);
 
   scene.traverse((item) => {
     if (item instanceof THREE.Mesh) {
@@ -30,15 +30,16 @@ const Room = (props: Props) => {
       }
     }
   });
-  const lamp = scene.getObjectByName('Lamp_shade');
+  const lamp = scene.getObjectByName('Lamp_Shade');
+  console.log(lamp?.position);
 
   if (lamp) {
     props.setLightPosition(lamp.position);
   }
 
-  useFrame((_, delta) => {
-    // scene.rotation.y += delta;
-  });
+  // useFrame((_, delta) => {
+  //   // scene.rotation.y += delta;
+  // });
   return (
     <>
       <group>

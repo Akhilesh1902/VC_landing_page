@@ -35,8 +35,7 @@ const Footer = (props: Props) => {
           <ul className='text-xs flex flex-col gap-3'>
             <li className='font-bold text-sm'>Resources</li>
             <li>Support</li>
-            <li>Terms nad Privacy</li>
-            <li>Coocie Settings</li>
+            <li>Terms and Privacy</li>
           </ul>
           <div className='text-xs grid grid-cols-4 grid-rows-4 gap-1'>
             <h1 className='font-bold text-sm col-span-4'>Contact</h1>

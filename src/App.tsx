@@ -16,7 +16,7 @@ function App() {
     <>
       <AnimatePresence>
         {location.pathname === '/solutions/store3d2' && (
-          <div className='h-screen w-screen overflow-x-cli fixed top-0 -z-10  '>
+          <div className='h-screen w-screen bg-black overflow-x-cli fixed top-0 -z-10  '>
             <CanvasWrapper />
           </div>
         )}

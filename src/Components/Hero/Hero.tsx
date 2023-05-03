@@ -11,7 +11,7 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <Container className=' h-screen flex flex-col justify-between'>
+    <Container className=' min-h-screen flex flex-col justify-between'>
       <div className='relative flex flex-col-reverse md:flex-row  justify-between h-[70vh] items-center'>
         <motion.div
           initial={{ x: -50, opacity: 0 }}
@@ -20,7 +20,7 @@ const Hero = (props: Props) => {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.5 },
           }}
-          className='absolute w-full z-10 left-0 md:relative '>
+          className='absolute w-fit z-10 left-0 md:relative '>
           <Slider
             options={[
               'Store3D solution Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
@@ -34,17 +34,20 @@ const Hero = (props: Props) => {
               'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
             ]}>
             <div className='flex text-start items-center'>
-              <p className='text-xl'>Interior Design Solution for Home</p>
+              <p className='text-xl'>Interior Design for Home</p>
             </div>
           </Slider>
-          <Slider options={[]}>
+          <Slider
+            options={[
+              'Innovative solutions leveraging foundational technologies of 3D, Web, AI, Blockchain',
+            ]}>
             <div className='flex text-start w-full items-center'>
-              <p className='text-xl'>3D, Web, AI, Blockchain Technologies.</p>
+              <p className='text-xl'>3D, Web, AI, Blockchain.</p>
             </div>
           </Slider>
         </motion.div>
 
-        <div className='w-full md:w-1/2 grid place-items-center h-full'>
+        <div className='w-full bg-gray-300 rounded-xl md:w-1/2 grid place-items-center h-full'>
           <Suspense
             fallback={
               <div className='w-full h-full grid place-items-center'>

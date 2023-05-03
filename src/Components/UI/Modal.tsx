@@ -28,6 +28,7 @@ const Modal = (props: Props) => {
       alert('enter valid mobile number');
       return;
     }
+    const SERVER_URL = ['commercenexgen.com', 'localhost'];
     const currentpage = location.pathname;
     const addedon = new Date().toLocaleDateString();
     const refUrl = '';
@@ -35,10 +36,10 @@ const Modal = (props: Props) => {
     const ipaddress = ip_res.data.ip;
 
     const dataToSend = { ...data, currentpage, addedon, refUrl, ipaddress };
-    // console.log(dataToSend);
+    console.log(dataToSend);
 
     const res = await axios.post(
-      'http://commercenexgen.com:3030/newContact',
+      `http://${SERVER_URL[0]}:3030/newContact`,
       dataToSend
     );
     if (res.status === 200) {

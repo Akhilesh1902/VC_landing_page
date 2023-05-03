@@ -17,7 +17,7 @@ const DemoSection = (props: Props) => {
         <Container
           className={` relative p-10 w-full flex md:justify-center z-10 gap-10 overflow-scroll md:overflow-cli`}>
           <Card name='furniture' imgsrc={landingCards.Sofa} />
-          <Card name='furniture' imgsrc={landingCards.Light} />
+          <Card name='lightings' imgsrc={landingCards.Light} />
           <Card name='paint' imgsrc={landingCards.Paint} />
           <Card name='tiles' imgsrc={landingCards.Tiles} />
           <Card name='sanitaryWare' imgsrc={landingCards.Bathtub} />
@@ -109,16 +109,16 @@ const Card = (props: CardProps) => {
           className='object-contain w-full h-full'
         />
       </div>
-      <Button
-        type='button'
-        onClick={() => {}}
-        varient={'primary'}
-        className='rounded-full'>
+      <a
+        // className='rounded-full'
+        target='_blank'
+        href='http://gandivam.co.in/dist/'
+        className='font-normal bg-primary-red text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-lime-200 hover:text-slate-800'>
         <div className='flex  items-center gap-2'>
-          <p className='capitalize'>Try Demo</p>
+          <p className='capitalize'>Demo</p>
           <BsFillPlayCircleFill />
         </div>
-      </Button>
+      </a>
     </div>
   );
 };

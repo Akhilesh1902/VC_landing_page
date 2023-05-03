@@ -21,7 +21,7 @@ const ImageDropper = (props: Props) => {
         {!open ? <BiChevronDown size={24} /> : <BiChevronUp size={24} />}
       </button>
       {open && (
-        <Container className='absolute w-[95%] z-10 -translate-x-1/2 left-1/2 !p-0'>
+        <Container className='w-[95%] z-10 !p-0'>
           {props.children}
           <img src={props.imgsrc} alt='' className='' />
         </Container>

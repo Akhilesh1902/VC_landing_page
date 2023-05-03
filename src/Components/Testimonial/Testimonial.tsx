@@ -41,16 +41,18 @@ const Testimonial = (props: Props) => {
                   className={`h-full flex flex-col gap-10 justify-between rounded p-3 bg-primary-red/30 pb-16`}>
                   <div className='fex h-full fex-col gap-2 '>
                     <div className='flex items-center'>
-                      <img
+                      {/* <img
                         src={Groww_Revenue_image}
                         className='w-16 h-16 row-span-2'
                         alt=''
-                      />
+                      /> */}
                       <div>
-                        <h1 className='capitalize  font-bold tex-xl'>
+                        <h1 className='capitalize  font-bold text-xl'>
                           {item.name}
                         </h1>
-                        <h2 className='capitalize'>{item.designation}</h2>
+                        <h2 className='capitalize font-bold'>
+                          {item.designation}
+                        </h2>
                       </div>
                     </div>
                     <p className='mt-3 h-full'>{item.message}</p>

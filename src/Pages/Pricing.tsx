@@ -101,7 +101,7 @@ const Pricing = (props: Props) => {
               </div>
             </div>
             <div className='row-start-2 flex flex-col items-center gap-3  bg-white rounded-lg p-5'>
-              <h1 className=''>My Space 3D</h1>
+              <h1 className=''>Home 3D</h1>
               <h2 className='bg-primary-red w-full text-center text-white rounded'>
                 Contact Us - sales@viscommerce.com
               </h2>

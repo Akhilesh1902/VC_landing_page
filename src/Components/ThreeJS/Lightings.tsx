@@ -17,18 +17,20 @@ const Lightings = (props: Props) => {
   return (
     <>
       <ambientLight intensity={0.2} color={0xffffff} />
-      {/* <directionalLight
+      <directionalLight
         intensity={0.3}
         color={0xffffff}
         position={[5, 5, 5]}
         castShadow
-      /> */}
+      />
       <pointLight
         ref={lampLightRef}
         position={props.lightPosition}
-        intensity={props.lightActive ? 1 : 0}
-        distance={7}
-        color={0xf0d58b}
+        position-y={props.lightPosition.y + 0.08}
+        intensity={props.lightActive ? 10 : 0}
+        distance={4}
+        // decay={3}
+        color={0xc99b44}
       />
     </>
   );

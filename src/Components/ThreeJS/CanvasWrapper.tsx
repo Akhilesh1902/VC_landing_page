@@ -8,7 +8,7 @@ import { Box, Html, OrbitControls } from '@react-three/drei';
 import SolutionModel from './SolutionModel';
 import Room from './Room';
 import { useState } from 'react';
-import { Vector3 } from 'three';
+import { Color, Vector3 } from 'three';
 
 type Props = {};
 

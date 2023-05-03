@@ -1,7 +1,7 @@
 import { Html, Sphere, useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { TbBulb, TbBulbOff } from 'react-icons/tb';
 
 type Props = {
@@ -15,7 +15,10 @@ const Room = (props: Props) => {
   const { scene } = useGLTF('./table.glb');
   const sphereRef = useRef<THREE.Mesh>(null);
   const { camera } = useThree();
-  camera.position.y = 3;
+  useEffect(() => {
+    camera.position.y = 3;
+  }, []);
+
   console.log(scene);
 
   scene.traverse((item) => {

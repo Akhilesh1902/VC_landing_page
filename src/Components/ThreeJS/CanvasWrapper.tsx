@@ -22,10 +22,12 @@ const CanvasWrapper = (props: Props) => {
   const [lightActive, setLightActive] = useState(false);
   const [lightPosition, setLightPosition] = useState(new Vector3());
   const { lightSettings } = useDatGUIContext();
+  console.log(lightSettings.bg_color.split('#'));
+
   return (
     <>
       <Canvas shadows>
-        <color attach={'background'} args={[lightSettings.bg_color]} />
+        <color attach={'background'} args={[`#${lightSettings.bg_color}`]} />
         <Lightings
           lightActive={lightActive}
           setLightPosition={setLightPosition}

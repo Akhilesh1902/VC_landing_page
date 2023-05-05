@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import { HexColorString } from 'three';
 
 export interface lightSettingstype {
   active: boolean;
@@ -14,7 +15,8 @@ export interface lightSettingstype {
     | 'studio'
     | 'city'
     | 'park'
-    | 'lobby';
+    | 'lobby'
+    | undefined;
 }
 
 export type DatGuiContextType = {
@@ -27,10 +29,10 @@ const Context = createContext<DatGuiContextType | null>(null);
 interface Props extends React.PropsWithChildren {}
 
 const DatGuiContext = (props: Props) => {
-  const [lightSettings, setLightSettings] = useState({
+  const [lightSettings, setLightSettings] = useState<lightSettingstype>({
     active: false,
     intensity: 10,
-    bg_color: '#F5F5F5',
+    bg_color: 'f5f5f5',
     hdri: 'sunset',
   });
 

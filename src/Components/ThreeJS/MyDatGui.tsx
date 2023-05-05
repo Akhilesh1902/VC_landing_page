@@ -10,24 +10,26 @@ import { lightSettingstype, useDatGUIContext } from './DatGuiContext';
 
 type Props = {};
 
+export const hdriOptions = [
+  'sunset',
+  'dawn',
+  'night',
+  'warehouse',
+  'forest',
+  'apartment',
+  'studio',
+  'city',
+  'park',
+  'lobby',
+  undefined,
+];
+
 const MyDatGui = (props: Props) => {
   const { lightSettings, updateLightSettings } = useDatGUIContext();
 
   const handleUpdate = (data: lightSettingstype) => {
     updateLightSettings(data);
   };
-  const hdriOptions = [
-    'sunset',
-    'dawn',
-    'night',
-    'warehouse',
-    'forest',
-    'apartment',
-    'studio',
-    'city',
-    'park',
-    'lobby',
-  ];
 
   return (
     <DatGui

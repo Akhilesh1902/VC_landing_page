@@ -28,7 +28,7 @@ const Room = (props: Props) => {
       item.receiveShadow = true;
 
       if (item.name === 'Lamp_shade') {
-        // item.material.roughness = 0.2;
+        item.material.roughness = 0.5;
         // item.material.emissiveIntensity = props.lightActive ? 0.5 : 0.1;
         // item.material.emissive = new THREE.Color(0xf0d58b);
         // console.log(item);
@@ -43,11 +43,11 @@ const Room = (props: Props) => {
       item.material.name === 'Mat_Laptop_Front'
     ) {
       console.log(item);
-      // item.material.roughness = 0.2;
-      item.material.emissiveIntensity = props.lightActive ? 0.5 : 0.1;
-      item.material.emissive = props.lightActive
-        ? new THREE.Color(0xf0d58b)
-        : new THREE.Color(0x000000);
+      item.material.roughness = 0.4;
+      // item.material.emissiveIntensity = props.lightActive ? 0.5 : 0.1;
+      // item.material.emissive = props.lightActive
+      //   ? new THREE.Color(0xffd7aa)
+      //   : new THREE.Color(0x000000);
     }
   });
   // console.log(lamp?.position);

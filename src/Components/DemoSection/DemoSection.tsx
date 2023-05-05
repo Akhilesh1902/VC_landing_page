@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Button, Container, ImageDropper } from '../UI';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { BsFillPlayCircleFill } from 'react-icons/bs';
+import { BsFillPlayCircleFill, BsChevronUp } from 'react-icons/bs';
+import { FiPlayCircle } from 'react-icons/fi';
 
 import { MySpace3D_Demo, landingCards } from '../../assets/images';
 import { PartnersData } from '../constants';
@@ -25,6 +26,7 @@ const DemoSection = (props: Props) => {
       </div>
       <Container className='mt-16 pb-10'>
         <ImageDropper
+          imageBg='#EFFCF9'
           buttonText='Home3D - Demonstrating Interior Design'
           imgsrc={MySpace3D_Demo}>
           <div
@@ -63,7 +65,7 @@ const DemoSection = (props: Props) => {
         </ImageDropper>
         <div className='flex flex-col gap-10 md:gap-0  p-10 mt-10 md:grid grid-cols-2'>
           {PartnersData.map((item, i) => (
-            <div className='flex flex-col gap-2  items-center '>
+            <div className='flex flex-col gap-5  items-center '>
               <div
                 className={clsx('flex flex-col md:w-1/2 gap-3', {
                   hidden: !partnerIndex[i],
@@ -71,18 +73,28 @@ const DemoSection = (props: Props) => {
                 <img src={item.image} alt='' />
                 <p>{item.desc}</p>
               </div>
-
-              <Button
-                type='button'
-                rounded
-                shadow
-                onClick={() => {
-                  setPartnerIndex((p) =>
-                    p.map((item, j) => (j === i ? !item : item))
-                  );
-                }}>
-                {item.title}
-              </Button>
+              {!partnerIndex[i] ? (
+                <Button
+                  type='button'
+                  // rounded
+                  className='!px-20 rounded-full outline  outline-1 outline-gray-200'
+                  shadow
+                  onClick={() => {
+                    setPartnerIndex((p) =>
+                      p.map((item, j) => (j === i ? !item : item))
+                    );
+                  }}>
+                  {item.title}
+                </Button>
+              ) : (
+                <BsChevronUp
+                  onClick={() => {
+                    setPartnerIndex((p) =>
+                      p.map((item, j) => (j === i ? !item : item))
+                    );
+                  }}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -100,25 +112,27 @@ type CardProps = {
 
 const Card = (props: CardProps) => {
   return (
-    <div className='shadow-card flex flex-col gap-3 w-ma rounded-xl p-4 items-center bg-white'>
-      <h1 className='font-bold capitalize '>{props.name}</h1>
-      <div className='w-36 h-36'>
-        <img
-          src={props.imgsrc}
-          alt=' card '
-          className='object-contain w-full h-full'
-        />
-      </div>
-      <a
-        // className='rounded-full'
-        target='_blank'
-        href='http://gandivam.co.in/dist/'
-        className='font-normal bg-primary-red text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-lime-200 hover:text-slate-800'>
-        <div className='flex  items-center gap-2'>
-          <p className='capitalize'>Demo</p>
-          <BsFillPlayCircleFill />
+    <div className='bg-white rounded-xl'>
+      <div className='shadow-card flex flex-col gap-3 w-ma rounded-xl  p-4 items-center opacity-50 hover:opacity-100 transition-opacity duration-500  '>
+        <h1 className='font-bold capitalize '>{props.name}</h1>
+        <div className='w-36 h-36'>
+          <img
+            src={props.imgsrc}
+            alt=' card '
+            className='object-contain w-full h-full'
+          />
         </div>
-      </a>
+        <a
+          // className='rounded-full'
+          target='_blank'
+          href='http://gandivam.co.in/dist/'
+          className='font-normal bg-primary-red text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-[#FF8279'>
+          <div className='flex  items-center gap-2'>
+            <p className='capitalize'>Demo</p>
+            <FiPlayCircle />
+          </div>
+        </a>
+      </div>
     </div>
   );
 };

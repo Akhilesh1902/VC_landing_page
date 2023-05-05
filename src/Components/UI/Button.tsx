@@ -70,7 +70,7 @@ const Button = (props: Props) => {
           'rounded-lg': props.rounded,
           'shadow-lg': props.shadow,
         },
-        'hover:bg-lime-200 hover:text-slate-800',
+        'hover:bg-[#FF8279] hover:text-slate-800',
         props.className
       )}
       data-innertext={props.innertext}>

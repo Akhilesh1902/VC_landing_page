@@ -25,7 +25,12 @@ const ImageDropper = (props: Props) => {
         }
       )}>
       <button
-        className='rounded-full z-20 asolute py-4 px-8 w-full flex justify-between items-center outline outline-1 outline-gray-200 bg-white text-primary-red text-sm font-bold shadow-lg'
+        className={clsx(
+          'rounded-full z-20 asolute py-4 px-8 w-full flex justify-between items-center outline outline-1 outline-gray-200 bg-white text-black  text-sm font-bold shadow-lg',
+          {
+            'text-primary-red': open,
+          }
+        )}
         onClick={() => {
           setOpen((p) => !p);
         }}>

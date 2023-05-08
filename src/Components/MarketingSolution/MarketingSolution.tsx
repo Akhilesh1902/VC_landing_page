@@ -22,12 +22,12 @@ const MarketingSolution = (props: Props) => {
 export default MarketingSolution;
 
 const TopSection = () => (
-  <div className='bg-primary-red p-5 text-xs font-bold flex gap-4 justify-center flex-wrap'>
+  <div className='bg-primary-red py-10 text-xs font-bold flex gap-10 justify-center flex-wrap'>
     {LandingPageYoutubeUrls.map((item, i) => (
       <a
         href={item.url}
         target='_blank'
-        className='font-normal bg-white rounded-full w-fit flex items-center gap-2 px-5 py-3 md:text-xl hover:bg-[#FF8279] hover:text-slate-800'>
+        className='font-normal bg-white rounded-full w-fit flex items-center gap-2 px-16 py-5 md:text-base hover:bg-[#FF8279] hover:text-slate-800'>
         {item.title} <FiPlayCircle />
       </a>
     ))}

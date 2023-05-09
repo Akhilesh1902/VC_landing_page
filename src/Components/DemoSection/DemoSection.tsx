@@ -18,16 +18,16 @@ const DemoSection = (props: Props) => {
         <Container
           className={` relative p-10 w-full flex md:justify-center z-10 gap-10 overflow-scroll md:overflow-cli`}>
           <Card name='furniture' imgsrc={landingCards.Sofa} />
-          <Card name='lightings' imgsrc={landingCards.Light} />
-          <Card name='paint' imgsrc={landingCards.Paint} />
-          <Card name='tiles' imgsrc={landingCards.Tiles} />
-          <Card name='sanitaryWare' imgsrc={landingCards.Bathtub} />
+          <Card name='lightings' imgsrc={landingCards.Light} commingsoon />
+          <Card name='paint' imgsrc={landingCards.Paint} commingsoon />
+          <Card name='tiles' imgsrc={landingCards.Tiles} commingsoon />
+          <Card name='sanitaryWare' imgsrc={landingCards.Bathtub} commingsoon />
         </Container>
       </div>
       <Container className='mt-16 pb-10'>
         <ImageDropper
           imageBg='#EFFCF9'
-          buttonText='Home3D - Demonstrating Interior Design'
+          buttonText='Home3D - Interior Design for Home'
           imgsrc={MySpace3D_Demo}>
           <div
             style={{ backgroundColor: '#EFFCF9' }}
@@ -108,13 +108,15 @@ export default DemoSection;
 type CardProps = {
   name: string;
   imgsrc: string;
+  commingsoon?: boolean;
 };
 
 const Card = (props: CardProps) => {
   return (
     <div className='bg-white rounded-xl'>
-      <div className='shadow-card flex flex-col gap-3 w-ma rounded-xl  p-4 items-center opacity-50 hover:opacity-100 transition-opacity duration-500  '>
+      <div className='shadow-card flex h-full flex-col gap-3 w-ma rounded-xl  p-4 items-center justify-between opacity-50 hover:opacity-100 transition-opacity duration-500  '>
         <h1 className='font-bold capitalize '>{props.name}</h1>
+        {props.commingsoon && <p className='text-xs'>comming soon...</p>}
         <div className='w-36 h-36'>
           <img
             src={props.imgsrc}
@@ -126,7 +128,7 @@ const Card = (props: CardProps) => {
           // className='rounded-full'
           target='_blank'
           href='http://gandivam.co.in/dist/'
-          className='font-normal bg-primary-red text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-[#FF8279'>
+          className='font-normal bg-primary-red  text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-[#FF8279'>
           <div className='flex  items-center gap-2'>
             <p className='capitalize'>Demo</p>
             <FiPlayCircle />

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import { BsChevronDown } from 'react-icons/bs';
 // import Slider from '../UI/Slider';
+import { Leva } from 'leva';
 
 const CanvasWrapper = React.lazy(() => import('../ThreeJS/CanvasWrapper'));
 
@@ -12,7 +13,10 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <div className=' bg-[#f5f5f5] w-full pb-10'>
+    <div className='realtive bg-[#f5f5f5] w-full pb-10'>
+      <div className='absolute z-10 top-0 right-10 '>
+        <Leva hideCopyButton fill collapsed />
+      </div>
       <Container className='min-h-screen flex flex-col justify-between'>
         <div className='relative flex flex-col-reverse md:flex-row md:grid grid-cols-2 justify-between h-[70vh] items-center'>
           <motion.div
@@ -28,7 +32,7 @@ const Hero = (props: Props) => {
                 'Store3D solution Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
               ]}>
               <div className='flex items-center text-start gap-2'>
-                <p className='text-xl'>3DCommerce for Home-Decor</p>
+                <p className='text-xl'>&#x2022; 3DCommerce for Home-Decor</p>
                 <BsChevronDown />
               </div>
             </Slider>
@@ -37,7 +41,7 @@ const Hero = (props: Props) => {
                 'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
               ]}>
               <div className='flex text-start items-center gap-2'>
-                <p className='text-xl'>Interior Design for Home</p>
+                <p className='text-xl'>&#x2022; Interior Design for Home</p>
                 <BsChevronDown />
               </div>
             </Slider>
@@ -46,7 +50,7 @@ const Hero = (props: Props) => {
                 'Innovative solutions leveraging foundational technologies of 3D, Web, AI, Blockchain',
               ]}>
               <div className='flex text-start w-full items-center gap-2'>
-                <p className='text-xl'>3D, Web, AI, Blockchain.</p>
+                <p className='text-xl'>&#x2022; 3D, Web, AI, Blockchain.</p>
                 <BsChevronDown />
               </div>
             </Slider>

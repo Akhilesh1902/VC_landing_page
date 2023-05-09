@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import CanvasWrapper from './Components/ThreeJS/CanvasWrapper';
 import Modal from './Components/UI/Modal';
 import { useState } from 'react';
-import DatGuiContext from './Components/ThreeJS/DatGuiContext';
 
 function App() {
   const location = useLocation();
@@ -16,19 +15,17 @@ function App() {
   return (
     <>
       <AnimatePresence>
-        <DatGuiContext>
-          {location.pathname === '/solutions/store3d2' && (
-            <div className='h-screen w-screen bg-black overflow-x-cli fixed top-0 -z-10  '>
-              <CanvasWrapper />
-            </div>
-          )}
-          <Nav />
-          <div className='absolute z-0 w-screen'>
-            <Pages />
-            <Footer setOpenModel={setOpenModel} />
+        {location.pathname === '/solutions/store3d2' && (
+          <div className='h-screen w-screen bg-black overflow-x-cli fixed top-0 -z-10  '>
+            <CanvasWrapper />
           </div>
-          {openModal && <Modal type={modalType} setOpenModel={setOpenModel} />}
-        </DatGuiContext>
+        )}
+        <Nav />
+        <div className='absolute z-0 w-screen'>
+          <Pages />
+          <Footer setOpenModel={setOpenModel} />
+        </div>
+        {openModal && <Modal type={modalType} setOpenModel={setOpenModel} />}
       </AnimatePresence>
     </>
   );

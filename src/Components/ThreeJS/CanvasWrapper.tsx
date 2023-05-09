@@ -1,39 +1,57 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
-import Sofa from './Sofa';
-import Floor from './Floor';
 import Lightings from './Lightings';
-import { useLocation } from 'react-router-dom';
-import { Box, Environment, Html, OrbitControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import SolutionModel from './SolutionModel';
 import Room from './Room';
 import { useState } from 'react';
-import { Color, Vector3 } from 'three';
-import DatGuiContext, { useDatGUIContext } from './DatGuiContext';
-import MyDatGui from './MyDatGui';
+import { Color, ColorRepresentation, Vector3 } from 'three';
 import { degToRad } from 'three/src/math/MathUtils';
+import { useControls, button, useStoreContext, levaStore } from 'leva';
 
 type Props = {};
 
 const CanvasWrapper = (props: Props) => {
-  const location = useLocation();
-  console.log(location);
+  const { light, lightIntensity, canvasColor, tableMaterials } = useControls({
+    light: false,
+    lightIntensity: {
+      value: 10,
+      min: 0,
+      max: 100,
+      step: 2,
+    },
+    tableMaterials: {
+      options: {
+        brown: 0,
+        lightBrown: 1,
+        black: 2,
+      },
+    },
+    canvasColor: '#F5F5F5',
+    button: button(() => {
+      console.log('clicked');
+      levaStore.set({ canvasColor: '#f5f5f5' }, true);
+    }),
+  });
 
-  const [lightActive, setLightActive] = useState(false);
+  const data = useStoreContext();
+  console.log(levaStore);
+
   const [lightPosition, setLightPosition] = useState(new Vector3());
-  const { lightSettings } = useDatGUIContext();
-  console.log(lightSettings.bg_color.split('#'));
+  console.log(canvasColor);
 
   return (
     <>
       <Canvas shadows>
-        <color attach={'background'} args={[`#${lightSettings.bg_color}`]} />
-        <Lightings
-          lightActive={lightActive}
-          setLightPosition={setLightPosition}
-          lightPosition={lightPosition}
+        <color
+          attach={'background'}
+          args={[new Color(canvasColor as ColorRepresentation)]}
         />
-        {/* <Floor /> */}
+        <Lightings
+          lightActive={light}
+          lightPosition={lightPosition}
+          lightIntensity={lightIntensity}
+        />
         <OrbitControls
           enableZoom={true}
           minDistance={3}
@@ -44,18 +62,15 @@ const CanvasWrapper = (props: Props) => {
           maxAzimuthAngle={degToRad(60)}
         />
 
-        <Environment preset={lightSettings.hdri} />
+        {/* <Environment preset={'forest'} /> */}
         <Suspense>
           {/* {location.pathname === '/' ? <Sofa /> : <SolutionModel />} */}
           <Room
             setLightPosition={setLightPosition}
-            setLightActive={setLightActive}
-            lightActive={lightActive}
-            lightPosition={lightPosition}
+            materialIndex={tableMaterials}
           />
         </Suspense>
       </Canvas>
-      <MyDatGui />
     </>
   );
 };

@@ -27,7 +27,7 @@ const Lightings = (props: Props) => {
         ref={lampLightRef}
         position={props.lightPosition}
         position-y={props.lightPosition.y + 0.2}
-        intensity={props.lightActive ? props.lightIntensity : 0}
+        intensity={props.lightActive ? 10 : 0}
         distance={4}
         // decay={3}
         color={0xffd7aa}

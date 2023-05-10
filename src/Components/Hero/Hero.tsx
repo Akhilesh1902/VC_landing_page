@@ -1,21 +1,103 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Container, ImageDropper, Slider } from '../UI/';
 import { VisCommerce_levels } from '../../assets/images';
 import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import { BsChevronDown } from 'react-icons/bs';
 // import Slider from '../UI/Slider';
-import { Leva } from 'leva';
 
 const CanvasWrapper = React.lazy(() => import('../ThreeJS/CanvasWrapper'));
 
 type Props = {};
 
 const Hero = (props: Props) => {
+  const [lightActive, setLightActive] = useState(false);
+  const [lightIntensity, setLightIntensity] = useState(50);
+  const [tableMaterialIndex, setTableMaterialIndex] = useState<0 | 1 | 2>(0);
+  const [animation, setAnimtion] = useState<'up' | 'down'>('up');
+
   return (
     <div className='realtive bg-[#f5f5f5] w-full pb-10'>
       <div className='absolute z-10 top-0 right-10 '>
-        <Leva hideCopyButton fill collapsed />
+        <form
+          action=''
+          className='bg-gray-300 p-4 md:w-[200px] rounded flex flex-col gap-3'>
+          <label htmlFor='' className='flex gap-3 font-bold'>
+            Light :
+            <input
+              type='checkbox'
+              className='w-5 h-5'
+              onChange={(e) => {
+                setLightActive(e.target.checked);
+              }}
+            />
+          </label>
+          <div>
+            <label htmlFor='' className='flex flex-col font-bold'>
+              Table Material :
+              <div className='flex gap-2 '>
+                <div className='bg-orange-900 w-8 h-8  '>
+                  <input
+                    className='w-full h-full opacity-0'
+                    type='radio'
+                    name='material'
+                    onClick={(e) => {
+                      setTableMaterialIndex(0);
+                    }}
+                  />
+                </div>
+                <div className='bg-yellow-700 w-8 h-8  '>
+                  <input
+                    className='w-full h-full opacity-0'
+                    type='radio'
+                    name='material'
+                    onClick={(e) => {
+                      setTableMaterialIndex(1);
+                    }}
+                  />
+                </div>
+                <div className='bg-stone-900 w-8 h-8  '>
+                  <input
+                    className='w-full h-full opacity-0'
+                    type='radio'
+                    name='material'
+                    onClick={(e) => {
+                      setTableMaterialIndex(2);
+                    }}
+                  />
+                </div>
+              </div>
+            </label>
+          </div>
+          <label htmlFor='' className='flex flex-col font-bold'>
+            Table Height :
+            <div className='flex gap-2'>
+              <label htmlFor='' className='flex gap-2 items-center'>
+                UP
+                <input
+                  type='radio'
+                  name='height'
+                  className='w-5 h-5'
+                  onClick={(e) => {
+                    console.log('herre');
+                    setAnimtion('up');
+                  }}
+                />
+              </label>
+              <label htmlFor='' className='flex gap-2 items-center'>
+                down
+                <input
+                  type='radio'
+                  name='height'
+                  className='w-5 h-5'
+                  onClick={(e) => {
+                    setAnimtion('down');
+                  }}
+                />
+              </label>
+            </div>
+          </label>
+        </form>
       </div>
       <Container className='min-h-screen flex flex-col justify-between'>
         <div className='relative flex flex-col-reverse md:flex-row md:grid grid-cols-2 justify-between h-[70vh] items-center'>
@@ -63,7 +145,11 @@ const Hero = (props: Props) => {
                   <p className='w-max'>Loading</p>
                 </div>
               }>
-              <CanvasWrapper />
+              <CanvasWrapper
+                lightActive={lightActive}
+                tableMaterialIndex={tableMaterialIndex}
+                animation={animation}
+              />
             </Suspense>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useGLTF } from '@react-three/drei';
+import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect } from 'react';
@@ -9,23 +9,36 @@ type Props = {
 };
 
 const Room = (props: Props) => {
-  const { scene, parser } = useGLTF('./table.glb');
+  const { scene, parser, animations } = useGLTF('./table.glb');
+  console.log(animations);
   console.log(scene);
 
   const { camera } = useThree();
+
+  const { actions, mixer } = useAnimations(animations, scene);
+
   useEffect(() => {
-    camera.position.y = 3;
-  }, []);
+    setTimeout(() => {
+      if (actions) {
+        console.log(actions);
+
+        const a = actions['Increase_Height'];
+        if (a) {
+          a.setLoop(THREE.LoopOnce, 0);
+          a.play();
+        }
+        console.log(a);
+      }
+    }, 1000);
+  }, [actions]);
+
+  // useEffect(() => {
+  //   camera.position.y = 3;
+  // }, []);
+
   useEffect(() => {
     if (scene) {
       scene.scale.set(0, 0, 0);
-      // gsap.to(scene.scale, {
-      //   duration: 1.5,
-      //   ease: "ease-in",
-      //   x:  1,
-      //   y:  1,
-      //   z:  1,
-      // });
     }
   }, [scene]);
 
@@ -33,6 +46,7 @@ const Room = (props: Props) => {
 
   useFrame((_state, delta) => {
     if (scene) scene.scale.lerp(new THREE.Vector3(1, 1, 1), 0.05);
+    // mixer.update(delta);
   });
 
   scene.traverse(async (item) => {

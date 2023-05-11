@@ -7,11 +7,14 @@ import Room from './Room';
 import { useState } from 'react';
 import { Vector3 } from 'three';
 import { degToRad } from 'three/src/math/MathUtils';
+import { EffectComposer, SSAO, SMAA, SSR } from '@react-three/postprocessing';
+import { BlendFunction } from 'postprocessing';
 
 type Props = {
   lightActive: boolean;
   tableMaterialIndex: 0 | 1 | 2;
   animation: 'up' | 'down';
+  postProcessing: 'SSAO' | 'SMAA' | 'SSR' | 'none';
 };
 
 const CanvasWrapper = (props: Props) => {
@@ -42,6 +45,28 @@ const CanvasWrapper = (props: Props) => {
             materialIndex={props.tableMaterialIndex}
           />
         </Suspense>
+        <EffectComposer>
+          {props.postProcessing === 'SSAO' ? (
+            <SSAO
+              worldDistanceThreshold={1}
+              worldDistanceFalloff={1}
+              worldProximityFalloff={1}
+              worldProximityThreshold={1}
+              // blendFunction={BlendFunction.MULTIPLY} // Use NORMAL to see the effect
+              // samples={31}
+              // radius={5}
+              // intensity={30}
+            />
+          ) : (
+            <></>
+          )}
+          {props.postProcessing === 'SMAA' ? (
+            <SMAA blendFunction={BlendFunction.MULTIPLY} />
+          ) : (
+            <></>
+          )}
+          {props.postProcessing === 'SSR' ? <SSR /> : <></>}
+        </EffectComposer>
       </Canvas>
     </>
   );

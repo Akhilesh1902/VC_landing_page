@@ -21,12 +21,13 @@ const Hero = (props: Props) => {
       <div className='absolute z-10 top-0 right-10 '>
         <form
           action=''
-          className='bg-gray-300 p-4 md:w-[200px] rounded flex flex-col gap-3'>
-          <label htmlFor='' className='flex gap-3 font-bold'>
+          className='bg-white outline outline-1 text-sm p-4 md:w-[200px] rounded flex flex-col gap-3'>
+          <h2 className='font-bold underline underline-offset-2'>Controls :</h2>
+          <label htmlFor='' className='flex gap-3 items-center font-bold'>
             Light :
             <input
               type='checkbox'
-              className='w-5 h-5'
+              className='w-4 h-4'
               onChange={(e) => {
                 setLightActive(e.target.checked);
               }}
@@ -36,7 +37,7 @@ const Hero = (props: Props) => {
             <label htmlFor='' className='flex flex-col font-bold'>
               Table Material :
               <div className='flex gap-2 '>
-                <div className='bg-orange-900 w-8 h-8  '>
+                <div className='bg-orange-900 w-6 h-6  '>
                   <input
                     className='w-full h-full opacity-0'
                     type='radio'
@@ -46,7 +47,7 @@ const Hero = (props: Props) => {
                     }}
                   />
                 </div>
-                <div className='bg-yellow-700 w-8 h-8  '>
+                <div className='bg-yellow-700 w-6 h-6  '>
                   <input
                     className='w-full h-full opacity-0'
                     type='radio'
@@ -56,7 +57,7 @@ const Hero = (props: Props) => {
                     }}
                   />
                 </div>
-                <div className='bg-stone-900 w-8 h-8  '>
+                <div className='bg-stone-900 w-6 h-6  '>
                   <input
                     className='w-full h-full opacity-0'
                     type='radio'
@@ -77,7 +78,7 @@ const Hero = (props: Props) => {
                 <input
                   type='radio'
                   name='height'
-                  className='w-5 h-5'
+                  className='w-4 h-4'
                   onClick={(e) => {
                     console.log('herre');
                     setAnimtion('up');

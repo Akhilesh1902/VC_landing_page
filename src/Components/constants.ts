@@ -1,4 +1,5 @@
 import { PartnersImages, Room3dGifs, Store3dCard } from '../assets/images';
+import resourePageImages from '../assets/images/resources';
 
 export const GifSectionData = [
   {
@@ -251,5 +252,85 @@ export const testimonialData = [
     message: `IKEA has been working on large scale photoreal 3D for over 10 years and has been promoting open standards and collaboration all along. We are excited to contribute to this group to make the use of 3D easier and faster to meet the demands of our customers.`,
     name: 'Martin Enthed',
     designation: 'IKEA Communications AB',
+  },
+];
+
+export const resourcePageData = [
+  {
+    title: 'Amazon creates immersive shopping experiences using Substance 3D',
+    details:
+      'Imagine if you could shop for new furniture by bringing a dozen sofas into your house and comparing how they look in your living room. Sounds unrealistic?',
+    image: resourePageImages.Amazon,
+    url: '',
+  },
+  {
+    title:
+      'Amazon brings Metaverse to the e-commerce segment with augmented rooms',
+    details:
+      'Amazon brings augmented rooms (Amazon View) to transform the shopping experience. Shoppers can customize their room with Amazon products in VR.',
+    image: resourePageImages.storeresource1,
+    url: '',
+  },
+  {
+    title:
+      'Essential Guide to 3D Product Configuration: Use Cases, Tips and Checklist',
+    details:
+      'A product configurator is software that allows people to customize an item and see how it appears. The configurator shows all possible variations in a product.',
+    image: resourePageImages.storeresource2,
+    url: '',
+  },
+  {
+    title: 'MarxentLabs 3D project charter',
+    details:
+      'Utilizing our many years of experience in running 3D projects, we’ve created this free 3D project charter template to make it easy for you to get started. Download today',
+    image: resourePageImages.storeresource3,
+    url: '',
+  },
+  {
+    title: '10 Things to Know About the World of 3D Models',
+    details:
+      'Racing bikes, coffee machines, energy drinks, dining chairs, camping cookers, hockey sticks, diamond rings, and even Hot Wheels toy cars.',
+    image: resourePageImages.storeresource5,
+    url: '',
+  },
+  {
+    title: `What can can't 3D & AR do for you?`,
+    details: `Each new evolution in technology poses one key question: who will identify its value first and reap the greatest reward and who will scramble to catch up before it's too late?`,
+    image: resourePageImages.storeresource6,
+    url: '',
+  },
+  {
+    title: 'Why Your eCommerce Store Needs a 3D Product Customizer',
+    details:
+      'Do you run an eCommerce store? Are you looking for a unique way to increase customer engagement and overall sales?',
+    image: resourePageImages.storeresource7,
+    url: '',
+  },
+  {
+    title: 'How 3D Commerce Offers the Building Blocks of a Virtual Inventory',
+    details:
+      'Retail sales have grown by almost four percent annually since 2010. During that time, ecommerce penetration has increased more',
+    image: resourePageImages.storeresource8,
+    url: '',
+  },
+  {
+    title: 'SAMPLE: RFP Table of Contentsfor a 3D Project',
+    details: 'Content for 3D Project',
+    image: resourePageImages.storeresource4,
+    url: '',
+  },
+  {
+    title: 'Democratizing Interior Design',
+    details:
+      'As Mark Hampton quotes, "Real comfort, visual and physical, is vital to every room." Giving that opportunity and space of individuality and design to everyone? That’s the vision at VisCommerce.',
+    image: resourePageImages.mySpaceResource1,
+    url: '',
+  },
+  {
+    title: 'Personalized Product Recommendations',
+    details:
+      'We’re all familiar with product recommendations. Many of us see them every day on Amazon—a household name synonymous with the early adoption of AI and machine learning',
+    image: resourePageImages.mySpaceResource2,
+    url: '',
   },
 ];

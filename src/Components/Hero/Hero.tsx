@@ -12,110 +12,122 @@ type Props = {};
 
 const Hero = (props: Props) => {
   const [lightActive, setLightActive] = useState(false);
-  const [lightIntensity, setLightIntensity] = useState(50);
-  const [tableMaterialIndex, setTableMaterialIndex] = useState<0 | 1 | 2>(0);
+  const [tableMaterialIndex, setTableMaterialIndex] = useState<0 | 1 | 2>(1);
   const [animation, setAnimtion] = useState<'up' | 'down'>('up');
   const [postProcessing, setPostProcessing] = useState<
     'SSAO' | 'SMAA' | 'SSR' | 'none'
-  >('SSAO');
+  >('none');
+  const [formOpen, setFromOpen] = useState(false);
 
   return (
     <div className='realtive bg-[#f5f5f5] w-full pb-10'>
-      <div className='absolute z-10 top-0 right-10 '>
+      <div className='absolute w-[300px] z-10 top-0 right-10 '>
         <form
           action=''
           className='bg-white outline outline-1 text-sm p-4  rounded flex flex-col gap-3'>
-          <h2 className='font-bold underline underline-offset-2 '>Controls </h2>
-          <label
-            htmlFor=''
-            className='grid grid-cols-2 gap-3 items-center font-bold'>
-            Light
-            <input
-              type='checkbox'
-              className='w-4 h-4'
-              onChange={(e) => {
-                setLightActive(e.target.checked);
-              }}
-            />
-          </label>
-          <div>
-            <label htmlFor='' className='grid grid-cols-2 flex-col font-bold'>
-              Table Material
-              <div className='flex gap-2 '>
-                <div className='bg-orange-900 w-6 h-6  '>
-                  <input
-                    className='w-full h-full opacity-0'
-                    type='radio'
-                    name='material'
-                    onClick={(e) => {
-                      setTableMaterialIndex(0);
-                    }}
-                  />
-                </div>
-                <div className='bg-yellow-700 w-6 h-6  '>
-                  <input
-                    className='w-full h-full opacity-0'
-                    type='radio'
-                    name='material'
-                    onClick={(e) => {
-                      setTableMaterialIndex(1);
-                    }}
-                  />
-                </div>
-                <div className='bg-stone-900 w-6 h-6  '>
-                  <input
-                    className='w-full h-full opacity-0'
-                    type='radio'
-                    name='material'
-                    onClick={(e) => {
-                      setTableMaterialIndex(2);
-                    }}
-                  />
-                </div>
-              </div>
-            </label>
-          </div>
-          <label htmlFor='' className='grid grid-cols-2 flex-col font-bold'>
-            Table Height
-            <div className='flex gap-2'>
-              <label htmlFor='' className='flex gap-2 items-center'>
-                UP
-                <input
-                  type='radio'
-                  name='height'
-                  className='w-4 h-4'
-                  onClick={(e) => {
-                    console.log('herre');
-                    setAnimtion('up');
-                  }}
-                />
-              </label>
-              <label htmlFor='' className='flex gap-2 items-center'>
-                down
-                <input
-                  type='radio'
-                  name='height'
-                  className='w-5 h-5'
-                  onClick={(e) => {
-                    setAnimtion('down');
-                  }}
-                />
-              </label>
-            </div>
-          </label>
-          <select
-            name='postprocessing'
-            id='postprocessing'
-            onChange={(e) => {
-              const val = e.target.value as typeof postProcessing;
-              console.log(val);
-              setPostProcessing(val);
+          <h2
+            className='font-bold underline underline-offset-2 cursor-pointer'
+            onClick={() => {
+              setFromOpen((p) => !p);
             }}>
-            <option value='SSAO'>SSAO</option>
-            <option value='SMAA'>SMAA</option>
-            <option value='SSR'>SSR</option>
-            <option value='none'>none</option>
-          </select>
+            Controls{' '}
+          </h2>
+          {formOpen && (
+            <div className='flex flex-col gap-3'>
+              <label
+                htmlFor=''
+                className='grid grid-cols-2 gap-3 items-center font-bold'>
+                Light
+                <input
+                  type='checkbox'
+                  className='w-4 h-4'
+                  onChange={(e) => {
+                    setLightActive(e.target.checked);
+                  }}
+                />
+              </label>
+              <div>
+                <label
+                  htmlFor=''
+                  className='grid grid-cols-2 flex-col items-center font-bold'>
+                  Table Material
+                  <div className='flex gap-2 '>
+                    <div className='bg-yellow-700 w-6 h-6  '>
+                      <input
+                        className='w-full h-full opacity-0'
+                        type='radio'
+                        name='material'
+                        onClick={(e) => {
+                          setTableMaterialIndex(1);
+                        }}
+                      />
+                    </div>
+                    <div className='bg-orange-900 w-6 h-6  '>
+                      <input
+                        className='w-full h-full opacity-0'
+                        type='radio'
+                        name='material'
+                        onClick={(e) => {
+                          setTableMaterialIndex(0);
+                        }}
+                      />
+                    </div>
+
+                    <div className='bg-stone-900 w-6 h-6  '>
+                      <input
+                        className='w-full h-full opacity-0'
+                        type='radio'
+                        name='material'
+                        onClick={(e) => {
+                          setTableMaterialIndex(2);
+                        }}
+                      />
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <label htmlFor='' className='grid grid-cols-2 flex-col font-bold'>
+                Table Height
+                <div className='flex gap-2'>
+                  <label htmlFor='' className='flex gap-2 items-center'>
+                    Up
+                    <input
+                      type='radio'
+                      name='height'
+                      className='w-4 h-4'
+                      onClick={(e) => {
+                        setAnimtion('up');
+                      }}
+                    />
+                  </label>
+                  <label htmlFor='' className='flex gap-2 items-center'>
+                    Down
+                    <input
+                      type='radio'
+                      name='height'
+                      className='w-5 h-5'
+                      onClick={(e) => {
+                        setAnimtion('down');
+                      }}
+                    />
+                  </label>
+                </div>
+              </label>
+              {/* <select
+                name='postprocessing'
+                id='postprocessing'
+                onChange={(e) => {
+                  const val = e.target.value as typeof postProcessing;
+                  console.log(val);
+                  setPostProcessing(val);
+                }}>
+                <option value='SSAO'>SSAO</option>
+                <option value='SMAA'>SMAA</option>
+                <option value='SSR'>SSR</option>
+                <option value='none'>none</option>
+              </select> */}
+            </div>
+          )}
         </form>
       </div>
       <Container className='min-h-screen flex flex-col justify-between'>

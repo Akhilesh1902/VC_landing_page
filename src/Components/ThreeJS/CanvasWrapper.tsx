@@ -41,6 +41,7 @@ const CanvasWrapper = (props: Props) => {
         <Suspense>
           {/* {location.pathname === '/' ? <Sofa /> : <SolutionModel />} */}
           <Room
+            lightActive={props.lightActive}
             setLightPosition={setLightPosition}
             materialIndex={props.tableMaterialIndex}
           />

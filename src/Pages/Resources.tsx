@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Marketing_Solution } from '../assets/images';
 import { Button, Container } from '../Components/UI';
-
+import { resourcePageData } from '../Components/constants';
 type Props = {};
 
 const ButtonArr = ['all', 'store 3d', 'my space 3d'];
@@ -37,7 +37,7 @@ const Resources = (props: Props) => {
       <div>
         <Container>
           <div className='my-10 flex flex-col items-center md:flex-row justify-center gap-10'>
-            {btnArr.map((item, i) => (
+            {/* {btnArr.map((item, i) => (
               <Button
                 type='button'
                 varient={item.active ? 'primary' : 'transparent'}
@@ -47,17 +47,14 @@ const Resources = (props: Props) => {
                 onClick={() => {}}>
                 {item.name}
               </Button>
-            ))}
+            ))} */}
           </div>
           <div className='flex gap-5 justify-center flex-wrap my-16'>
-            {new Array(10).fill('a').map((item, i) => (
+            {resourcePageData.map((item, i) => (
               <ResorceCard
-                description={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, expedita! ${
-                  i === 3 &&
-                  'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, expedita!'
-                } `}
-                imgsrc={Marketing_Solution}
-                title='Resource Card title'
+                description={item.details}
+                imgsrc={item.image}
+                title={item.title}
               />
             ))}
           </div>

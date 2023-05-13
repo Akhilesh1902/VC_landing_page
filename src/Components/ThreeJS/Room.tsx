@@ -6,12 +6,13 @@ import { useEffect } from 'react';
 type Props = {
   setLightPosition: React.Dispatch<React.SetStateAction<THREE.Vector3>>;
   materialIndex: number;
+  lightActive: boolean;
 };
 
 const Room = (props: Props) => {
-  const { scene, parser, animations } = useGLTF('./table.glb');
-  console.log(animations);
-  console.log(scene);
+  const { scene, parser, animations } = useGLTF('./table2.glb');
+  // console.log(animations);
+  // console.log(scene);
 
   const { camera } = useThree();
 
@@ -20,14 +21,14 @@ const Room = (props: Props) => {
   useEffect(() => {
     setTimeout(() => {
       if (actions) {
-        console.log(actions);
+        // console.log(actions);
 
         const a = actions['Increase_Height'];
         if (a) {
           a.setLoop(THREE.LoopOnce, 0);
           a.play();
         }
-        console.log(a);
+        // console.log(a);
       }
     }, 1000);
   }, [actions]);
@@ -42,7 +43,7 @@ const Room = (props: Props) => {
     }
   }, [scene]);
 
-  console.log(scene);
+  // console.log(scene);
 
   useFrame((_state, delta) => {
     if (scene) scene.scale.lerp(new THREE.Vector3(1, 1, 1), 0.05);
@@ -80,6 +81,14 @@ const Room = (props: Props) => {
       item.material.name === 'Mat_Laptop_Front'
     ) {
       item.material.roughness = 0.4;
+      item.material.color = new THREE.Color('#d6ad67');
+
+      console.log(item);
+      item.material._transmission = 0.3;
+      item.material.emissive = new THREE.Color('#ffd94f');
+      item.material.emissiveIntensity = props.lightActive ? 0.5 : 0;
+      // item.material.emissive = new THREE.Color('#dea049');
+      console.log(item);
     }
   });
 

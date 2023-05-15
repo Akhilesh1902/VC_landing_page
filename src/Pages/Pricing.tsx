@@ -1,12 +1,56 @@
-import React from 'react';
-import { Container } from '../Components/UI';
-import { VisCommerce_levels, WhiteLabeling } from '../assets/images';
-import { whiteLabelingData } from '../Components/constants';
-import clsx from 'clsx';
-
+import React, { useRef } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { IoMdClose } from 'react-icons/io';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 type Props = {};
 
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+  phone: number;
+};
+
 const Pricing = (props: Props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
+
+  const location = useLocation();
+  const submit: SubmitHandler<FormValues> = async (data) => {
+    if (Number.isNaN(data.phone)) {
+      alert('enter valid mobile number');
+      return;
+    }
+    const SERVER_URL = ['commercenexgen.com', 'localhost'];
+    const currentpage = location.pathname;
+    const addedon = new Date().toLocaleDateString();
+    const refUrl = '';
+    const ip_res = await axios.get('https://api.ipify.org/?format=json');
+    const ipaddress = ip_res.data.ip;
+
+    const dataToSend = { ...data, currentpage, addedon, refUrl, ipaddress };
+    console.log(dataToSend);
+
+    const res = await axios.post(
+      `http://${SERVER_URL[0]}:3030/newContact`,
+      dataToSend
+    );
+    if (res.status === 200) {
+      alert(
+        'Thank You for Reaching out to us, Our team will soon reach out to you.'
+      );
+    } else {
+      alert('Something went wrong while sending the mail.');
+    }
+    formRef.current.reset();
+    console.log(res);
+    console.log('email form submitted');
+  };
+  const formRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   return (
     <div>
       <div className='relative bg-primary-red w-screen py-2 md:py-10'>
@@ -14,158 +58,48 @@ const Pricing = (props: Props) => {
           Pricing
         </h1>
       </div>
-      <div className=' bg-primary-red/10 py-10'>
-        <Container className=''>
-          <div className='flex flex-col md:grid lg:mx-20 grid-cols-2 grid-rows-2 gap-5'>
-            <div className='flex flex-col items-center gap-3 bg-white rounded-lg p-5'>
-              <h1 className=''>Room 3D</h1>
-              <h2 className='bg-primary-red w-full text-center text-white rounded'>
-                Contact Us - sales@viscommerce.com
-              </h2>
-              <img src={VisCommerce_levels} alt='' />
-            </div>
-            <div className='flex flex-col  row-span-2 items-center gap-3 bg-white rounded-lg p-5'>
-              <h1 className=''>Store Front 3D</h1>
-              <h2 className='bg-primary-red w-full text-center text-white rounded'>
-                $2,500 (Starting)
-              </h2>
-              <div className='flex flex-col w-full px-3 gap-6'>
-                <div className='hidden lg:flex flex-col gap-2'>
-                  <h2 className='font-bold'>Addon for eCommerce Store</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; Home Décor sector</p>
-                    <p>
-                      &#x2022; Furniture, lighting, paints, tiles, plants,
-                      sanitaryware companies
-                    </p>
-                    <p>&#x2022; 3DCommerce compliant</p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>SKU</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; 50 glTF, optimized models</p>
-                    <p>
-                      &#x2022; Pricing will proportionally increase with number
-                      of SKU's.
-                    </p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Basic</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; Zoom, Pan, Rotate</p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Material Varient</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; Colors, Textures, Materials (e.g., Leather, Wood,
-                      Glass etc.)
-                    </p>
-                  </div>
-                </div>
+      <div className='  py-10 grid place-items-center'>
+        <h1 className='text-2xl font-bold mb-10 '>Contact US</h1>
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit(submit)}
+          className='flex flex-col md:w-[400px] gap-2'>
+          <input
+            {...register('name')}
+            placeholder='User Name'
+            className='bg-white p-2 outline-1 outline'
+            required
+          />
+          <input
+            {...register('phone', {
+              valueAsNumber: true,
+              //   validate: (value) => value > 0,
+            })}
+            className='bg-white p-2 outline-1 outline'
+            placeholder='Mobile Number'
+          />
+          {/* {errors.number && (
+                <p className='text-black'>{errors.number.message}</p>
+              )} */}
 
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Animation (Movements)</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; E.g. Demonstration of table heights for ergonomic
-                      tables
-                    </p>
-                    <p>&#x2022; E.g. Operating cabinet doors</p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Lightings</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; Controls for On/Off, Intensity, Color</p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Integration</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; For e.g. with eCommerce systems such as Magento,
-                      OpenCart
-                    </p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Collateral</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; Related Explainer Video, Documentation</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='row-start-2 flex flex-col items-center gap-3  bg-white rounded-lg p-5'>
-              <h1 className=''>Home 3D</h1>
-              <h2 className='bg-primary-red w-full text-center text-white rounded'>
-                Contact Us - sales@viscommerce.com
-              </h2>
-              <div className='flex flex-col gap-6'>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Store Front 3D</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; See pricing for StoreFront3D</p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Home 3D_App</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>&#x2022; Customization (eg., billing)</p>
-                    <p>&#x2022; Branding</p>
-                  </div>
-                </div>
-                <div className='flex flex-col gap-2'>
-                  <h2 className='font-bold'>Home 3D Server</h2>
-                  <div className='text-sm ml-5 opacity-60 flex flex-col gap-1'>
-                    <p>
-                      &#x2022; Rendered Images (market price in the $50 to $200
-                      range)
-                    </p>
-                    <p>&#x2022; Revenue Share between VisCommerce and Brand </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Container className='w-full flex flex-col gap-10 py-10 px-5 items-center col-span-2 mt-10 bg-white'>
-              <h1 className='text-2xl font-bold '>
-                Viscommerce Room3D - White Labelling
-              </h1>
-              <div className='flex flex-col md:grid grid-flow-row grid-cols-2 gap-4'>
-                {whiteLabelingData.map((item, i) => (
-                  <div
-                    className={clsx(
-                      'text-white p-4 rounded shadow-gray-500 shadow-md',
-                      `bg-${item.background}-400`,
-                      {
-                        'bg-cyan-300': i === 0,
-                        'bg-fuchsia-400': i === 1,
-                        'bg-blue-400': i === 2,
-                        'bg-violet-400': i === 3,
+          <input
+            type='email'
+            {...register('email')}
+            placeholder='E-mail'
+            className='bg-white p-2 outline-1 outline'
+            required
+          />
+          <textarea
+            placeholder='Message'
+            {...register('message')}
+            className='bg-white p-2 outline-1 outline'
+          />
 
-                        'row-span-2 row-start-2 col-start-2 bg-rose-300':
-                          i === 4,
-                      }
-                    )}>
-                    <h1 className='capitalize font-bold text-xl'>
-                      {item.title}
-                    </h1>
-                    <h3 className='font-bold mt-4'>{item.subTitle}</h3>
-                    <div className='ml-4'>
-                      {item.list.map((item, i) => (
-                        <p>&#x2022; {item}</p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Container>
-          </div>
-        </Container>
+          <input
+            type='submit'
+            className='bg-primary-red p-2 text-white font-bold'
+          />
+        </form>
       </div>
     </div>
   );

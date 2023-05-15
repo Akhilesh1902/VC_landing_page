@@ -108,6 +108,14 @@ const Nav = (props: Props) => {
                 </div>
               </Button>
             </li>
+            <li className='grid place-items-center'>
+              <a
+                className='text-base bg-primary-red p-2 px-6 rounded-full text-white hover:bg-primary-red/70 '
+                href='http://gandivam.co.in/dist/'
+                target='active'>
+                Try Demo
+              </a>
+            </li>
           </ul>
           <AiOutlineMenu
             className='md:hidden text-xl'
@@ -224,6 +232,9 @@ const Nav = (props: Props) => {
                       <AiFillCaretDown />
                     </div>
                   </Button>
+                  <a className='' href='http://gandivam.co.in/dist/'>
+                    Try Demo
+                  </a>
                 </li>
               </ul>
             </motion.div>

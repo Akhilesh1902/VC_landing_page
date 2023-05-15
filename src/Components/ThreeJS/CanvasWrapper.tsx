@@ -31,8 +31,8 @@ const CanvasWrapper = (props: Props) => {
           enableZoom={true}
           minDistance={3}
           maxDistance={5}
-          maxPolarAngle={degToRad(80)}
-          minPolarAngle={degToRad(50)}
+          maxPolarAngle={degToRad(0)}
+          minPolarAngle={degToRad(60)}
           minAzimuthAngle={degToRad(300)}
           maxAzimuthAngle={degToRad(60)}
         />

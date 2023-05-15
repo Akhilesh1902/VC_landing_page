@@ -26,11 +26,11 @@ const Hero = (props: Props) => {
           action=''
           className='bg-white outline outline-1 text-sm p-4  rounded flex flex-col gap-3'>
           <h2
-            className='font-bold underline underline-offset-2 cursor-pointer'
+            className='font-bold flex items-center gap-2 cursor-pointer'
             onClick={() => {
               setFromOpen((p) => !p);
             }}>
-            Controls{' '}
+            <BsChevronDown /> Controls{' '}
           </h2>
           {formOpen && (
             <div className='flex flex-col gap-3'>
@@ -113,7 +113,7 @@ const Hero = (props: Props) => {
                   </label>
                 </div>
               </label>
-              {/* <select
+              <select
                 name='postprocessing'
                 id='postprocessing'
                 onChange={(e) => {
@@ -125,7 +125,7 @@ const Hero = (props: Props) => {
                 <option value='SMAA'>SMAA</option>
                 <option value='SSR'>SSR</option>
                 <option value='none'>none</option>
-              </select> */}
+              </select>
             </div>
           )}
         </form>

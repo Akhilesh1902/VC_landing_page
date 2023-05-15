@@ -124,7 +124,7 @@ const Store3dBenefits = (props: Props) => {
 export const DigitalRightsManagement = () => (
   <div className='w-full flex flex-col items-center gap-10 mb-10'>
     <h1 className='font-bold text-lg md:text-2xl'>
-      DRM (Dgital Rights Management)
+      DRM (Digital Rights Management)
     </h1>
     <div
       style={{

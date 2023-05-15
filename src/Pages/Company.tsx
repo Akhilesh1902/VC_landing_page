@@ -6,6 +6,7 @@ import { TbTargetArrow } from 'react-icons/tb';
 import { RiHandCoinFill } from 'react-icons/ri';
 import { DayStore3dLogo, Marketing_Solution } from '../assets/images';
 import clsx from 'clsx';
+import { teamDetailsData } from '../Components/constants';
 
 type Props = {};
 
@@ -90,7 +91,7 @@ const Team = () => {
         </h1>
       </div>
       <div className='flex flex-col  items-center'>
-        {new Array(5).fill('1').map((item, i) => (
+        {teamDetailsData.map((item, i) => (
           <div
             className={clsx(
               'w-screen flex justify-start items-starts md:pl-[250px]',
@@ -102,14 +103,12 @@ const Team = () => {
               imgsrc={Marketing_Solution}
               dark={i % 2 ? true : false}
               details={{
-                name: `testname`,
-                title: `text title ${
-                  i % 2 ? 'asdasdasdadasdaasdasd asdasdssd' : ''
-                }`,
-                role: 'sdfasdf',
-                education: 'sdfsdf',
-                interest: 'sfasdfsadf',
-                linkedin: 'safsdfasfsfa',
+                name: item.name,
+                title: item.title,
+                role: item.role,
+                education: item.education,
+                interest: item.interests,
+                linkedin: item.linkedIn,
               }}
             />
           </div>
@@ -135,7 +134,7 @@ interface TeamMembersProps {
 const TeamMembers = (props: TeamMembersProps) => {
   return (
     <Container
-      className={'flex flex-col m-0  md:flex-row justify-start gap-16 p-10 '}>
+      className={'flex flex-col m-0   md:flex-row justify-start gap-16 p-10 '}>
       <div
         className='outline overflow-clip w-[240px] aspect-square self-center grid items-center'
         style={{
@@ -153,15 +152,15 @@ const TeamMembers = (props: TeamMembersProps) => {
           {props.details.name}
         </h1>
         <h2>{props.details.title}</h2>
-        <div className='grid grid-cols-2 grid-rows-4 '>
+        <div className='grid grid-cols-4 grid-rows-4 mt-5 normal-case'>
           <p className='font-bold'>Role</p>
-          <p>{props.details.role}</p>
+          <p className='col-span-3'>{props.details.role}</p>
           <p className='font-bold'>Education</p>
-          <p>{props.details.education}</p>
+          <p className='col-span-3'>{props.details.education}</p>
           <p className='font-bold'>interest</p>
-          <p>{props.details.interest}</p>
+          <p className='col-span-3'>{props.details.interest}</p>
           <p className='font-bold'>LinkedIn</p>
-          <a href={props.details.linkedin} className='underline'>
+          <a href={props.details.linkedin} className='underline col-span-3'>
             {props.details.linkedin}
           </a>
         </div>

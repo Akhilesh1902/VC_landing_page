@@ -318,8 +318,8 @@ const MySpace3d = () => {
               to={item.link}
               className={({ isActive, isPending }) =>
                 clsx(
-                  `font-bold relative after:block after:w-[2px] after:h-full after:bg-black after:absolute after:top-1/2 after:-translate-y-1/2 last:after:hidden after:-right-2 `,
-                  { 'text-primary-red': isActive }
+                  `font-bold relative after:block after:w-[2px] p-2 transition-bg duration-500 after:h-full after:bg-black after:absolute after:top-1/2 after:-translate-y-1/2 last:after:hidden after:-right-2 `,
+                  { 'text-white bg-primary-red/60 rounded': isActive }
                 )
               }>
               {item.innerText}

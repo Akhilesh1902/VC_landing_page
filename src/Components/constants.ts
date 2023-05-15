@@ -334,3 +334,55 @@ export const resourcePageData = [
     url: '',
   },
 ];
+
+export const teamDetailsData = [
+  {
+    name: 'Mr Ramakrishna J Tumuluri (aka RK)',
+    title: 'Founder, CEO',
+    role: 'Product management , development, sales, marketing etc.',
+    education: 'MS Electrical Engineering, SIU – Carbondale, Il, USA',
+    interests: 'History, Cricket, Table-Tennis, Yoga, Comedy',
+    linkedIn: 'https://in.linkedin.com/in/ramakrishna-tumuluri',
+  },
+  {
+    name: 'Mr. Mohit Patel',
+    title: 'Content Developer',
+    role: '2D Infographics , Video (esp. 3D based) , 3D (3DCommerce compliant)',
+    education: 'Diploma In Computer Engineering',
+    interests: 'Cooking, Research New Technologies',
+    linkedIn: 'https://www.linkedin.com/in/mohit-patel-9b631b19a/',
+  },
+  {
+    name: 'Ms. Archana Patukuri',
+    title: 'Software Developer',
+    role: 'Web-App design (Figma) and development (Html, Css, JavaScript, Bootstrap, Reactjs). Responsive and Performant',
+    education: 'B.Sc Computer Science and Multimedia',
+    interests: 'Traveling, Listening to Music, Singing, Dancing, Yoga',
+    linkedIn: 'https://www.linkedin.com/in/g1anishetti',
+  },
+  {
+    name: 'Jay Patel',
+    title: 'QA Specialist',
+    role: 'Making sure that the product delivered is in top notch Quality',
+    education: 'Bachelor of computer science (CA & IT)',
+    interests:
+      'Playing Cricket, Researching, Travelling, Exploring new Gadgets',
+    linkedIn: '',
+  },
+  {
+    name: 'Jigish Patel',
+    title: 'Illustrator and Video Creator',
+    role: 'Making the User Understand the works of Viscommerce in Simple Terms.',
+    education: '',
+    interests: '',
+    linkedIn: '',
+  },
+  {
+    name: 'Akhilesh',
+    title: 'Software Developer',
+    role: 'Developing high quality Interactive WebApps using ThreeJS',
+    education: 'Bachelor of Computer Application',
+    interests: 'Gaming, Bike Rides and a cup of Coffee',
+    linkedIn: 'https://www.linkedin.com/in/akhilesh-c-8aab6b1b8/',
+  },
+];

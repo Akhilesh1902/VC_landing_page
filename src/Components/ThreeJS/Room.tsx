@@ -1,8 +1,8 @@
-import { useAnimations, useGLTF } from '@react-three/drei';
+import { Plane, useAnimations, useGLTF, Reflector } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect } from 'react';
-
+import { degToRad } from 'three/src/math/MathUtils';
 type Props = {
   setLightPosition: React.Dispatch<React.SetStateAction<THREE.Vector3>>;
   materialIndex: number;
@@ -13,6 +13,7 @@ const Room = (props: Props) => {
   const { scene, parser, animations } = useGLTF('./table2.glb');
   // console.log(animations);
   // console.log(scene);
+  const { scene: _scene } = useThree();
 
   const { camera } = useThree();
 
@@ -95,11 +96,45 @@ const Room = (props: Props) => {
   if (lamp) {
     props.setLightPosition(lamp.position);
   }
-
+  // @ts-ignore
   return (
     <>
       <group>
         <primitive object={scene}></primitive>
+        <Reflector
+          blur={[512, 512]} // Blur ground reflections (width, heigt), 0 skips blur
+          mixBlur={0.75} // How much blur mixes with surface roughness
+          mixStrength={0.25} // Strength of the reflections
+          resolution={1024} // Off-buffer resolution, lower=faster, higher=better quality
+          args={[50, 50]} // PlaneBufferGeometry arguments
+          rotation={[-Math.PI * 0.5, 0, 0]}
+          position-y={-0.64}
+          mirror={0.5} // Mirror environment, 0 = texture colors, 1 = pick up env colors
+          minDepthThreshold={0.25}
+          maxDepthThreshold={1}
+          depthScale={50}>
+          {(Material, props) => (
+            // @ts-ignore
+            <Material
+              color={0xf5f5f5}
+              metalness={0.5}
+              roughness={0}
+              {...props}
+            />
+          )}
+        </Reflector>
+        {/* 
+        <Plane
+          rotation-x={degToRad(90)}
+          scale={15}
+          position-y={-0.64}
+          receiveShadow>
+          <meshPhongMaterial
+            side={THREE.DoubleSide}
+            // metalness={0.8}
+            reflectivity={1}
+          />
+        </Plane> */}
       </group>
     </>
   );

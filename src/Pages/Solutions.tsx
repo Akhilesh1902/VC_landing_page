@@ -311,15 +311,15 @@ const MySpace3d = () => {
 
   return (
     <Container className='flex flex-col  items-center '>
-      <div className='my-10 flex gap-3'>
+      <div className='my-10 flex gap-5 '>
         {button.map((item) => {
           return (
             <NavLink
               to={item.link}
               className={({ isActive, isPending }) =>
                 clsx(
-                  `font-bold relative after:block after:w-[2px] p-2 transition-bg duration-500 after:h-full after:bg-black after:absolute after:top-1/2 after:-translate-y-1/2 last:after:hidden after:-right-2 `,
-                  { 'text-white bg-primary-red/60 rounded': isActive }
+                  `font-medium relative after:block after:w-[2px] p-3 px-8 outline outline-1 outline-gray-300 rounded-full transition-bg duration-500  `,
+                  { 'text-white bg-primary-red/60': isActive }
                 )
               }>
               {item.innerText}

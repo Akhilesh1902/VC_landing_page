@@ -319,7 +319,9 @@ const MySpace3d = () => {
               className={({ isActive, isPending }) =>
                 clsx(
                   `font-medium relative after:block after:w-[2px] p-3 px-8 outline outline-1 outline-gray-300 rounded-full transition-bg duration-500  `,
-                  { 'text-white bg-primary-red/60': isActive }
+                  {
+                    'text-white bg-primary-red/60 drop-shadow-3xl': isActive,
+                  }
                 )
               }>
               {item.innerText}
@@ -328,15 +330,43 @@ const MySpace3d = () => {
         })}
       </div>
 
-      <motion.div className='hidden md:block'>
-        {exp === 'userExperience' &&
-          UserExperience.desktop.map((src) => <img src={src} alt='' />)}
-        {exp === 'visCommerceExperience' &&
-          VC_Experienve.desktop.map((src) => <img src={src} alt='' />)}
-        {exp === 'brandExperience' &&
-          BrandExperience.desktop.map((src) => <img src={src} alt='' />)}
-        {exp === 'whiteExperience' &&
-          WhiteLabeling.desktop.map((src) => <img src={src} alt='' />)}
+      <motion.div className='hidden md:flex flex-col items-center gap-10  my-10'>
+        {exp === 'userExperience' && (
+          <>
+            <h1 className='text-3xl font-bold mb-5'>User Experience</h1>
+            {UserExperience.desktop.map((src) => (
+              <img src={src} className='bg-[#FFFEDF] rounded-2xl' alt='' />
+            ))}
+          </>
+        )}
+        {exp === 'visCommerceExperience' && (
+          <>
+            <h1 className='text-3xl font-bold mb-5'>VisCommerce Experience</h1>
+            {VC_Experienve.desktop.map((src) => (
+              <img src={src} className='bg-[#F5E4D9]  rounded-2xl' alt='' />
+            ))}
+          </>
+        )}
+        {exp === 'brandExperience' && (
+          <>
+            <h1 className='text-3xl font-bold mb-5'>
+              Brand Experience with MySpace3D App
+            </h1>
+            {BrandExperience.desktop.map((src) => (
+              <img src={src} className='bg-[#C7E9D9]  rounded-2xl' alt='' />
+            ))}
+          </>
+        )}
+        {exp === 'whiteExperience' && (
+          <>
+            <h1 className='text-3xl font-bold mb-5'>
+              VisCommerce MySpace3D - White Labeling
+            </h1>
+            {WhiteLabeling.desktop.map((src) => (
+              <img src={src} className='bg-[#ABEDBC]  rounded-3xl' alt='' />
+            ))}
+          </>
+        )}
       </motion.div>
       <div className='md:hidden flex flex-col'>
         {exp === 'userExperience' &&

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '../UI';
+import { Container, ImageDropper } from '../UI';
 import {
   Enhance_Brand_1,
   DayStore3dLogo,
@@ -24,7 +24,7 @@ const Store3dBenefits = (props: Props) => {
           Store3D Benefits
         </h1>
       </div>
-      <Container className='flex flex-col items-center gap-32'>
+      <Container className='flex flex-col mt-10 items-center gap-32'>
         <div className='flex flex-col md:flex-row gap-10 items-center  '>
           <div>
             <img
@@ -114,9 +114,15 @@ const Store3dBenefits = (props: Props) => {
             </div>
           </div>
         </div>
-        <CardSection />
-        <DigitalRightsManagement />
       </Container>
+      <div className='py-10 bg-[#f5f5f5] '>
+        <Container className='flex flex-col gap-10'>
+          <ImageDropper buttonText='3D Commerce and Gltf' imgsrc=''>
+            <CardSection />
+          </ImageDropper>
+          <DigitalRightsManagement />
+        </Container>
+      </div>
     </div>
   );
 };
@@ -154,7 +160,7 @@ export default Store3dBenefits;
 
 const CardSection = () => {
   return (
-    <div className='flex flex-col  md:grid grid-cols-2 grid-rows-2 gap-5 w-full px-5'>
+    <div className='flex flex-col md:grid grid-cols-2 grid-rows-2 gap-5 w-full px-5'>
       <div className='bg-green-300 p-5 shadow-2xl rounded-2xl pb-10'>
         <div className='my-5'>
           <img src={commerce3d} alt='' className='h-8 m-auto' />

@@ -134,7 +134,7 @@ interface TeamMembersProps {
 const TeamMembers = (props: TeamMembersProps) => {
   return (
     <Container
-      className={'flex flex-col m-0   md:flex-row justify-start gap-16 p-10 '}>
+      className={'flex flex-col m-0 md:flex-row justify-start gap-16 p-10 '}>
       <div
         className='outline overflow-clip w-[240px] aspect-square self-center grid items-center'
         style={{

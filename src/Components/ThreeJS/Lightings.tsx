@@ -24,6 +24,7 @@ const Lightings = (props: Props) => {
         castShadow
       />
       <pointLight
+        // castShadow
         ref={lampLightRef}
         position={props.lightPosition}
         position-y={props.lightPosition.y + 0.2}

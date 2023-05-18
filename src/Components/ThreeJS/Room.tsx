@@ -10,29 +10,28 @@ type Props = {
 };
 
 const Room = (props: Props) => {
-  const { scene, parser, animations } = useGLTF('./table2.glb');
+  const { scene, parser, animations } = useGLTF('./table_final3.glb');
   // console.log(animations);
-  // console.log(scene);
-  const { scene: _scene } = useThree();
+  console.log(scene);
 
   const { camera } = useThree();
 
   const { actions, mixer } = useAnimations(animations, scene);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (actions) {
-        // console.log(actions);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (actions) {
+  //       // console.log(actions);
 
-        const a = actions['Increase_Height'];
-        if (a) {
-          a.setLoop(THREE.LoopOnce, 0);
-          a.play();
-        }
-        // console.log(a);
-      }
-    }, 1000);
-  }, [actions]);
+  //       const a = actions['Increase_Height'];
+  //       if (a) {
+  //         a.setLoop(THREE.LoopOnce, 0);
+  //         a.play();
+  //       }
+  //       // console.log(a);
+  //     }
+  //   }, 1000);
+  // }, [actions]);
 
   // useEffect(() => {
   //   camera.position.y = 3;
@@ -101,7 +100,8 @@ const Room = (props: Props) => {
     <>
       <group>
         <primitive object={scene}></primitive>
-        <Reflector
+
+        {/* <Reflector
           blur={[512, 512]} // Blur ground reflections (width, heigt), 0 skips blur
           mixBlur={0.75} // How much blur mixes with surface roughness
           mixStrength={0.25} // Strength of the reflections
@@ -112,29 +112,33 @@ const Room = (props: Props) => {
           mirror={0.5} // Mirror environment, 0 = texture colors, 1 = pick up env colors
           minDepthThreshold={0.25}
           maxDepthThreshold={1}
-          depthScale={50}>
+          depthScale={50}
+          receiveShadow={true}
+          castShadow>
           {(Material, props) => (
             // @ts-ignore
             <Material
+            shadowSide={}
               color={0xf5f5f5}
               metalness={0.5}
-              roughness={0}
+              roughness={0.1}
               {...props}
             />
           )}
-        </Reflector>
-        {/* 
+        </Reflector> */}
+
         <Plane
           rotation-x={degToRad(90)}
           scale={15}
-          position-y={-0.64}
-          receiveShadow>
-          <meshPhongMaterial
+          position-y={-0.03}
+          receiveShadow={true}>
+          <meshStandardMaterial
+            // color={0xff0000}
             side={THREE.DoubleSide}
-            // metalness={0.8}
-            reflectivity={1}
+            // // metalness={0.8}
+            // reflectivity={1}
           />
-        </Plane> */}
+        </Plane>
       </group>
     </>
   );

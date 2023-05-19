@@ -104,5 +104,5 @@ body {
 
 .react-3d-carousel .slider-container .slider-right div,
 .react-3d-carousel .slider-container .slider-left div {
-  background: #9a9a9a;
+  background: #b0b0b0 !important;
 }

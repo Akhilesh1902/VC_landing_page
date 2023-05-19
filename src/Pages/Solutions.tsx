@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Button, Container } from '../Components/UI';
+import { Button, Container, ImageDropper } from '../Components/UI';
 import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
@@ -206,9 +206,11 @@ const Store3d = () => {
           </Button>
         </Container>
       </section>
-      <section>
+      <section className='pb-20'>
         <Container>
-          <DigitalRightsManagement />
+          <ImageDropper buttonText='DRM (Digital Rights Management)' imgsrc=''>
+            <DigitalRightsManagement />
+          </ImageDropper>
         </Container>
       </section>
     </div>

@@ -1,14 +1,15 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import Lightings from './Lightings';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, OrbitControlsProps, Sphere } from '@react-three/drei';
 import SolutionModel from './SolutionModel';
 import Room from './Room';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Vector3 } from 'three';
 import { degToRad } from 'three/src/math/MathUtils';
 import { EffectComposer, SSAO, SMAA, SSR } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
+import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 type Props = {
   lightActive: boolean;
@@ -19,32 +20,35 @@ type Props = {
 
 const CanvasWrapper = (props: Props) => {
   const [lightPosition, setLightPosition] = useState(new Vector3());
-
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 2, 5] }}>
-        <Lightings
-          lightActive={props.lightActive}
-          lightPosition={lightPosition}
-        />
+      <Canvas shadows camera={{ position: [0, 5, 5] }}>
         <OrbitControls
+          target={[0, 2, 0]}
           enableZoom={true}
+          enablePan={false}
+          zoomSpeed={3}
           minDistance={3}
-          maxDistance={5}
+          maxDistance={8}
           maxPolarAngle={degToRad(0)}
-          minPolarAngle={degToRad(60)}
+          minPolarAngle={degToRad(70)}
           minAzimuthAngle={degToRad(300)}
           maxAzimuthAngle={degToRad(60)}
         />
-
         {/* <Environment preset={'forest'} /> */}
         <Suspense>
           {/* {location.pathname === '/' ? <Sofa /> : <SolutionModel />} */}
-          <Room
-            lightActive={props.lightActive}
-            setLightPosition={setLightPosition}
-            materialIndex={props.tableMaterialIndex}
-          />
+          <group position-y={-0.5}>
+            <Lightings
+              lightActive={props.lightActive}
+              lightPosition={lightPosition}
+            />
+            <Room
+              lightActive={props.lightActive}
+              setLightPosition={setLightPosition}
+              materialIndex={props.tableMaterialIndex}
+            />
+          </group>
         </Suspense>
         <EffectComposer>
           {props.postProcessing === 'SSAO' ? (
@@ -53,10 +57,6 @@ const CanvasWrapper = (props: Props) => {
               worldDistanceFalloff={1}
               worldProximityFalloff={1}
               worldProximityThreshold={1}
-              // blendFunction={BlendFunction.MULTIPLY} // Use NORMAL to see the effect
-              // samples={31}
-              // radius={5}
-              // intensity={30}
             />
           ) : (
             <></>

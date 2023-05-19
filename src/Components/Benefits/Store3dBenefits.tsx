@@ -120,7 +120,9 @@ const Store3dBenefits = (props: Props) => {
           <ImageDropper buttonText='3D Commerce and Gltf' imgsrc=''>
             <CardSection />
           </ImageDropper>
-          <DigitalRightsManagement />
+          <ImageDropper buttonText='DRM (Digital Rights Management)' imgsrc=''>
+            <DigitalRightsManagement />
+          </ImageDropper>
         </Container>
       </div>
     </div>

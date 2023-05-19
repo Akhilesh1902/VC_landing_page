@@ -125,7 +125,7 @@ const Card = (props: CardProps) => {
           />
         </div>
         {props.commingsoon ? (
-          <p className='font-normal px-5 py-3 '>Comming Soon</p>
+          <p className='font-normal px-5 py-3 text-center '>Comming Soon</p>
         ) : (
           <a
             // className='rounded-full'

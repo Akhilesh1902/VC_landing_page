@@ -10,12 +10,14 @@ import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect } from 'react';
 import { degToRad } from 'three/src/math/MathUtils';
-import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
+import * as gsap from 'gsap';
+import useGsapAnimation from '../../hooks/useGsapAnimation';
 
 type Props = {
   setLightPosition: React.Dispatch<React.SetStateAction<THREE.Vector3>>;
   materialIndex: number;
   lightActive: boolean;
+  animation: 'up' | 'down' | null;
 };
 
 const Room = (props: Props) => {
@@ -23,9 +25,16 @@ const Room = (props: Props) => {
   // console.log(animations);
   console.log(scene);
 
-  const { camera } = useThree();
+  const { camera, scene: _scene } = useThree();
 
-  const { actions, mixer } = useAnimations(animations, scene);
+  const [setgsapAnimation] = useGsapAnimation(
+    ['LampShade', 'TableBaseFrame', 'LampMesh'],
+    _scene
+  );
+
+  useEffect(() => {
+    setgsapAnimation(props.animation);
+  }, [props.animation]);
 
   useEffect(() => {
     if (scene) {
@@ -92,13 +101,13 @@ const Room = (props: Props) => {
   woodTexture_AO.repeat.set(4, 4);
   woodTexture_AO.wrapS = woodTexture_AO.wrapT = THREE.RepeatWrapping;
 
-  useFrame((_state, delta) => {
-    const { clock } = _state;
-    const ypos = Math.abs(Math.sin(clock.getElapsedTime())) + 1;
-    tableBaseFrame.position.y = ypos;
-    lampMesh.position.y = ypos + 0.2;
-    lamp.position.y = ypos + 1.15;
-  });
+  // useFrame((_state, delta) => {
+  //   const { clock } = _state;
+  //   const ypos = Math.abs(Math.sin(clock.getElapsedTime())) + 1;
+  //   tableBaseFrame.position.y = ypos;
+  //   lampMesh.position.y = ypos + 0.2;
+  //   lamp.position.y = ypos + 1.15;
+  // });
 
   return (
     <>

@@ -1,20 +1,19 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import Lightings from './Lightings';
-import { OrbitControls, OrbitControlsProps, Sphere } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import SolutionModel from './SolutionModel';
 import Room from './Room';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Vector3 } from 'three';
 import { degToRad } from 'three/src/math/MathUtils';
 import { EffectComposer, SSAO, SMAA, SSR } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
-import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 type Props = {
   lightActive: boolean;
   tableMaterialIndex: 0 | 1 | 2;
-  animation: 'up' | 'down';
+  animation: 'up' | 'down' | null;
   postProcessing: 'SSAO' | 'SMAA' | 'SSR' | 'none';
 };
 
@@ -47,6 +46,7 @@ const CanvasWrapper = (props: Props) => {
               lightActive={props.lightActive}
               setLightPosition={setLightPosition}
               materialIndex={props.tableMaterialIndex}
+              animation={props.animation}
             />
           </group>
         </Suspense>

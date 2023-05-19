@@ -13,7 +13,7 @@ type Props = {};
 const Hero = (props: Props) => {
   const [lightActive, setLightActive] = useState(false);
   const [tableMaterialIndex, setTableMaterialIndex] = useState<0 | 1 | 2>(1);
-  const [animation, setAnimtion] = useState<'up' | 'down'>('up');
+  const [animation, setAnimation] = useState<'up' | 'down' | null>(null);
   const [postProcessing, setPostProcessing] = useState<
     'SSAO' | 'SMAA' | 'SSR' | 'none'
   >('none');
@@ -96,7 +96,7 @@ const Hero = (props: Props) => {
                       name='height'
                       className='w-4 h-4'
                       onClick={(e) => {
-                        setAnimtion('up');
+                        setAnimation('up');
                       }}
                     />
                   </label>
@@ -107,7 +107,7 @@ const Hero = (props: Props) => {
                       name='height'
                       className='w-5 h-5'
                       onClick={(e) => {
-                        setAnimtion('down');
+                        setAnimation('down');
                       }}
                     />
                   </label>

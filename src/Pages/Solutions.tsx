@@ -320,7 +320,7 @@ const MySpace3d = () => {
                 clsx(
                   `font-medium relative after:block after:w-[2px] p-3 px-8 outline outline-1 outline-gray-300 rounded-full transition-bg duration-500  `,
                   {
-                    'text-white bg-primary-red/60 drop-shadow-3xl': isActive,
+                    'text-white bg-primary-red/60 ': isActive,
                   }
                 )
               }>
@@ -330,12 +330,12 @@ const MySpace3d = () => {
         })}
       </div>
 
-      <motion.div className='hidden md:flex flex-col items-center gap-10  my-10'>
+      <motion.div className='hidden md:flex flex-col items-center   my-10'>
         {exp === 'userExperience' && (
           <>
             <h1 className='text-3xl font-bold mb-5'>User Experience</h1>
             {UserExperience.desktop.map((src) => (
-              <img src={src} className='bg-[#FFFEDF] rounded-2xl' alt='' />
+              <img src={src} className='bg-[#FFFEDF] ' alt='' />
             ))}
           </>
         )}
@@ -343,7 +343,7 @@ const MySpace3d = () => {
           <>
             <h1 className='text-3xl font-bold mb-5'>VisCommerce Experience</h1>
             {VC_Experienve.desktop.map((src) => (
-              <img src={src} className='bg-[#F5E4D9]  rounded-2xl' alt='' />
+              <img src={src} className='bg-[#F5E4D9]  ' alt='' />
             ))}
           </>
         )}
@@ -353,7 +353,7 @@ const MySpace3d = () => {
               Brand Experience with MySpace3D App
             </h1>
             {BrandExperience.desktop.map((src) => (
-              <img src={src} className='bg-[#C7E9D9]  rounded-2xl' alt='' />
+              <img src={src} className='bg-[#C7E9D9]  ' alt='' />
             ))}
           </>
         )}
@@ -363,7 +363,7 @@ const MySpace3d = () => {
               VisCommerce MySpace3D - White Labeling
             </h1>
             {WhiteLabeling.desktop.map((src) => (
-              <img src={src} className='bg-[#ABEDBC]  rounded-3xl' alt='' />
+              <img src={src} className='bg-[#ABEDBC]  rounded-3l' alt='' />
             ))}
           </>
         )}

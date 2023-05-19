@@ -27,7 +27,7 @@ const TopSection = () => (
       <a
         href={item.url}
         target='_blank'
-        className='font-normal bg-white rounded-full w-fit flex items-center gap-2 px-16 py-5 md:text-base hover:bg-[#FF8279] hover:text-slate-800'>
+        className='font-normal bg-white rounded-full w-fit flex items-center gap-2 px-16 py-5 md:text-xl hover:bg-[#FF8279] hover:text-slate-800'>
         {item.title} <FiPlayCircle />
       </a>
     ))}

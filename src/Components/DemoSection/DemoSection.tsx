@@ -114,9 +114,9 @@ type CardProps = {
 const Card = (props: CardProps) => {
   return (
     <div className='bg-white rounded-xl'>
-      <div className='shadow-card flex h-full flex-col gap-3 w-ma rounded-xl  p-4 items-center justify-between opacity-50 hover:opacity-100 transition-opacity duration-500  '>
+      <div className='shadow-card flex h-full flex-col gap-3 w-ma rounded-xl  p-4 items-center justify-between '>
         <h1 className='font-bold capitalize '>{props.name}</h1>
-        {props.commingsoon && <p className='text-xs'>comming soon...</p>}
+
         <div className='w-36 h-36'>
           <img
             src={props.imgsrc}
@@ -124,16 +124,20 @@ const Card = (props: CardProps) => {
             className='object-contain w-full h-full'
           />
         </div>
-        <a
-          // className='rounded-full'
-          target='_blank'
-          href='http://gandivam.co.in/dist/'
-          className='font-normal bg-primary-red  text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-[#FF8279'>
-          <div className='flex  items-center gap-2'>
-            <p className='capitalize'>Demo</p>
-            <FiPlayCircle />
-          </div>
-        </a>
+        {props.commingsoon ? (
+          <p className='font-normal px-5 py-3 '>Comming Soon</p>
+        ) : (
+          <a
+            // className='rounded-full'
+            target='_blank'
+            href='http://gandivam.co.in/dist/'
+            className='font-normal bg-primary-red  text-white rounded-full w-fit flex items-center gap-2 px-5 py-3  hover:bg-[#FF8279] transition-bg duration-300'>
+            <div className='flex  items-center gap-2'>
+              <p className='capitalize'>Demo</p>
+              <FiPlayCircle />
+            </div>
+          </a>
+        )}
       </div>
     </div>
   );

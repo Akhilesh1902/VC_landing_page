@@ -1,4 +1,10 @@
-import { Plane, useAnimations, useGLTF, Reflector } from '@react-three/drei';
+import {
+  Plane,
+  useAnimations,
+  useGLTF,
+  Reflector,
+  useTexture,
+} from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect } from 'react';
@@ -95,10 +101,20 @@ const Room = (props: Props) => {
   if (lamp) {
     props.setLightPosition(lamp.position);
   }
+  const woodTexture = useTexture('./woodTexture.jpg');
+  woodTexture.repeat.set(4, 4);
+  woodTexture.wrapS = woodTexture.wrapT = THREE.RepeatWrapping;
+  const woodTexture_rough = useTexture('./woodTexture_rough.jpg');
+  woodTexture_rough.repeat.set(4, 4);
+  woodTexture_rough.wrapS = woodTexture_rough.wrapT = THREE.RepeatWrapping;
+  const woodTexture_AO = useTexture('./woodTexture_AO.jpg');
+  woodTexture_AO.repeat.set(4, 4);
+  woodTexture_AO.wrapS = woodTexture_AO.wrapT = THREE.RepeatWrapping;
+
   // @ts-ignore
   return (
     <>
-      <group>
+      <group position-y={-0.5}>
         <primitive object={scene}></primitive>
 
         {/* <Reflector
@@ -134,7 +150,15 @@ const Room = (props: Props) => {
           receiveShadow={true}>
           <meshStandardMaterial
             // color={0xff0000}
+            attach='material'
+            roughness={0}
+            metalness={0}
+            map={woodTexture}
+            roughnessMap={woodTexture_rough}
+            aoMap={woodTexture_AO}
+            displacementBias={-0.127}
             side={THREE.DoubleSide}
+
             // // metalness={0.8}
             // reflectivity={1}
           />

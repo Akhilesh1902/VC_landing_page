@@ -32,7 +32,7 @@ const Lightings = (props: Props) => {
     <>
       <ambientLight intensity={0.5} color={0xffffff} />
       <directionalLight
-        intensity={2}
+        intensity={3}
         color={0xffffff}
         position={[5, 5, 5]}
         castShadow

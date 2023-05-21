@@ -132,7 +132,7 @@ const Hero = (props: Props) => {
         </form>
       </div>
       <Container className='min-h-screen flex flex-col justify-between'>
-        <div className='relative flex flex-col-reverse md:flex-row md:grid grid-cols-2 justify-between h-[70vh] items-center'>
+        <div className='relative flex flex-col-reverse md:flex-row md:grid grid-cols-2 justify-between md:h-[70vh] md:items-center'>
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{
@@ -140,13 +140,13 @@ const Hero = (props: Props) => {
               opacity: 1,
               transition: { duration: 0.5, delay: 0.5 },
             }}
-            className='absolute w-fit z-10 left-0 md:relative '>
+            className=' w-fit z-10 left-0 md:relative my-10 '>
             <Slider
               options={[
                 'Store3D solution Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
               ]}>
               <div className='flex items-center text-start gap-2'>
-                <p className='text-xl'>&#x2022; 3DCommerce for Home-Decor</p>
+                <p className='md:text-xl'>&#x2022; 3DCommerce for Home-Decor</p>
                 <BsChevronDown />
               </div>
             </Slider>
@@ -155,7 +155,7 @@ const Hero = (props: Props) => {
                 'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
               ]}>
               <div className='flex text-start items-center gap-2'>
-                <p className='text-xl'>&#x2022; Interior Design for Home</p>
+                <p className='md:text-xl'>&#x2022; Interior Design for Home</p>
                 <BsChevronDown />
               </div>
             </Slider>
@@ -164,13 +164,13 @@ const Hero = (props: Props) => {
                 'Innovative solutions leveraging foundational technologies of 3D, Web, AI, Blockchain',
               ]}>
               <div className='flex text-start w-full items-center gap-2'>
-                <p className='text-xl'>&#x2022; 3D, Web, AI, Blockchain.</p>
+                <p className='md:text-xl'>&#x2022; 3D, Web, AI, Blockchain.</p>
                 <BsChevronDown />
               </div>
             </Slider>
           </motion.div>
 
-          <div className='w-full bg-gray-70  rounded-xl  grid place-items-center h-full'>
+          <div className='w-full bg-gray-70  rounded-xl  grid place-items-center h-[70vh] md:h-full'>
             <Suspense
               fallback={
                 <div className='w-full h-full grid place-items-center'>

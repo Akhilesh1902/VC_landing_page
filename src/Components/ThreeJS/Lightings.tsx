@@ -15,10 +15,10 @@ const Lightings = (props: Props) => {
   // useHelper(lampLightRef, PointLightHelper, 0.4, 'red');
   const { camera, scene } = useThree();
   const LampShade = scene.getObjectByName('LampShade');
-  console.log(LampShade);
-  console.log(camera.position);
+  // console.log(LampShade);
+  // console.log(camera.position);
   // console.log(props.lightSettings);
-  console.log(props.lightPosition);
+  // console.log(props.lightPosition);
 
   useFrame(() => {
     if (lampLightRef.current && LampShade) {

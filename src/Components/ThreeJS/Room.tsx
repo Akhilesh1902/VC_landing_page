@@ -1,16 +1,8 @@
-import {
-  Plane,
-  useAnimations,
-  useGLTF,
-  Reflector,
-  useTexture,
-  Sphere,
-} from '@react-three/drei';
+import { Plane, useGLTF, useTexture } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { degToRad } from 'three/src/math/MathUtils';
-import * as gsap from 'gsap';
 import useGsapAnimation from '../../hooks/useGsapAnimation';
 
 type Props = {
@@ -23,9 +15,13 @@ type Props = {
 const Room = (props: Props) => {
   const { scene, parser, animations } = useGLTF('./table12.glb');
   // console.log(animations);
-  console.log(scene);
+  // console.log(scene);
 
   const { camera, scene: _scene } = useThree();
+
+  const lamp = scene.getObjectByName('LampShade')!;
+  // const lampMesh = scene.getObjectByName('LampMesh')!;
+  // const tableBaseFrame = scene.getObjectByName('TableBaseFrame')!;
 
   const [setgsapAnimation] = useGsapAnimation(
     ['LampShade', 'TableBaseFrame', 'LampMesh'],
@@ -41,8 +37,6 @@ const Room = (props: Props) => {
       scene.scale.set(0, 0, 0);
     }
   }, [scene]);
-
-  // console.log(scene);
 
   useFrame((_state, delta) => {
     if (scene) scene.scale.lerp(new THREE.Vector3(1, 1, 1), 0.05);
@@ -80,12 +74,6 @@ const Room = (props: Props) => {
       }
     }
   });
-
-  const lamp = scene.getObjectByName('LampShade')!;
-  // console.log(lamp);
-  const tableTop = scene.getObjectByName('Table_Top_Mesh')!;
-  const lampMesh = scene.getObjectByName('LampMesh')!;
-  const tableBaseFrame = scene.getObjectByName('TableBaseFrame')!;
 
   if (lamp) {
     // console.log('here');

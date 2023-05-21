@@ -87,8 +87,8 @@ const BenefitsCard = (props: CardProps) => {
       </div>
       <div className='flex flex-col md:px-5 my-10 gap-4'>
         <h1 className='text-xl font-bold'>{props.title}</h1>
-        {props.benefits.map((item, k) => (
-          <p>&#x2022; {item}</p>
+        {props.benefits.map((item, i) => (
+          <p key={i}>&#x2022; {item}</p>
         ))}
       </div>
     </div>

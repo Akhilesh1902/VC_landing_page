@@ -1,51 +1,28 @@
-import { useThree } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { Scene, Vector3 } from 'three';
 import gsap from 'gsap';
-const offset = 0.5;
+
+const initialPosition = [
+  new Vector3(-1.3151025772094727, 2.583855628967285, 0.3104785084724426),
+  new Vector3(0.0002736106398515403, 1.5135929584503174, -0.025415688753128052),
+  new Vector3(-1.478838562965393, 1.6522538661956787, 0.032681286334991455),
+];
 
 const useGsapAnimation = (animationObjects: string[], scene: Scene) => {
   const [animation, setAnimation] = useState<'up' | 'down' | null>(null);
-  const [initialPosition, setInitialPosition] = useState<Vector3[]>();
-
   useEffect(() => {
-    const d = animationObjects.map(
-      (item) => scene.getObjectByName(item)!.position
-    );
-    console.log(d);
-    if (d) setInitialPosition(d);
-  }, []);
-
-  // const { scene } = useThree();
-
-  useEffect(() => {
-    if (animation == 'up') {
-      animationObjects.forEach((item, i) => {
-        const obj = scene.getObjectByName(item);
-        if (obj && initialPosition)
-          gsap.to(obj.position, {
-            // x: obj.position.x + offset,
-            y: initialPosition[i].y + offset,
-            // z: obj.position.z + offset,
-            duration: 2,
-          });
-      });
-    }
-    if (animation == 'down') {
-      animationObjects.forEach((item) => {
-        const obj = scene.getObjectByName(item);
-        if (obj)
-          gsap.to(obj.position, {
-            // x: obj.position.x + offset,
-            y: obj.position.y - offset,
-            // z: obj.position.z + offset,
-            duration: 2,
-          });
-      });
-    }
+    animationObjects.forEach((item, i) => {
+      const obj = scene.getObjectByName(item);
+      if (obj && animation) {
+        gsap.to(obj.position, {
+          y: initialPosition[i].y + (animation === 'up' ? 0.5 : 0),
+          duration: 2,
+        });
+      }
+    });
   }, [animation]);
 
-  return [setAnimation];
+  return [setAnimation] as const;
 };
 
 export default useGsapAnimation;

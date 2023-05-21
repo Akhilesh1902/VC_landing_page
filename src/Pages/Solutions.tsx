@@ -142,6 +142,7 @@ const Store3d = () => {
           return (
             <>
               <div
+                key={item.title}
                 className={clsx('w-full relative m-auto py-10', {
                   'after:absolute after:block w-full after:w-[120%] after:h-full text-white after:bg-primary-red after:-z-10 after:top-0 after:-rotate-3 after:left-1/2 after:-translate-x-1/2':
                     i % 2,
@@ -175,7 +176,7 @@ const Store3d = () => {
           {showMoreGifs ? 'Read Less' : 'Read More'}
         </Button>
       </section>
-      <section>
+      <section className='bg-[#f5f5f5] py-5 mt-5'>
         <Container className=' flex flex-col md:felx-row items-center gap-5 my-20 '>
           <div className='flex flex-col  md:flex-row justify-between items-center gap-5 md:items-start'>
             <img src={techStack} alt='' />
@@ -184,12 +185,12 @@ const Store3d = () => {
                 Technologies and System Requirements
               </h1>
               {SolutionTechnologies.map((item, i) => {
-                if (i > 3 && !showMoreTech) return null;
+                if (i > 1 && !showMoreTech) return null;
                 return (
                   <div className='flex flex-col gap-2'>
                     <h2 className='text-lg font-bold'>{item.title}</h2>
                     {item.desc.map((desc, i) => (
-                      <p>&#x2022; {desc}</p>
+                      <p key={i}>&#x2022; {desc}</p>
                     ))}
                   </div>
                 );
@@ -204,6 +205,23 @@ const Store3d = () => {
             }}>
             {showMoreTech ? 'Read Less' : 'Read More'}
           </Button>
+        </Container>
+      </section>
+      <section className='bg-primary-red py-5 mb-10'>
+        <Container className='flex justify-center gap-3'>
+          {[
+            'https://modelviewer.dev/',
+            'https://threejs.org/',
+            'https://www.khronos.org/gltf/',
+          ].map((item, i) => (
+            <a
+              key={item}
+              className='p-2 px-10 bg-white/70 rounded-full text-primary-red font-bold hover:cursor-pointer'>
+              {i == 0 && 'ModelViewer >'}
+              {i == 1 && 'ThreeJS >'}
+              {i == 2 && 'glTF >'}
+            </a>
+          ))}
         </Container>
       </section>
       <section className='pb-20'>
@@ -317,6 +335,7 @@ const MySpace3d = () => {
         {button.map((item) => {
           return (
             <NavLink
+              key={item.innerText}
               to={item.link}
               className={({ isActive, isPending }) =>
                 clsx(
@@ -335,50 +354,64 @@ const MySpace3d = () => {
       <motion.div className='hidden md:flex flex-col items-center   my-10'>
         {exp === 'userExperience' && (
           <>
-            <h1 className='text-3xl font-bold mb-5'>User Experience</h1>
+            <h1 className='text-3xl font-bold mb-16'>User Experience</h1>
             {UserExperience.desktop.map((src) => (
-              <img src={src} className='bg-[#FFFEDF] ' alt='' />
+              <img key={src} src={src} className='bg-[#FFFEDF] ' alt='' />
             ))}
           </>
         )}
         {exp === 'visCommerceExperience' && (
           <>
-            <h1 className='text-3xl font-bold mb-5'>VisCommerce Experience</h1>
+            <h1 className='text-3xl font-bold mb-16'>VisCommerce Experience</h1>
             {VC_Experienve.desktop.map((src) => (
-              <img src={src} className='bg-[#F5E4D9]  ' alt='' />
+              <img key={src} src={src} className='bg-[#F5E4D9]  ' alt='' />
             ))}
           </>
         )}
         {exp === 'brandExperience' && (
           <>
-            <h1 className='text-3xl font-bold mb-5'>
+            <h1 className='text-3xl font-bold mb-16'>
               Brand Experience with MySpace3D App
             </h1>
             {BrandExperience.desktop.map((src) => (
-              <img src={src} className='bg-[#C7E9D9]  ' alt='' />
+              <img
+                key={src}
+                src={src}
+                className='bg-[#E0FFF1] rounded-3l'
+                alt=''
+              />
             ))}
           </>
         )}
         {exp === 'whiteExperience' && (
           <>
-            <h1 className='text-3xl font-bold mb-5'>
+            <h1 className='text-3xl font-bold mb-16'>
               VisCommerce MySpace3D - White Labeling
             </h1>
             {WhiteLabeling.desktop.map((src) => (
-              <img src={src} className='bg-[#ABEDBC]  rounded-3l' alt='' />
+              <img
+                key={src}
+                src={src}
+                className='bg-[#F3FFDF]  rounded-3l'
+                alt=''
+              />
             ))}
           </>
         )}
       </motion.div>
       <div className='md:hidden flex flex-col'>
         {exp === 'userExperience' &&
-          UserExperience.mobile.map((src) => <img src={src} alt='' />)}
+          UserExperience.mobile.map((src) => (
+            <img key={src} src={src} alt='' />
+          ))}
         {exp === 'visCommerceExperience' &&
-          VC_Experienve.mobile.map((src) => <img src={src} alt='' />)}
+          VC_Experienve.mobile.map((src) => <img key={src} src={src} alt='' />)}
         {exp === 'brandExperience' &&
-          BrandExperience.mobile.map((src) => <img src={src} alt='' />)}
+          BrandExperience.mobile.map((src) => (
+            <img key={src} src={src} alt='' />
+          ))}
         {exp === 'whiteExperience' &&
-          WhiteLabeling.mobile.map((src) => <img src={src} alt='' />)}
+          WhiteLabeling.mobile.map((src) => <img key={src} src={src} alt='' />)}
       </div>
     </Container>
   );

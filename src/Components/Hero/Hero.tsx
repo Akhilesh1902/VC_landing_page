@@ -12,11 +12,11 @@ type Props = {};
 
 const Hero = (props: Props) => {
   const [lightActive, setLightActive] = useState(false);
-  const [tableMaterialIndex, setTableMaterialIndex] = useState<0 | 1 | 2>(1);
+  const [tableMaterialIndex, setTableMaterialIndex] = useState<0 | 1 | 2>(0);
   const [animation, setAnimation] = useState<'up' | 'down' | null>(null);
   const [postProcessing, setPostProcessing] = useState<
     'SSAO' | 'SMAA' | 'SSR' | 'none'
-  >('none');
+  >('SMAA');
   const [formOpen, setFromOpen] = useState(false);
 
   return (
@@ -116,6 +116,7 @@ const Hero = (props: Props) => {
               <select
                 name='postprocessing'
                 id='postprocessing'
+                value={postProcessing}
                 onChange={(e) => {
                   const val = e.target.value as typeof postProcessing;
                   console.log(val);

@@ -12,6 +12,7 @@ const Testimonial = (props: Props) => {
           <Carousel
             slides={testimonialData.map((item, i) => (
               <div
+                key={item.name}
                 className={`flex px-10 w-full h-[300px] flex-col gap-10 justify-between rounded p-3 bg-[#FE8279] text-white pb-16`}>
                 <div className='flex flex-col gap-2 '>
                   <div className='flex items-center'>
@@ -33,6 +34,7 @@ const Testimonial = (props: Props) => {
         <div className='mobileTestimonial md:hidden flex flex-row gap-2  overflow-scroll w-[90vw]'>
           {testimonialData.map((item, i) => (
             <div
+              key={item.name}
               className={`flex p-2 flex-col gap-10 justify-between rounded bg-[#FE8279] text-white `}>
               <div className='flex w-[75vw] flex-col gap-2 '>
                 <div className='flex items-center'>

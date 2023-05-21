@@ -41,6 +41,7 @@ const Hero = (props: Props) => {
                 <input
                   type='checkbox'
                   className='w-4 h-4'
+                  checked={lightActive}
                   onChange={(e) => {
                     setLightActive(e.target.checked);
                   }}
@@ -170,7 +171,7 @@ const Hero = (props: Props) => {
             </Slider>
           </motion.div>
 
-          <div className='w-full bg-gray-70  rounded-xl  grid place-items-center h-[70vh] md:h-full'>
+          <div className='w-full bg-gray-70  rounded-xl  grid place-items-center h-[60vh] md:h-full'>
             <Suspense
               fallback={
                 <div className='w-full h-full grid place-items-center'>

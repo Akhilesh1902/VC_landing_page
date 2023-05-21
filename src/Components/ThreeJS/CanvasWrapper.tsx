@@ -66,7 +66,30 @@ const CanvasWrapper = (props: Props) => {
           ) : (
             <></>
           )}
-          {props.postProcessing === 'SSR' ? <SSR /> : <></>}
+          {props.postProcessing === 'SSR' ? (
+            <SSR
+              ENABLE_BLUR={true}
+              rayStep={0.1}
+              intensity={1}
+              ENABLE_JITTERING={false}
+              jitter={0.1}
+              jitterSpread={0.1}
+              jitterRough={0.1}
+              maxRoughness={1}
+              MAX_STEPS={20}
+              NUM_BINARY_SEARCH_STEPS={5}
+              maxDepth={1}
+              maxDepthDifference={3}
+              thickness={10}
+              ior={1.45}
+              STRETCH_MISSED_RAYS={false}
+              USE_MRT={true}
+              USE_NORMALMAP={true}
+              USE_ROUGHNESSMAP={true}
+            />
+          ) : (
+            <></>
+          )}
         </EffectComposer>
       </Canvas>
     </>

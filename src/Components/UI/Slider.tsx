@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
+import clsx from 'clsx';
 
 interface Props extends React.PropsWithChildren {
   options?: string[];
@@ -20,7 +22,15 @@ const Slider = (props: Props) => {
       <Button
         type='button'
         onClick={openDropDown}
-        className='capitalize whitespace-break-spaces font-bold hover:bg-transparent'>
+        className={clsx(
+          'capitalize whitespace-break-spaces font-bold hover:bg-transparent hover:text-primary-red/50  flex items-center gap-3',
+          { 'text-primary-red': showOptions }
+        )}>
+        {!showOptions ? (
+          <AiOutlinePlusCircle size={24} />
+        ) : (
+          <AiOutlineMinusCircle size={24} />
+        )}
         {props.children}
       </Button>
       {showOptions && (

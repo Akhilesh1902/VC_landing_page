@@ -30,7 +30,7 @@ const Hero = (props: Props) => {
             onClick={() => {
               setFromOpen((p) => !p);
             }}>
-            <BsChevronDown /> Controls{' '}
+            Controls{' '}
           </h2>
           {formOpen && (
             <div className='flex flex-col gap-3'>
@@ -147,8 +147,7 @@ const Hero = (props: Props) => {
                 'Store3D solution Furniture, Lighting, Paits, Tiles, Carpet, Sanitaryware companies',
               ]}>
               <div className='flex items-center text-start gap-2'>
-                <p className='md:text-xl'>&#x2022; 3DCommerce for Home-Decor</p>
-                <BsChevronDown />
+                <p className='md:text-xl'> 3DCommerce for Home-Decor</p>
               </div>
             </Slider>
             <Slider
@@ -156,8 +155,7 @@ const Hero = (props: Props) => {
                 'Empower Consumers to design homes using 3D digital twin of home-decor items and homes',
               ]}>
               <div className='flex text-start items-center gap-2'>
-                <p className='md:text-xl'>&#x2022; Interior Design for Home</p>
-                <BsChevronDown />
+                <p className='md:text-xl'> Interior Design for Home</p>
               </div>
             </Slider>
             <Slider
@@ -165,8 +163,7 @@ const Hero = (props: Props) => {
                 'Innovative solutions leveraging foundational technologies of 3D, Web, AI, Blockchain',
               ]}>
               <div className='flex text-start w-full items-center gap-2'>
-                <p className='md:text-xl'>&#x2022; 3D, Web, AI, Blockchain.</p>
-                <BsChevronDown />
+                <p className='md:text-xl'> 3D, Web, AI, Blockchain.</p>
               </div>
             </Slider>
           </motion.div>

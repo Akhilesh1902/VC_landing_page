@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Button, Container, ImageDropper } from '../Components/UI';
+import { Button, Container, ImageDropper, Slider } from '../Components/UI';
 import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
@@ -20,6 +20,13 @@ import {
   SolutionTechnologies,
   Store3DCardData,
 } from '../Components/constants';
+
+import {
+  GltfLogo_SVG,
+  Commerce3DLogo_SVG,
+  BrowserLogo_SVG,
+  Devices_SVG,
+} from '../assets/images/svgs';
 
 type Props = {};
 
@@ -45,39 +52,38 @@ const Store3d = () => {
   const [showMoreTech, setShowMoreTech] = useState(false);
   return (
     <div className='overflow-clip w-full'>
-      <Container className='solution-container  min-h-[80vh] bg-transparent '>
-        <section className='flex flex-col-reverse md:flex-row h-[70vh] gap-20 justify-end md:justify-between relative after:block after:absolute after:w-[3000px] after:h-56 after:translate-x-1/2 after:right-1/2 after:-rotate-6 after:-z-10 after:-bottom-12 after:bg-primary-red'>
+      <section className=' bg-[#f5f5f5]'>
+        <Container className='solution-container flex flex-col-reverse md:flex-row h-[70vh] gap-20 justify-end md:justify-between min-h-[80vh] bg-transparent '>
           <div className='flex flex-col gap-5 justify-center'>
-            <h1 className='text-3xl font-bold'>
-              Build Your Strore With
-              <br />
-              <span className='text-black md:text-primary-red'>
-                Immersive Experience
-              </span>
-            </h1>
-            <div className='ml-5 flex flex-col gap-2 text-black/50'>
-              <p>&#x2022; Make your custom interactive room with room3d</p>
-              <p>
-                &#x2022; Get your Store online with interactive 3d elements
-                using store3D
-              </p>
-            </div>
-            <div className=' flex gap-3'>
-              <Button
-                type='button'
-                rounded
-                varient={'primary'}
-                onClick={() => {}}
-                className='bg-white !text-primary-red md:!text-white md:bg-primary-red '>
+            <Slider>
+              <h2 className='text-lg '>Industry Specific customization</h2>
+            </Slider>
+            <Slider>
+              <h2 className='text-lg '>3DCommerce Compliance</h2>
+            </Slider>
+            <Slider
+              options={[
+                'Smartphone, Tablet, PC',
+                ' iOS, Android, Window',
+                'Google Chrome, Microsoft Edge, Apple Safari, Mozilla Firefox etc',
+              ]}>
+              <h2 className='text-lg '>Devices, Browsers, Technologies</h2>
+            </Slider>
+            <Slider>
+              <h2 className='text-lg '>Devices, Browsers, Technologies</h2>
+            </Slider>
+            <div className='flex gap-3 ml-5 mt-5 '>
+              <a
+                href='http://gandivam.co.in/dist/'
+                target='active'
+                className='bg-primary-red rounded-full text-white px-5 py-2 shadow-md shadow-slate-400 hover:scale-105 hover:bg-primary-red/70 transition-scale transition-bg duration-300'>
                 Try Store3D Demo
-              </Button>
-              <Button
-                type='button'
-                rounded
-                varient={'secondary'}
-                onClick={() => {}}>
+              </a>
+              <a
+                href='/pricing'
+                className='bg-gray-500 rounded-full text-white px-5 py-2 shadow-md shadow-slate-400 hover:scale-105 hover:bg-gray-400 transition-scale transition-bg duration-300'>
                 Pricing
-              </Button>
+              </a>
             </div>
           </div>
           <div className='grid place-items-center'>
@@ -102,16 +108,159 @@ const Store3d = () => {
               // allowfullscreen
             ></iframe>
           </div>
-        </section>
-      </Container>
-      <section className='w-full mt-20 py-10'>
+        </Container>
+      </section>
+      <section className='w-full py-24'>
         <Container>
           <div className=' drop-shadow-2xl'>
             <img src={VisCommerce_levels} alt='' className='rounded-2xl' />
           </div>
         </Container>
       </section>
-      <section className='w-full'>
+      <section className='bg-[#f5f5f5] py-10'>
+        <Container className='flex flex-col items-center'>
+          <h1 className='text-4xl font-bold py-10'>3DCommerce Compliant</h1>
+          <div className='grid grid-cols-2 gap-5'>
+            <div className='rounded-xl bg-[#ABEDBC] flex flex-col p-5 gap-5'>
+              <img src={Commerce3DLogo_SVG} alt='' className='h-16' />
+              <div>
+                <p className='text-lg font-bold'>3D Commerce Assets</p>
+                <ul className='ml-5'>
+                  <li className=''>
+                    https://github.com/KhronosGroup/3DC-Asset-Creation
+                  </li>
+                  <li>File Size</li>
+                  <li>Draw Calls</li>
+                  <li>Number of Triangles</li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#CEEBAD] flex flex-col p-5 gap-5'>
+              <img src={GltfLogo_SVG} alt='' className='h-16' />
+              <div>
+                <p className='text-lg font-bold'>glTF</p>
+                <ul className='ml-5'>
+                  <li className=''>https://www.khronos.org/gltf</li>
+                  <li>PBR</li>
+                  <li>Draco</li>
+                  <li>KTX2</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className='py-10'>
+        <Container className='flex flex-col items-center'>
+          <h1 className='text-4xl font-bold py-10'>
+            Devices, Browsers, Technologies
+          </h1>
+          <div className='grid grid-cols-2 grid-rows-2 gap-5'>
+            <div className='rounded-xl bg-[#f5f5f5] flex flex-row-reverse items-center p-5 gap-5'>
+              <img src={Devices_SVG} alt='' className='h-32' />
+              <div>
+                <p className='text-lg font-bold'>Devices</p>
+                <ul className='ml-5'>
+                  <li>Smartphones, Tablets, PCs</li>
+                  <li>iOS, Android, Windows</li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#f5f5f5] flex flex-row-reverse items-center p-5 gap-5'>
+              <img src={BrowserLogo_SVG} alt='' className='h-32' />
+              <div>
+                <p className='text-lg font-bold'>Browsers</p>
+                <ul className='ml-5'>
+                  <li>Google Chrome, Microsoft Edge, Apple Safari</li>
+                  <li>Mozilla Firefox, Opera, Brave</li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#f5f5f5] col-span-2 flex flex-col gap-2 items-center justify-center'>
+              <h2 className='font-bold'>Technologies</h2>
+              <div className='px-5'>
+                {[
+                  'glTF (3D Content)',
+                  'Threejs (Runtime and Framework)',
+                  'HTML5, CSS3, JavaScript (ES6)',
+                  'Bootstrap5',
+                  'ReactJS Nodejs',
+                  ' Blender Cycles, Python API',
+                ].map((item) => (
+                  <span className='px-3 border-r-2 border-primary-red last:border-none'>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className='bg-[#f5f5f5] py-10'>
+        <Container className='flex flex-col items-center'>
+          <h1 className='text-4xl font-bold py-10'>Features</h1>
+          <div className='grid grid-cols-2 grid-rows-2 gap-5'>
+            <div className='rounded-xl bg-[#ABECFF] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Basic</p>
+                <ul className='ml-5'>
+                  <li>Zoom, Pan, Rotate</li>
+                  <li>Viewpoints</li>
+                  <li>Video Tour</li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#CAC5FF] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Advanced (Product level)</p>
+                <ul className='ml-5'>
+                  <li>Configurator (colours, textures, materials)</li>
+                  <li>
+                    Animation (e.g. simulate height changes of ergonomic table)
+                  </li>
+                  <li>Measurements (e.g. lengths, angles)</li>
+                  <li>Trials (e.g. try amongst various chairs)</li>
+                  <li>
+                    Arrangement (e.g. layout chairs, tables for optimal
+                    ergonomics)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#E9CDFF] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Lighting & Rendering</p>
+                <ul className='ml-5'>
+                  <li>Indoor & Outdoor lighting</li>
+                  <li>Lighting controls (on/off, intensity, colour)</li>
+                  <li>Lighting effects (reflection, shadows …)</li>
+                  <li>
+                    Photo realistic rendered images and videos
+                    (blender/cycles/python)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#FFDAED] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Collaboration</p>
+                <ul className='ml-5'>
+                  <li>
+                    Real time sync of changes in peer 3D models (e.g. between
+                    seller & buyer)
+                  </li>
+                  <li>Real time comments synced (In context)</li>
+                  <li>Version control of 3D scenes</li>
+                  <li>Share 3D Scenes via URL's (Google docs style)</li>
+                  <li>Audio, Video, Chat Integration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* <section className='w-full'>
         <Container>
           <div className='w-full flex flex-wrap py-10 justify-center gap-4'>
             {Store3DCardData.map((items, i) => (
@@ -134,8 +283,8 @@ const Store3d = () => {
             ))}
           </div>
         </Container>
-      </section>
-      <section className='w-full flex flex-col gap-10'>
+      </section> */}
+      {/* <section className='w-full flex flex-col gap-10'>
         {GifSectionData.map((item, i) => {
           if (i > 3 && !showMoreGifs) return null;
 
@@ -175,8 +324,55 @@ const Store3d = () => {
           }}>
           {showMoreGifs ? 'Read Less' : 'Read More'}
         </Button>
+      </section> */}
+      <section className='py-10'>
+        <Container className='flex flex-col items-center'>
+          <h1 className='text-4xl font-bold py-10'>
+            Quality, Performance, UI / UX
+          </h1>
+          <div className='grid grid-cols-3 gap-5'>
+            <div className='rounded-xl bg-[#f5f5f5] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Quality</p>
+                <ul className='ml-5'>
+                  <li>Device coverage</li>
+                  <li>https://www.browserstack.com</li>
+                  <li>Automated Regression Testing</li>
+                  <li>https://imagemagick.org</li>
+                  <li>https://pptr.dev/ (Puppeteer)</li>
+                  <li>Performance testing</li>
+                  <li>https://developer.chrome.com/en/docs/lighthouse/</li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#f5f5f5] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Performance</p>
+                <ul className='ml-5'>
+                  <li>Draco</li>
+                  <li>https://google.github.io/draco/</li>
+                  <li>KTX2</li>
+                  <li>CDN</li>
+                  <li>Spector.JS</li>
+                  <li>WebGPU</li>
+                </ul>
+              </div>
+            </div>
+            <div className='rounded-xl bg-[#f5f5f5] p-5 py-10'>
+              <div>
+                <p className='text-lg font-bold'>Performance</p>
+                <ul className='ml-5'>
+                  <li>Per customer specification</li>
+                  <li>
+                    https://developer.adobe.com/xd/uxp/design/user-interface/
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
       </section>
-      <section className='bg-[#f5f5f5] py-5 mt-5'>
+      <section className='bg-[#f5f5f5] py-5'>
         <Container className=' flex flex-col md:felx-row items-center gap-5 my-20 '>
           <div className='flex flex-col  md:flex-row justify-between items-center gap-5 md:items-start'>
             <img src={techStack} alt='' />

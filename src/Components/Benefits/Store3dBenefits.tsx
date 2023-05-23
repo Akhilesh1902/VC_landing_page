@@ -10,6 +10,7 @@ import {
   Draco_logo,
   KTX_logo,
   DRM,
+  Grow_Revenue_Text,
 } from '../../assets/images';
 type Props = {};
 
@@ -25,47 +26,24 @@ const Store3dBenefits = (props: Props) => {
         </h1>
       </div>
       <Container className='flex flex-col mt-10 items-center gap-32'>
-        <div className='flex flex-col md:flex-row gap-10 items-center  '>
-          <div>
-            <img
-              src={Groww_Revenue_image}
-              alt='grow revenue'
-              className='w-96'
-            />
-          </div>
-          <div className='flex flex-col gap-3'>
-            <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
-              1 Grow Revenue
-            </h1>
-            <h2 className='font-bold text-lg'>
-              Increase Traffic and Conversions
-            </h2>
-            <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>
-                &#x2022; Shopify reports more than 100% growth in users to 3D &
-                AR.
-              </p>
-              <p className='opacity-50'>
-                &#x2022; MarxentLabs reports more than 40% increase in
-                conversion.
-              </p>
-              <p className='opacity-50'>
-                &#x2022; Threekit reports consumers 20% more likely to buy with
-                product configurators.
-              </p>
+        <div className='flex flex-col gap-10 items-center  '>
+          <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
+            1 Grow Revenue
+          </h1>
+          <div className='flex flex-col md:flex-row gap-10 items-center  '>
+            <div>
+              <img
+                src={Groww_Revenue_image}
+                alt='grow revenue'
+                className='w-96'
+              />
             </div>
-            <h2 className='font-bold text-lg'>Google Analytics</h2>
-            <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>
-                &#x2022; Enables regular measurements of key biz metrics.
-              </p>
-            </div>
-            <h2 className='font-bold text-lg'>Survey Agency</h2>
-            <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>
-                &#x2022; Tune Interactive3D Web-App and measure results in
-                real-time.
-              </p>
+            <div className='flex flex-col gap-3'>
+              <img
+                src={Grow_Revenue_Text}
+                alt='grow revenue'
+                className='w-96'
+              />
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ export { default as PRS } from './PRS.webp';
 export { default as RM } from './RM.webp';
 export { default as STL } from './STL.webp';
 export { default as techStack } from './techStack.webp';
+export { default as Grow_Revenue_Text } from './growRevenueText.webp';
 
 // my space 3d
 import BrandExperience_D from './mySpace3d/Brand Experience 1 DTP-100.webp';

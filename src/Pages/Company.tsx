@@ -100,7 +100,7 @@ const Team = () => {
               }
             )}>
             <TeamMembers
-              imgsrc={Marketing_Solution}
+              imgsrc={item.img || Marketing_Solution}
               dark={i % 2 ? true : false}
               details={{
                 name: item.name,
@@ -134,9 +134,9 @@ interface TeamMembersProps {
 const TeamMembers = (props: TeamMembersProps) => {
   return (
     <Container
-      className={'flex flex-col m-0 md:flex-row justify-start gap-16 p-10 '}>
+      className={'flex flex-col m-0 md:flex-row justify-between gap-16 p-10 '}>
       <div
-        className='outline overflow-clip w-[240px] aspect-square self-center grid items-center'
+        className=' outline outline-1 overflow-clip w-[240px] h-[240px]  self-center grid items-center'
         style={{
           borderRadius: '1000px 0px 1000px 1000px',
           boxShadow: '15px 0px 10px #454545',
@@ -147,20 +147,22 @@ const TeamMembers = (props: TeamMembersProps) => {
           className=' h-full w-full object-cover'
         />
       </div>
-      <div className='capitalize'>
+      <div className='capitalize w-3/4'>
         <h1 className='font-bold text-primary-red text-2xl'>
           {props.details.name}
         </h1>
         <h2>{props.details.title}</h2>
-        <div className='grid grid-cols-4 grid-rows-4 mt-5 normal-case'>
-          <p className='font-bold'>Role</p>
-          <p className='col-span-3'>{props.details.role}</p>
-          <p className='font-bold'>Education</p>
-          <p className='col-span-3'>{props.details.education}</p>
-          <p className='font-bold'>interest</p>
-          <p className='col-span-3'>{props.details.interest}</p>
-          <p className='font-bold'>LinkedIn</p>
-          <a href={props.details.linkedin} className='underline col-span-3'>
+        <div className='grid grid-cols-4 grid-rows-4 mt-5 gap-3 normal-case'>
+          <p className='font-bold leading-none'>Role</p>
+          <p className='col-span-3 leading-none'>{props.details.role}</p>
+          <p className='font-bold leading-none'>Education</p>
+          <p className='col-span-3 leading-none'>{props.details.education}</p>
+          <p className='font-bold leading-none'>interest</p>
+          <p className='col-span-3 leading-none'>{props.details.interest}</p>
+          <p className='font-bold leading-none'>LinkedIn</p>
+          <a
+            href={props.details.linkedin}
+            className='underline col-span-3 leading-none'>
             {props.details.linkedin}
           </a>
         </div>

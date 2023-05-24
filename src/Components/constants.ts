@@ -1,5 +1,6 @@
 import { PartnersImages, Room3dGifs, Store3dCard } from '../assets/images';
 import resourePageImages from '../assets/images/resources';
+import { Akhil, Archana, Rk } from '../assets/images/teamImages';
 
 export const GifSectionData = [
   {
@@ -115,26 +116,39 @@ export const Store3DCardData = [
     title: 'Furniture',
     image: Store3dCard.Store3dFurniture,
     desc: 'Showcase sofas, tables, beds, cabinets with precise material (e.g. leather) and designs',
+    details: [
+      'Sofas, Tables, Beds, Cabinets, Chairs etc',
+      'Materials such as Leather, Wood, Glass, Steel',
+    ],
   },
   {
     title: 'Lightings',
     image: Store3dCard.Store3dLights,
     desc: 'Showcase light-fixtures for interiors and exteriors with live lighting, shadows etc',
+    details: [
+      'Lights & light fixtures',
+      'Controls such as on/off, intensity, color',
+      'Effects such as reflection, shadows, anti-aliasing, ambient occlusion, glow etc',
+      'Indoor & Outdoor lighting',
+    ],
   },
   {
     title: 'Paints',
     image: Store3dCard.Store3dPaint,
     desc: 'Showcase colors, textures, stencils in shiny, matte finishes under daylight, nightlights etc',
+    details: ['Colors', 'Textures', 'Stencils'],
   },
   {
     title: 'Tiles',
     image: Store3dCard.Store3dTiles,
     desc: 'Showcase granite, marble, vitrified-tiles, wooden floors under daylight and nightlight',
+    details: ['Marbles', 'Granite', 'Vetrified Tiles', 'Wood'],
   },
   {
     title: 'Sanitaryware',
     image: Store3dCard.Store3dSanitary,
     desc: 'Showcase basins, faucets, shower enclosures, mixers, bathtubs with lighting, tiles etc.',
+    details: ['Marbles', 'Granite', 'Vetrified Tiles', 'Wood'],
   },
 ];
 
@@ -338,9 +352,10 @@ export const resourcePageData = [
 export const teamDetailsData = [
   {
     name: 'Mr Ramakrishna J Tumuluri (aka RK)',
+    img: Rk,
     title: 'Founder, CEO',
     role: 'Product management , development, sales, marketing etc.',
-    education: 'MS Electrical Engineering, SIU – Carbondale, Il, USA',
+    education: 'MS Electrical Engineering, SIU - Carbondale, Il, USA',
     interests: 'History, Cricket, Table-Tennis, Yoga, Comedy',
     linkedIn: 'https://in.linkedin.com/in/ramakrishna-tumuluri',
   },
@@ -354,24 +369,24 @@ export const teamDetailsData = [
   },
   {
     name: 'Ms. Archana Patukuri',
+    img: Archana,
     title: 'Software Developer',
-    role: 'Web-App design (Figma) and development (Html, Css, JavaScript, Bootstrap, Reactjs). Responsive and Performant',
-    education: 'B.Sc Computer Science and Multimedia',
-    interests: 'Traveling, Listening to Music, Singing, Dancing, Yoga',
-    linkedIn: 'https://www.linkedin.com/in/g1anishetti',
+    role: 'Web-App design (Figma) and development (HTML, CSS, JavaScript, Bootstrap, Reactjs,Threejs). Responsive and Performant',
+    education: 'B.Tech Computer Science and Engineering',
+    interests: 'Traveling, Listening to Music, Dancing',
+    linkedIn: 'https://www.linkedin.com/in/archana-patukuri-495055162/',
   },
   {
     name: 'Jay Patel',
     title: 'QA Specialist',
     role: 'Making sure that the product delivered is in top notch Quality',
     education: 'Bachelor of computer science (CA & IT)',
-    interests:
-      'Playing Cricket, Researching, Travelling, Exploring new Gadgets',
-    linkedIn: '',
+    interests: 'Web Development, Cricket, Exploring new Gadgets, Researching',
+    linkedIn: 'https://www.linkedin.com/in/jay-patel-5121221b8',
   },
   {
     name: 'Jigish Patel',
-    title: 'Illustrator and Video Creator',
+    title: 'Graphic designer | UI Designer',
     role: 'Making the User Understand the works of Viscommerce in Simple Terms.',
     education: '',
     interests: '',
@@ -379,6 +394,7 @@ export const teamDetailsData = [
   },
   {
     name: 'Akhilesh',
+    img: Akhil,
     title: 'Software Developer',
     role: 'Developing high quality Interactive WebApps using ThreeJS',
     education: 'Bachelor of Computer Application',

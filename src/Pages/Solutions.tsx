@@ -110,10 +110,46 @@ const Store3d = () => {
           </div>
         </Container>
       </section>
-      <section className='w-full py-24'>
+      {/* <section className='w-full py-24'>
         <Container>
           <div className=' drop-shadow-2xl'>
             <img src={VisCommerce_levels} alt='' className='rounded-2xl' />
+          </div>
+        </Container>
+      </section> */}
+      <section className='w-full py-24'>
+        <Container className='flex flex-col items-center'>
+          <h1 className='font-bold text-4xl py-10'>Custom Solutions</h1>
+          <div className='flex flex-col gap-6'>
+            {Store3DCardData.map((item, i) => (
+              <div
+                key={i}
+                className={clsx('flex justify-between p-16 rounded-xl', {
+                  'bg-[#FFE3E3]': i == 0,
+                  'bg-[#FFF3E6]': i == 1,
+                  'bg-[#D2FFF6]': i == 2,
+                  'bg-[#E2E8FF]': i == 3,
+                  'bg-[#C9F5FF]': i == 4,
+                })}>
+                <div className='w-1/2'>
+                  <h2 className='text-lg font-bold'>{item.title}</h2>
+                  <ul className='ml-5 flex flex-col gap-2'>
+                    {item.details.map((item, i) => (
+                      <li key={item + i} className='text-black/40'>
+                        &middot; {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className='grid place-items-center'>
+                  <img
+                    src={item.image}
+                    alt=''
+                    className='w-[240px] aspect-[9/4]'
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -331,7 +367,7 @@ const Store3d = () => {
             Quality, Performance, UI / UX
           </h1>
           <div className='grid grid-cols-3 gap-5'>
-            <div className='rounded-xl bg-[#f5f5f5] p-5 py-10'>
+            <div className='rounded-xl bg-[#ffd8d8] p-5 py-10'>
               <div>
                 <p className='text-lg font-bold'>Quality</p>
                 <ul className='ml-5'>
@@ -345,7 +381,7 @@ const Store3d = () => {
                 </ul>
               </div>
             </div>
-            <div className='rounded-xl bg-[#f5f5f5] p-5 py-10'>
+            <div className='rounded-xl bg-[#e5eac0] p-5 py-10'>
               <div>
                 <p className='text-lg font-bold'>Performance</p>
                 <ul className='ml-5'>
@@ -358,7 +394,7 @@ const Store3d = () => {
                 </ul>
               </div>
             </div>
-            <div className='rounded-xl bg-[#f5f5f5] p-5 py-10'>
+            <div className='rounded-xl bg-[#c3ece9] p-5 py-10'>
               <div>
                 <p className='text-lg font-bold'>Performance</p>
                 <ul className='ml-5'>
@@ -372,7 +408,7 @@ const Store3d = () => {
           </div>
         </Container>
       </section>
-      <section className='bg-[#f5f5f5] py-5'>
+      {/* <section className='bg-[#f5f5f5] py-5'>
         <Container className=' flex flex-col md:felx-row items-center gap-5 my-20 '>
           <div className='flex flex-col  md:flex-row justify-between items-center gap-5 md:items-start'>
             <img src={techStack} alt='' />
@@ -402,7 +438,7 @@ const Store3d = () => {
             {showMoreTech ? 'Read Less' : 'Read More'}
           </Button>
         </Container>
-      </section>
+      </section> */}
       <section className='bg-primary-red py-5 mb-10'>
         <Container className='flex justify-center gap-3'>
           {[

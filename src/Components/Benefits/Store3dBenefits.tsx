@@ -12,6 +12,7 @@ import {
   DRM,
   Grow_Revenue_Text,
 } from '../../assets/images';
+import { IncraseProfit_SVG } from '../../assets/images/svgs';
 type Props = {};
 
 const Store3dBenefits = (props: Props) => {
@@ -25,8 +26,8 @@ const Store3dBenefits = (props: Props) => {
           Store3D Benefits
         </h1>
       </div>
-      <Container className='flex flex-col mt-10 items-center gap-32'>
-        <div className='flex flex-col gap-10 items-center  '>
+      <div className='py-16'>
+        <Container className='flex flex-col mt-10 items-center gap-32'>
           <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
             1 Grow Revenue
           </h1>
@@ -46,53 +47,66 @@ const Store3dBenefits = (props: Props) => {
               />
             </div>
           </div>
-        </div>
-        <div className='flex flex-col md:flex-row-reverse gap-10 items-center  '>
-          <div>
-            <img src={Product_Return_1} alt='grow revenue' className='w-96' />
-          </div>
-          <div className='flex flex-col gap-3'>
-            <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
-              2 Reduce Product Return
-            </h1>
-            <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>
-                &#x2022; Average product return rate in eCommerce 20% - 30%
-              </p>
-              <p className='opacity-50'>
-                &#x2022; Using 3D / AR Shopify found returns reduce by 5%
-              </p>
-              <p className='opacity-50'>&#x2022; Improves bottom-line</p>
+        </Container>
+      </div>
+      <div className='py-16 bg-[#f5f5f5]'>
+        <Container className='flex flex-col gap-10 items-center  '>
+          <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
+            2 Increase Profit
+          </h1>
+          <img
+            src={IncraseProfit_SVG}
+            alt=''
+            className='bg-white p-4 rounded-lg w-[160px]'
+          />
+          <div className='flex flex-row-reverse'>
+            <div>
+              <img src={Product_Return_1} alt='grow revenue' className='w-96' />
+            </div>
+            <div className='flex flex-col gap-3'>
+              <div className='ml-10 flex flex-col gap-2'>
+                <p className='opacity-50'>
+                  &#x2022; Average product return rate in eCommerce 20% - 30%
+                </p>
+                <p className='opacity-50'>
+                  &#x2022; Using 3D / AR Shopify found returns reduce by 5%
+                </p>
+                <p className='opacity-50'>&#x2022; Improves bottom-line</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='flex flex-col md:flex-row gap-10 items-center  '>
-          <div>
-            <img src={Enhance_Brand_1} alt='grow revenue' className='w-96' />
-          </div>
-          <div className='flex flex-col gap-3'>
-            <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
-              3 Enhanced Brand
-            </h1>
-            <div className='ml-10 flex flex-col gap-2'>
-              <p className='opacity-50'>
-                &#x2022; Ergonomic recommendations from osha <br />
-                <a href='https://www.osha.gov/ergonomics' className='ml-5'>
-                  https://www.osha.gov/ergonomics
-                </a>
-              </p>
-              <p className='opacity-50'>
-                &#x2022; Lighting recommendations from standards bodies <br />
-                <a
-                  href='https://www.iso.org/committee/4418564.html'
-                  className='ml-5'>
-                  https://www.iso.org/committee/4418564.html
-                </a>
-              </p>
+        </Container>
+      </div>
+      <div className='py-16'>
+        <Container className='flex flex-col gap-10 items-center  '>
+          <h1 className='font-bold text-3xl md:text-5xl tracking-tight'>
+            3 Strengthen Brand
+          </h1>
+          <div className='flex gap-10 items-center '>
+            <div>
+              <img src={Enhance_Brand_1} alt='grow revenue' className='w-96' />
+            </div>
+            <div className='flex flex-col gap-3'>
+              <div className='ml-10 flex flex-col gap-2'>
+                <p className='opacity-50'>
+                  &#x2022; Ergonomic recommendations from osha <br />
+                  <a href='https://www.osha.gov/ergonomics' className='ml-5'>
+                    https://www.osha.gov/ergonomics
+                  </a>
+                </p>
+                <p className='opacity-50'>
+                  &#x2022; Lighting recommendations from standards bodies <br />
+                  <a
+                    href='https://www.iso.org/committee/4418564.html'
+                    className='ml-5'>
+                    https://www.iso.org/committee/4418564.html
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
       <div className='py-10 bg-[#f5f5f5] '>
         <Container className='flex flex-col gap-10'>
           <ImageDropper buttonText='3DCommerce and glTF' imgsrc=''>

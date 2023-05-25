@@ -55,10 +55,14 @@ const Store3d = () => {
       <section className=' bg-[#f5f5f5]'>
         <Container className='solution-container flex flex-col-reverse md:flex-row h-[70vh] gap-20 justify-end md:justify-between min-h-[80vh] bg-transparent '>
           <div className='flex flex-col gap-5 justify-center'>
-            <Slider>
+            <Slider
+              options={[
+                'Requirements of furniture, lighting, paints, tiles, sanitaryware sectors',
+                'Diverse spaces such as living room, bedroom, kitchen, bathroom etc',
+              ]}>
               <h2 className='text-lg '>Industry Specific customization</h2>
             </Slider>
-            <Slider>
+            <Slider options={['glTF', '3D Commerce Assets']}>
               <h2 className='text-lg '>3DCommerce Compliance</h2>
             </Slider>
             <Slider
@@ -69,8 +73,14 @@ const Store3d = () => {
               ]}>
               <h2 className='text-lg '>Devices, Browsers, Technologies</h2>
             </Slider>
-            <Slider>
-              <h2 className='text-lg '>Devices, Browsers, Technologies</h2>
+            <Slider
+              options={[
+                'Camera operations',
+                'Product level',
+                'Lighting',
+                'Lighting',
+              ]}>
+              <h2 className='text-lg '>Features</h2>
             </Slider>
             <div className='flex gap-3 ml-5 mt-5 '>
               <a

@@ -91,7 +91,7 @@ const Store3d = () => {
               className='hidden md:block'
               width='560'
               height='315'
-              src='https://www.youtube.com/embed/2WLuNmKMXo0'
+              src='https://www.youtube.com/embed/QGJ1ZZosgp4'
               title='YouTube video player'
               // frameborder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -101,7 +101,7 @@ const Store3d = () => {
               className='mt-20 md:hidden'
               width='full'
               height='auto'
-              src='https://www.youtube.com/embed/2WLuNmKMXo0'
+              src='https://www.youtube.com/embed/QGJ1ZZosgp4'
               title='YouTube video player'
               // frameborder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -124,14 +124,17 @@ const Store3d = () => {
             {Store3DCardData.map((item, i) => (
               <div
                 key={i}
-                className={clsx('flex justify-between p-16 rounded-xl', {
-                  'bg-[#FFE3E3]': i == 0,
-                  'bg-[#FFF3E6]': i == 1,
-                  'bg-[#D2FFF6]': i == 2,
-                  'bg-[#E2E8FF]': i == 3,
-                  'bg-[#C9F5FF]': i == 4,
-                })}>
-                <div className='w-1/2'>
+                className={clsx(
+                  'flex flex-col-reverse md:flex-row gap-4 justify-between p-16 py-28 rounded-xl',
+                  {
+                    'bg-[#FFE3E3]': i == 0,
+                    'bg-[#FFF3E6]': i == 1,
+                    'bg-[#D2FFF6]': i == 2,
+                    'bg-[#E2E8FF]': i == 3,
+                    'bg-[#C9F5FF]': i == 4,
+                  }
+                )}>
+                <div className='md:w-1/2'>
                   <h2 className='text-lg font-bold'>{item.title}</h2>
                   <ul className='ml-5 flex flex-col gap-2'>
                     {item.details.map((item, i) => (
@@ -156,7 +159,7 @@ const Store3d = () => {
       <section className='bg-[#f5f5f5] py-10'>
         <Container className='flex flex-col items-center'>
           <h1 className='text-4xl font-bold py-10'>3DCommerce Compliant</h1>
-          <div className='grid grid-cols-2 gap-5'>
+          <div className='grid md:grid-cols-2 gap-5'>
             <div className='rounded-xl bg-[#ABEDBC] flex flex-col p-5 gap-5'>
               <img src={Commerce3DLogo_SVG} alt='' className='h-16' />
               <div>
@@ -191,8 +194,8 @@ const Store3d = () => {
           <h1 className='text-4xl font-bold py-10'>
             Devices, Browsers, Technologies
           </h1>
-          <div className='grid grid-cols-2 grid-rows-2 gap-5'>
-            <div className='rounded-xl bg-[#f5f5f5] flex flex-row-reverse items-center p-5 gap-5'>
+          <div className='grid md:grid-cols-2 md:grid-rows-2 gap-5'>
+            <div className='rounded-xl bg-[#f5f5f5] flex flex-col md:flex-row-reverse items-center p-5 gap-5'>
               <img src={Devices_SVG} alt='' className='h-32' />
               <div>
                 <p className='text-lg font-bold'>Devices</p>
@@ -202,7 +205,7 @@ const Store3d = () => {
                 </ul>
               </div>
             </div>
-            <div className='rounded-xl bg-[#f5f5f5] flex flex-row-reverse items-center p-5 gap-5'>
+            <div className='rounded-xl bg-[#f5f5f5] flex flex-col md:flex-row-reverse items-center p-5 gap-5'>
               <img src={BrowserLogo_SVG} alt='' className='h-32' />
               <div>
                 <p className='text-lg font-bold'>Browsers</p>
@@ -212,9 +215,9 @@ const Store3d = () => {
                 </ul>
               </div>
             </div>
-            <div className='rounded-xl bg-[#f5f5f5] col-span-2 flex flex-col gap-2 items-center justify-center'>
+            <div className='rounded-xl bg-[#f5f5f5] md:col-span-2 flex flex-col gap-2 items-center justify-center'>
               <h2 className='font-bold'>Technologies</h2>
-              <div className='px-5'>
+              <div className='px-5 text-center'>
                 {[
                   'glTF (3D Content)',
                   'Threejs (Runtime and Framework)',
@@ -235,7 +238,7 @@ const Store3d = () => {
       <section className='bg-[#f5f5f5] py-10'>
         <Container className='flex flex-col items-center'>
           <h1 className='text-4xl font-bold py-10'>Features</h1>
-          <div className='grid grid-cols-2 grid-rows-2 gap-5'>
+          <div className='grid md:grid-cols-2 grid-rows-2 gap-5'>
             <div className='rounded-xl bg-[#ABECFF] p-5 py-10'>
               <div>
                 <p className='text-lg font-bold'>Basic</p>
@@ -366,10 +369,10 @@ const Store3d = () => {
           <h1 className='text-4xl font-bold py-10'>
             Quality, Performance, UI / UX
           </h1>
-          <div className='grid grid-cols-3 gap-5'>
+          <div className=' grid md:grid-cols-3 gap-5'>
             <div className='rounded-xl bg-[#ffd8d8] p-5 py-10'>
               <div>
-                <p className='text-lg font-bold'>Quality</p>
+                <p className='text-lg font-bold '>Quality</p>
                 <ul className='ml-5'>
                   <li>Device coverage</li>
                   <li>https://www.browserstack.com</li>
@@ -440,7 +443,7 @@ const Store3d = () => {
         </Container>
       </section> */}
       <section className='bg-primary-red py-5 mb-10'>
-        <Container className='flex justify-center gap-3'>
+        <Container className='flex flex-col md:flex-row text-center justify-center gap-3'>
           {[
             'https://modelviewer.dev/',
             'https://threejs.org/',

@@ -1,0 +1,11 @@
+export { default as AmazonMeta } from './Amazon brings Metaverse to the e-commerce segment with augmented rooms.pdf';
+export { default as AmazonImmersive } from './Amazon creates immersive shopping experiences using Substance 3D.pdf';
+export { default as Democratizing } from './Democratizing Interior Design 20th September.pdf';
+export { default as EssentialGuide } from './Essential Guide to 3D Product Configuration.pdf';
+export { default as How3DCommerce } from './How 3D Commerce Offers the Building Blocks of a Virtual Inventory f.pdf';
+export { default as MarxentLabs } from './MarxentLabs 3D project charter.pdf';
+export { default as SampleRFP } from './Sample-RFP-Table-of-Contents-for-3D-Projects.pdf';
+export { default as FutureofECommerce } from './The_Future_of_eCommerce_is_3D.pdf';
+export { default as WhatCan3D } from './What can cant 3D & AR do for you.pdf';
+export { default as WhyEcommerce } from './Why your eCommerce store needs 3D product.pdf';
+export { default as PersonalizedProduct } from './personalized-product-recommendations-ebook-offer.pdf';

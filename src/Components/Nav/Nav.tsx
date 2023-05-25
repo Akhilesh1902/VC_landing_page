@@ -232,9 +232,14 @@ const Nav = (props: Props) => {
                       <AiFillCaretDown />
                     </div>
                   </Button>
-                  <a className='' href='http://gandivam.co.in/dist/'>
-                    Try Demo
-                  </a>
+                  <li className='grid place-items-center'>
+                    <a
+                      className='text-base bg-primary-red mt-10 p-2 px-6 rounded-full text-white hover:bg-primary-red/70 '
+                      href='http://gandivam.co.in/dist/'
+                      target='active'>
+                      Try Demo
+                    </a>
+                  </li>
                 </li>
               </ul>
             </motion.div>

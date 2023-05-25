@@ -136,7 +136,7 @@ const TeamMembers = (props: TeamMembersProps) => {
     <Container
       className={'flex flex-col m-0 md:flex-row justify-between gap-16 p-10 '}>
       <div
-        className=' outline outline-1 overflow-clip w-[240px] h-[240px]  self-center grid items-center'
+        className=' outline outline-1 overflow-clip w-[240px] h-[240px] self-center grid items-center'
         style={{
           borderRadius: '1000px 0px 1000px 1000px',
           boxShadow: '15px 0px 10px #454545',

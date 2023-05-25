@@ -55,6 +55,7 @@ const Resources = (props: Props) => {
                 description={item.details}
                 imgsrc={item.image}
                 title={item.title}
+                file={item.url}
               />
             ))}
           </div>
@@ -70,6 +71,7 @@ interface ResorceCardProps {
   imgsrc: string;
   title: string;
   description: String;
+  file: string;
 }
 const ResorceCard = (props: ResorceCardProps) => {
   return (
@@ -77,14 +79,20 @@ const ResorceCard = (props: ResorceCardProps) => {
       <img src={props.imgsrc} alt='' className='w-full aspect-[9/5]' />
       <h2 className='font-bold text-2xl'>{props.title}</h2>
       <p className='text-base opacity-70 leading-snug'>{props.description}</p>
-      <Button
+      {/* <Button
         type='button'
         varient={'primary'}
         onClick={() => {}}
         rounded
         className='self-start justify-self-end mt-auto'>
         Read More
-      </Button>
+      </Button> */}
+      <a
+        href={props.file}
+        target='blank'
+        className='bg-primary-red font-bold text-white px-5 py-3 rounded-xl w-fit'>
+        Read More
+      </a>
     </div>
   );
 };

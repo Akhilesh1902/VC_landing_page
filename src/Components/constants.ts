@@ -1,6 +1,19 @@
 import { PartnersImages, Room3dGifs, Store3dCard } from '../assets/images';
 import resourePageImages from '../assets/images/resources';
-import { Akhil, Archana, Rk } from '../assets/images/teamImages';
+import {
+  AmazonImmersive,
+  AmazonMeta,
+  Democratizing,
+  EssentialGuide,
+  FutureofECommerce,
+  How3DCommerce,
+  MarxentLabs,
+  PersonalizedProduct,
+  SampleRFP,
+  WhatCan3D,
+  WhyEcommerce,
+} from '../assets/images/resourcesPdf';
+import { Akhil, Archana, Jay, Jigish, Rk } from '../assets/images/teamImages';
 
 export const GifSectionData = [
   {
@@ -275,7 +288,7 @@ export const resourcePageData = [
     details:
       'Imagine if you could shop for new furniture by bringing a dozen sofas into your house and comparing how they look in your living room. Sounds unrealistic?',
     image: resourePageImages.Amazon,
-    url: '',
+    url: AmazonImmersive,
   },
   {
     title:
@@ -283,7 +296,7 @@ export const resourcePageData = [
     details:
       'Amazon brings augmented rooms (Amazon View) to transform the shopping experience. Shoppers can customize their room with Amazon products in VR.',
     image: resourePageImages.storeresource1,
-    url: '',
+    url: AmazonMeta,
   },
   {
     title:
@@ -291,61 +304,61 @@ export const resourcePageData = [
     details:
       'A product configurator is software that allows people to customize an item and see how it appears. The configurator shows all possible variations in a product.',
     image: resourePageImages.storeresource2,
-    url: '',
+    url: EssentialGuide,
   },
   {
     title: 'MarxentLabs 3D project charter',
     details:
       'Utilizing our many years of experience in running 3D projects, we’ve created this free 3D project charter template to make it easy for you to get started. Download today',
     image: resourePageImages.storeresource3,
-    url: '',
+    url: MarxentLabs,
   },
   {
     title: '10 Things to Know About the World of 3D Models',
     details:
       'Racing bikes, coffee machines, energy drinks, dining chairs, camping cookers, hockey sticks, diamond rings, and even Hot Wheels toy cars.',
     image: resourePageImages.storeresource5,
-    url: '',
+    url: FutureofECommerce,
   },
   {
     title: `What can can't 3D & AR do for you?`,
     details: `Each new evolution in technology poses one key question: who will identify its value first and reap the greatest reward and who will scramble to catch up before it's too late?`,
     image: resourePageImages.storeresource6,
-    url: '',
+    url: WhatCan3D,
   },
   {
     title: 'Why Your eCommerce Store Needs a 3D Product Customizer',
     details:
       'Do you run an eCommerce store? Are you looking for a unique way to increase customer engagement and overall sales?',
     image: resourePageImages.storeresource7,
-    url: '',
+    url: WhyEcommerce,
   },
   {
     title: 'How 3D Commerce Offers the Building Blocks of a Virtual Inventory',
     details:
       'Retail sales have grown by almost four percent annually since 2010. During that time, ecommerce penetration has increased more',
     image: resourePageImages.storeresource8,
-    url: '',
+    url: How3DCommerce,
   },
   {
     title: 'SAMPLE: RFP Table of Contentsfor a 3D Project',
     details: 'Content for 3D Project',
     image: resourePageImages.storeresource4,
-    url: '',
+    url: SampleRFP,
   },
   {
     title: 'Democratizing Interior Design',
     details:
       'As Mark Hampton quotes, "Real comfort, visual and physical, is vital to every room." Giving that opportunity and space of individuality and design to everyone? That’s the vision at VisCommerce.',
     image: resourePageImages.mySpaceResource1,
-    url: '',
+    url: Democratizing,
   },
   {
     title: 'Personalized Product Recommendations',
     details:
       'We’re all familiar with product recommendations. Many of us see them every day on Amazon—a household name synonymous with the early adoption of AI and machine learning',
     image: resourePageImages.mySpaceResource2,
-    url: '',
+    url: PersonalizedProduct,
   },
 ];
 
@@ -377,21 +390,25 @@ export const teamDetailsData = [
     linkedIn: 'https://www.linkedin.com/in/archana-patukuri-495055162/',
   },
   {
+    name: 'Jigish Patel',
+    img: Jigish,
+    title: 'Graphic designer | UI Designer',
+    role: 'Making the User Understand the works of Viscommerce in Simple Terms.',
+    education: 'ComputerScience Engineering',
+    interests:
+      'Travelling, Listening songs, Playing Cricket, Creating Photo Manipulation',
+    linkedIn: 'https://www.linkedin.com/in/jigish-patel-4b868a19a',
+  },
+  {
     name: 'Jay Patel',
+    img: Jay,
     title: 'QA Specialist',
-    role: 'Making sure that the product delivered is in top notch Quality',
+    role: 'Ensuring product quality across devices and innovations in "visual testing"',
     education: 'Bachelor of computer science (CA & IT)',
     interests: 'Web Development, Cricket, Exploring new Gadgets, Researching',
     linkedIn: 'https://www.linkedin.com/in/jay-patel-5121221b8',
   },
-  {
-    name: 'Jigish Patel',
-    title: 'Graphic designer | UI Designer',
-    role: 'Making the User Understand the works of Viscommerce in Simple Terms.',
-    education: '',
-    interests: '',
-    linkedIn: '',
-  },
+
   {
     name: 'Akhilesh',
     img: Akhil,

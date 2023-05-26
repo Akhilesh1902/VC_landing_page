@@ -21,7 +21,7 @@ type Props = {
 const Room = (props: Props) => {
   const { scene, parser, animations } = useGLTF('./table12.glb');
   // console.log(animations);
-  // console.log(scene);
+  console.log(scene);
 
   const { camera, scene: _scene } = useThree();
 

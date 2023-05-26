@@ -109,12 +109,12 @@ const Store3dBenefits = (props: Props) => {
       </div>
       <div className='py-10 bg-[#f5f5f5] '>
         <Container className='flex flex-col gap-10'>
-          <ImageDropper
+          {/* <ImageDropper
             imageBg='#f5f5f5'
             buttonText='3DCommerce and glTF'
             imgsrc=''>
             <CardSection />
-          </ImageDropper>
+          </ImageDropper> */}
           <ImageDropper
             imageBg='#f5f5f5'
             buttonText='DRM (Digital Rights Management)'

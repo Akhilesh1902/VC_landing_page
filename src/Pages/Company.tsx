@@ -73,7 +73,7 @@ interface AboutUsCardProps extends React.PropsWithChildren {
 const AboutUsCards = (props: AboutUsCardProps) => {
   return (
     <div
-      className='flex flex-col gap-3 w-full md:w-[45%] p-4 rounded-lg'
+      className='flex flex-col items-center gap-3 w-full md:w-[45%] p-4 rounded-lg'
       style={{ boxShadow: '0px 0px 10px #4a4a4a' }}>
       <props.icon size={48} className={'text-primary-red'} />
       <h1 className='text-3xl font-bold'>{props.tittle}</h1>

@@ -576,7 +576,7 @@ const MySpace3d = () => {
 
   return (
     <Container className='flex flex-col  items-center '>
-      <div className='my-10 flex gap-5 '>
+      <div className='my-10 flex flex-wrap items-center justify-center  gap-5 '>
         {button.map((item) => {
           return (
             <NavLink
@@ -584,7 +584,7 @@ const MySpace3d = () => {
               to={item.link}
               className={({ isActive, isPending }) =>
                 clsx(
-                  `font-medium relative after:block after:w-[2px] p-3 px-8 outline outline-1 outline-gray-300 rounded-full transition-bg duration-500  `,
+                  `font-medium relative after:block after:w-[2px] p-2 md:p-3 md:px-8 outline outline-1 outline-gray-300 rounded-full transition-bg duration-500  `,
                   {
                     'text-white bg-primary-red/60 ': isActive,
                   }

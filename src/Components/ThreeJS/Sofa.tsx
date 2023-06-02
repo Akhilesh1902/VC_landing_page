@@ -1,8 +1,9 @@
 import { useGLTF } from '@react-three/drei';
-import { useLoader } from '@react-three/fiber';
+import { useLoader, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader';
-// import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+// import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import React from 'react';
 
 type Props = {
@@ -13,16 +14,25 @@ type Props = {
 };
 
 const Sofa = (props: Props) => {
-  //     const scene = useLoader(GLTFLoader, faceUrl, (loader) => {
-  //         const ktxLoader = new KTX2Loader()
-  //         ktxLoader.setTranscoderPath('three/examples/js/libs/basis/')
-  //         loader.setKTX2Loader(ktxLoader)
-  //         loader.setMeshoptDecoder(MeshoptDecoder)
-  //       })
+  const { gl } = useThree();
 
-  //   console.log(scene);
+  const scene = useLoader(GLTFLoader, './ktx2_sofa.glb', (loader) => {
+    const ktxLoader = new KTX2Loader();
+    const draco = new DRACOLoader();
+    draco.setDecoderPath('./draco_gltf.js');
+    loader.setDRACOLoader(draco);
+    ktxLoader.setTranscoderPath('three/examples/js/libs/basis/');
+    loader.setKTX2Loader(ktxLoader.detectSupport(gl));
+    // loader.setMeshoptDecoder(MeshoptDecoder);
+  });
 
-  return <group>{/* <primitive object={scene}></primitive> */}</group>;
+  console.log(scene);
+
+  return (
+    <group>
+      <primitive object={scene}></primitive>{' '}
+    </group>
+  );
 };
 
 export default Sofa;

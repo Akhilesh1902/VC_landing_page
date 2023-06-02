@@ -5,6 +5,7 @@ import {
   useTexture,
   MeshReflectorMaterial,
 } from '@react-three/drei';
+import React from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect, useMemo, useState } from 'react';
@@ -96,33 +97,31 @@ const Room = (props: Props) => {
   woodTexture_AO.wrapS = woodTexture_AO.wrapT = THREE.RepeatWrapping;
 
   return (
-    <>
-      <group>
-        <primitive object={scene}></primitive>
-        <Plane
-          rotation-x={-degToRad(90)}
-          scale={15}
-          position-y={-0.03}
-          receiveShadow={true}>
-          <MeshReflectorMaterial
-            // color={0xffffff}
-            blur={[512, 512]}
-            resolution={1024}
-            mixBlur={1}
-            mixStrength={5}
-            // roughness={1}
-            depthScale={50}
-            minDepthThreshold={0.25}
-            maxDepthThreshold={1}
-            // metalness={0}
-            mirror={0.5} // Mirror environment, 0 = texture colors, 1 = pick up env colors
-            map={woodTexture}
-            roughnessMap={woodTexture_rough}
-            // aoMap={woodTexture_AO}
-          />
-        </Plane>
-      </group>
-    </>
+    <group>
+      <primitive object={scene}></primitive>
+      <Plane
+        rotation-x={-degToRad(90)}
+        scale={15}
+        position-y={-0.03}
+        receiveShadow={true}>
+        <MeshReflectorMaterial
+          // color={0xffffff}
+          blur={[512, 512]}
+          resolution={1024}
+          mixBlur={1}
+          mixStrength={5}
+          // roughness={1}
+          depthScale={50}
+          minDepthThreshold={0.25}
+          maxDepthThreshold={1}
+          // metalness={0}
+          mirror={0.5} // Mirror environment, 0 = texture colors, 1 = pick up env colors
+          map={woodTexture}
+          roughnessMap={woodTexture_rough}
+          // aoMap={woodTexture_AO}
+        />
+      </Plane>
+    </group>
   );
 };
 

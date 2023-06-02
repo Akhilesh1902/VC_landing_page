@@ -10,6 +10,7 @@ import { degToRad } from 'three/src/math/MathUtils';
 import { EffectComposer, SSAO, SMAA, SSR } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import Sofa from './Sofa';
+import Sofa_jpeg from './Sofa_jpeg';
 
 type Props = {
   lightActive: boolean;
@@ -43,13 +44,19 @@ const CanvasWrapper = (props: Props) => {
               lightActive={props.lightActive}
               lightPosition={lightPosition}
             />
-            <Room
+            {/* <Room
               lightActive={props.lightActive}
               setLightPosition={setLightPosition}
               materialIndex={props.tableMaterialIndex}
               animation={props.animation}
             />
             <Sofa
+              lightActive={props.lightActive}
+              setLightPosition={setLightPosition}
+              materialIndex={props.tableMaterialIndex}
+              animation={props.animation}
+            /> */}
+            <Sofa_jpeg
               lightActive={props.lightActive}
               setLightPosition={setLightPosition}
               materialIndex={props.tableMaterialIndex}
